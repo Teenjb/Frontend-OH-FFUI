@@ -5,6 +5,9 @@ module.exports = {
   important: "#root",
   
   theme: {
+    fontFamily: {
+      sans: ['Raleway', 'sans-serif'],
+      serif: ['Spicy Rice', 'serif'],},
     extend: {},
   },
   plugins: [],
