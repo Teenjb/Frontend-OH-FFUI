@@ -3,11 +3,15 @@ import '../index.css';
 import React, { useState } from "react";
 import logo from "./logo.png";
 import hero from "./Hero Banner.png";
+import instagram from "./icons8-instagram-100.svg";
+import whatsapp from "./icons8-whatsapp-100.svg";
+import line from "./icons8-line-100.svg";
+import tiktok from "./icons8-tiktok-100.svg";
 
 function Home(){
     const [show, setShow] = useState(false);
     return(
-        <div className="bg-gradient-to-b from-blue-900 to-blue-200 pb-12 overflow-y-hidden" style={{ minHeight: 700 }}>
+        <div className="bg-gradient-to-b from-blue-900 to-blue-200 pb-12 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full border-b bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
@@ -46,7 +50,7 @@ function Home(){
                           </div>
                       </div>
                       <div className="inline-flex space-x-2 ">
-                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-200 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s">Login</button>
+                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s">Login</button>
                         <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s">Sign Up</button>
                       </div>
                   </div>
@@ -78,19 +82,23 @@ function Home(){
 
               <footer className='w-full border-b bg-blue-900'>
                   <div>
-                      <h2 className='text-pink-500 font-black flex md:text-3xl text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0'> Open House FF UI Vol.III </h2>
-                      <p> Lorem ipsum bla bla bla</p>
-                      <ul>
+                      <h2 className='text-pink-500 font-black flex md:text-3xl text-base items-center py-10 flex-row justify-center relative top-0 bottom-0 left-0 right-0'> Open House FF UI Vol.III </h2>
+                      <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bla blaaaa</p>
+                      <ul className='flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0'>
                           <li>
-                              <img></img>
+                              <img className='h-10 w-10' src={tiktok} alt='' href="javascript: void(0)"/></li>
+                          <li>
+                              <img className='h-10 w-10' src={instagram} alt='' href="javascript: void(0)"/>
                           </li>
                           <li>
-                              <img></img>
-                          </li>
+                              <img className='h-10 w-10' src={line} alt='' href="javascript: void(0)"/></li>
                           <li>
-                              <img></img>
+                              <img className='h-8 w-8' src={whatsapp} alt='' href="javascript: void(0)"/>
                           </li>
                       </ul>
+                  </div>
+                  <div className='bg-pink-500 py-5 flex items-center flex-row justify-center relative top-0 bottom-0 left-0 right-0'>
+                      <p className='text-blue-900 text-sm font-bold'>All rights reserved © OH FF UI VOL.III </p>
                   </div>
               </footer>
         </div>
