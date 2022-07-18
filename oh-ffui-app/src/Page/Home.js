@@ -1,15 +1,25 @@
 import '../index.css';
 
 import React, { useState } from "react";
-import logo from "./logo.png";
-import hero from "./Hero Banner.png";
-import instagram from "./icons8-instagram-100.svg";
-import whatsapp from "./icons8-whatsapp-100.svg";
-import line from "./icons8-line-100.svg";
-import tiktok from "./icons8-tiktok-100.svg";
+import logo from "../Img/logo.png";
+import hero from "../Img/Hero Banner.png";
+import instagram from "../Img/icons8-instagram-100.svg";
+import whatsapp from "../Img/icons8-whatsapp-100.svg";
+import line from "../Img/icons8-line-100.svg";
+import tiktok from "../Img/icons8-tiktok-100.svg";
+import Register from '../Page/Register';
+import { Navigate } from 'react-router-dom';
 
 function Home(){
     const [show, setShow] = useState(false);
+
+    const handleClick = (event) =>{
+        const {id} = event.target;
+        if(id === 'register'){
+            window.location.href = '/register';
+        }
+    }
+
     return(
         <div className="bg-gradient-to-b from-blue-900 to-blue-200 pb-12 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full border-b bg-blue-900">
@@ -51,9 +61,7 @@ function Home(){
                       </div>
                       <div className="inline-flex space-x-2 ">
                         <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s">Login</button>
-                        <link to ="/Register">
-                            <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s">Sign Up</button>
-                        </link>
+                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s" id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
                       </div>
                   </div>
               </nav>

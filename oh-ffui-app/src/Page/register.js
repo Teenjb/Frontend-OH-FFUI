@@ -1,7 +1,7 @@
 import '../index.css';
 
 import React, { useState } from "react";
-import logo from "./logo.png";
+import logo from "../Img/logo.png";
 
 function Register(){
     const [show, setShow] = useState(false);
