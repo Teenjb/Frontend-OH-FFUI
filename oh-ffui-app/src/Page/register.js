@@ -1,12 +1,10 @@
 import '../index.css';
 
-import React, { useState } from "react";
 import logo from "../Img/logo.png";
 
 function Register(){
-    const [show, setShow] = useState(false);
     return(
-        <div className="bg-white pb-12 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
             <div className="min-h-full flex">
                 <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                     <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -60,20 +58,20 @@ function Register(){
                             </div>
                             </div>
 
-                            <div class="">
-                                <div class="flex justify- mb-3">
-                                    <div>
+                            <div>
+                                <div class="grid selection:mb-3">
+                                    <div className='w-50 pb-5'>
                                     <label for="school" className="block text-sm font-medium text-gray-700"> Provinsi </label>
-                                    <select class="form-select aappearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <select class="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option selected>Pilih Provinsi</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
                                     </select>
                                     </div>
-                                    <div className=''>
+                                    <div className='w-50'>
                                     <label for="school" className="block text-sm font-medium text-gray-700"> Kota </label>
-                                    <select class="form-select aappearance-none block w-full px-3 py-2 border left-10 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <select class="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option selected>Pilih Kota</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -82,10 +80,18 @@ function Register(){
                                     </div>
                                 </div>
                             </div>
+
+                            <div>
+                            <label for="school" className="block text-sm font-medium text-gray-700"> Kode Pos </label>
+                            <div className="mt-1">
+                                <input id="school" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                            </div>
+                            </div>
+
                             <div>
                                 <label for="school" className="block text-sm font-medium text-gray-700"> Alamat </label>
                                 <div className="mt-1">
-                                    <input id="school" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                                 </div>
                             </div>
                                 
@@ -97,7 +103,7 @@ function Register(){
                             </div>
 
                             <div>
-                            <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Register</button>
+                            <button type="submit" className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Register</button>
                             </div>
                         </form>
                         </div>
@@ -106,7 +112,7 @@ function Register(){
                 </div>
                 <div className="hidden lg:block relative w-0 flex-1">
                     <img className="absolute inset-0 h-full w-full object-cover bg-blend-overlay" src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80" alt=""/>
-                    <h1 className='grid h-full place-items-center relative w-full bg-yellow-300 bg-opacity-50 font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10 text-center'>Register</h1>
+                    <h1 className='grid h-full place-items-center relative w-full bg-yellow-300 bg-opacity-50 font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10'>Register</h1>
                 </div>
                 </div>
         </div>

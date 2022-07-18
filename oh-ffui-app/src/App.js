@@ -3,6 +3,7 @@ import './index.css';
 import Home from './Page/Home';
 import Login from './Page/Login';
 import Register from './Page/Register';
+import Shop from './Page/Shop';
 
 import React, { useState } from "react";
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
+            <Route path="/shop" element={<Shop />} />
             <Route
               path="*"
               element = {<Navigate to="/home" />}

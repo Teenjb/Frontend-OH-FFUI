@@ -1,7 +1,6 @@
 import '../index.css';
 import React, { useState } from "react";
 import logo from "../Img/logo.png";
-import hero from "../Img/Hero Banner.png";
 import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
@@ -9,7 +8,7 @@ import tiktok from "../Img/icons8-tiktok-100.svg";
 import Register from '../Page/Register';
 import { Navigate } from 'react-router-dom';
 
-function Home(){
+function Shop(){
     const [show, setShow] = useState(false);
 
     const handleClick = (event) =>{
@@ -20,7 +19,7 @@ function Home(){
     }
 
     return(
-        <div className="bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="bg-gradient-to-b from-blue-900 to-blue-200 pb-12 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
@@ -65,30 +64,6 @@ function Home(){
                   </div>
               </nav>
 
-              <div className="">
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
-                      <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
-                              <img src={hero} alt=""></img>
-                          </h1>
-                      </div>
-                  </div>
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
-                        <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="font-serif text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-                              What They Say?
-                          </h1>
-                      </div>
-                  </div>
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
-                        <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="font-serif text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-                              Rangkaian Acara
-                          </h1>
-                      </div>
-                  </div>
-              </div>
-
               <footer className='w-full border-b bg-blue-900'>
                   <div>
                       <h2 className='text-pink-500 font-black flex md:text-3xl text-base items-center py-10 flex-row justify-center relative top-0 bottom-0 left-0 right-0'> Open House FF UI Vol.III </h2>
@@ -110,7 +85,7 @@ function Home(){
                       <p className='text-blue-900 text-sm font-bold'>All rights reserved © OH FF UI VOL.III </p>
                   </div>
               </footer>
-        </div>
+            </div>
     );
 }
-export default Home;
+export default Shop;
