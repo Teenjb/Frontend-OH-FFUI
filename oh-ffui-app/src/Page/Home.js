@@ -8,6 +8,9 @@ import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
 import sayOne from "../Img/Group 28.png";
 import sayTwo from "../Img/Group 29.png";
+import pic2 from "../Img/Group 33.png";
+import pic1 from "../Img/Group 34.png";
+import pic3 from "../Img/Group 35.png";
 import Register from './Register';
 import { Navigate } from 'react-router-dom';
 
@@ -78,7 +81,7 @@ function Home(){
                           </h1>
                       </div>
                   </div>
-                  <div className="container mx-auto flex flex-col items-center py-12">
+                  <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
                         <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
                           <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                               What They Say?
@@ -92,7 +95,7 @@ function Home(){
                                     <h3 className='text-l text-white text-l px-10 '>Peserta Open House FF UI Vol.2</h3>
                                   </div>
                               </div>
-                              <div className='py-2 md:py-5'></div>
+                              <div className='py-3 md:py-5'></div>
                               <div className='bg-cyan-600 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
                                   <img src={sayTwo} alt="" className='object-scale-down h-80 w-100'/>
                                   <div>
@@ -104,13 +107,116 @@ function Home(){
                           </div>
                       </div>
                   </div>
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
+                  <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
                         <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="font-serif text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+                          <h1 className="font-serif md:mb-10 py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                               Rangkaian Acara
                           </h1>
+                          <div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <img src={pic1} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Roadshow</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Agustus-November 2022</h5>
+                                      <p className='text-white'>Roadshow merupakan ajang memperkenalkan dan mempromosikan Open House FF UI Vol. III dengan mengunjungi SMA/SMK sederajat. Tertarik dan sekolahmu ingin dikunjungi? Yuk hubungi linimasa kami!</p>
+                                  </div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Seminar Daring</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 1: Sabtu, 19 November 2022</h5>
+                                      <p className='text-white'>Rangkaian acara pada main event yang menghadirkan pembicara ahli untuk membahas topik tertentu.</p>
+                                  </div>
+                                  <img src={pic2} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <img src={pic3} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Talkshow</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 1: Sabtu, 19 November 2022</h5>
+                                      <p className='text-white'>Suatu jenis acara yang berupa perbincangan antara moderator dengan pembicara berdasarkan term of reference yang diberikan oleh panitia.</p>
+                                  </div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Sharing session</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 1: Sabtu, 19 November 2022</h5>
+                                      <p className='text-white'>Live streaming talkshow dengan mahasiswa FFUI yang aktif, berprestasi, dan representatif dari masing-masing jalur masuk UI.</p>
+                                  </div>
+                                  <img src={pic1} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <img src={pic2} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Tur kampus dan laboratorium</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 2: Sabtu, 26 November 2022</h5>
+                                      <p className='text-white'>Rangkaian acara pada main event yang mengajak peserta untuk melihat langsung laboratorium di FF UI, apotek simulasi di Gedung Pascasarjana dan Profesi FF UI, serta Gedung RIK UI.</p>
+                                  </div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Workshop</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 2: Sabtu, 26 November 2022</h5>
+                                      <p className='text-white'>Kegiatan simulasi praktikum yang memberikan kesempatan bagi peserta untuk membuat suatu sediaan (pulveres, kapsul, dan liquid hand soap).</p>
+                                  </div>
+                                  <img src={pic3} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <div className='grid md:hidden mx-auto py-5'>
+                                      <div className='w-6 h-6 rounded-full bg-blue-900'/>
+                                      <div className='mt-5 w-6 h-6 rounded-full bg-blue-900'/>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-1'></div>
+                              <div className='grid md:flex justify-evenly items-center'>
+                                  <div className='hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full'></div>
+                                  <img src={pic1} alt='' className='hidden md:block md:px-5'/>
+                                  <div className='bg-pink-500 rounded-md px-10 py-10 w-full'>
+                                      <h3 className='font-serif text-3xl text-white pb-2'>Pharmacy Championship (Pharmission dan Pharmacy Quiz)</h3>
+                                      <h5 className='font-bold text-xl text-white pb-4'>Day 2: Sabtu, 26 November 2022</h5>
+                                      <p className='text-white'>Acara perlombaan berhadiah yang terdiri atas Pharmission (submisi karya) dan Pharmacy Quiz (pos soal) untuk memperkenalkan mata kuliah farmasi dengan dibantu dengan pemberian modul.</p>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
                   </div>
+                  <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
+                        <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col">
+                          <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+                              Video Perkenalan
+                          </h1>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Video Perkenalan' className='bg-orange-400 md:items-center place-items-center py-10 px-10 rounded-md'></iframe>
+                    </div> 
               </div>
 
               <footer className='w-full border-b bg-blue-900'>

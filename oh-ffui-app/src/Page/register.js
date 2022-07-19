@@ -59,8 +59,8 @@ function Register(){
                             </div>
 
                             <div>
-                                <div class="grid selection:mb-3">
-                                    <div className='w-50 pb-5'>
+                                <div class="flex selection:mb-3">
+                                    <div className='w-50 w-2/5'>
                                     <label for="school" className="block text-sm font-medium text-gray-700"> Provinsi </label>
                                     <select class="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option selected>Pilih Provinsi</option>
@@ -69,7 +69,7 @@ function Register(){
                                         <option value="3">Three</option>
                                     </select>
                                     </div>
-                                    <div className='w-50'>
+                                    <div className='w-50 w-3/5'>
                                     <label for="school" className="block text-sm font-medium text-gray-700"> Kota </label>
                                     <select class="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option selected>Pilih Kota</option>

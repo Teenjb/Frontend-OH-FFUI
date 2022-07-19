@@ -9,7 +9,7 @@ module.exports = {
       sans: ['Raleway', 'sans-serif'],
       serif: ['Spicy Rice', 'serif'],},
     },
-    extend: {
+    extend: {padding: { "fluid-video": "56.25%" }
   },
   plugins: [],
 }

@@ -650,102 +650,6 @@ video {
   right: 0px;
 }
 
-#root .top-0 {
-  top: 0px;
-}
-
-#root .bottom-0 {
-  bottom: 0px;
-}
-
-#root .left-0 {
-  left: 0px;
-}
-
-#root .right-0 {
-  right: 0px;
-}
-
-#root .top-0 {
-  top: 0px;
-}
-
-#root .bottom-0 {
-  bottom: 0px;
-}
-
-#root .left-0 {
-  left: 0px;
-}
-
-#root .right-0 {
-  right: 0px;
-}
-
-#root .top-0 {
-  top: 0px;
-}
-
-#root .bottom-0 {
-  bottom: 0px;
-}
-
-#root .left-0 {
-  left: 0px;
-}
-
-#root .right-0 {
-  right: 0px;
-}
-
-#root .top-0 {
-  top: 0px;
-}
-
-#root .bottom-0 {
-  bottom: 0px;
-}
-
-#root .left-0 {
-  left: 0px;
-}
-
-#root .right-0 {
-  right: 0px;
-}
-
-#root .z-30 {
-  z-index: 30;
-}
-
-#root .z-20 {
-  z-index: 20;
-}
-
-#root .z-30 {
-  z-index: 30;
-}
-
-#root .z-20 {
-  z-index: 20;
-}
-
-#root .z-30 {
-  z-index: 30;
-}
-
-#root .z-20 {
-  z-index: 20;
-}
-
-#root .z-30 {
-  z-index: 30;
-}
-
-#root .z-20 {
-  z-index: 20;
-}
-
 #root .z-30 {
   z-index: 30;
 }
@@ -783,6 +687,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+#root .mt-5 {
+  margin-top: 1.25rem;
+}
+
 #root .mt-8 {
   margin-top: 2rem;
 }
@@ -803,12 +711,8 @@ video {
   margin-bottom: 1.25rem;
 }
 
-#root .mt-6 {
-  margin-top: 1.5rem;
-}
-
-#root .mb-5 {
-  margin-bottom: 1.25rem;
+#root .mt-5 {
+  margin-top: 1.25rem;
 }
 
 #root .mt-6 {
@@ -819,28 +723,8 @@ video {
   margin-bottom: 1.25rem;
 }
 
-#root .mt-6 {
-  margin-top: 1.5rem;
-}
-
-#root .mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-#root .mt-6 {
-  margin-top: 1.5rem;
-}
-
-#root .mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-#root .mt-6 {
-  margin-top: 1.5rem;
-}
-
-#root .mb-5 {
-  margin-bottom: 1.25rem;
+#root .mt-5 {
+  margin-top: 1.25rem;
 }
 
 #root .block {
@@ -871,6 +755,10 @@ video {
   height: 20rem;
 }
 
+#root .h-6 {
+  height: 1.5rem;
+}
+
 #root .h-8 {
   height: 2rem;
 }
@@ -899,8 +787,12 @@ video {
   height: 20rem;
 }
 
-#root .h-60 {
-  height: 15rem;
+#root .h-6 {
+  height: 1.5rem;
+}
+
+#root .h-0 {
+  height: 0px;
 }
 
 #root .h-8 {
@@ -915,52 +807,8 @@ video {
   height: 20rem;
 }
 
-#root .h-8 {
-  height: 2rem;
-}
-
-#root .h-10 {
-  height: 2.5rem;
-}
-
-#root .h-80 {
-  height: 20rem;
-}
-
-#root .h-8 {
-  height: 2rem;
-}
-
-#root .h-10 {
-  height: 2.5rem;
-}
-
-#root .h-80 {
-  height: 20rem;
-}
-
-#root .h-8 {
-  height: 2rem;
-}
-
-#root .h-10 {
-  height: 2.5rem;
-}
-
-#root .h-80 {
-  height: 20rem;
-}
-
-#root .h-8 {
-  height: 2rem;
-}
-
-#root .h-10 {
-  height: 2.5rem;
-}
-
-#root .h-80 {
-  height: 20rem;
+#root .h-6 {
+  height: 1.5rem;
 }
 
 #root .h-8 {
@@ -983,6 +831,10 @@ video {
   width: 91.666667%;
 }
 
+#root .w-6 {
+  width: 1.5rem;
+}
+
 #root .w-8 {
   width: 2rem;
 }
@@ -999,6 +851,14 @@ video {
   width: 0px;
 }
 
+#root .w-2\/5 {
+  width: 40%;
+}
+
+#root .w-3\/5 {
+  width: 60%;
+}
+
 #root .w-full {
   width: 100%;
 }
@@ -1011,8 +871,8 @@ video {
   width: 91.666667%;
 }
 
-#root .w-80 {
-  width: 20rem;
+#root .w-6 {
+  width: 1.5rem;
 }
 
 #root .w-8 {
@@ -1031,68 +891,8 @@ video {
   width: 91.666667%;
 }
 
-#root .w-8 {
-  width: 2rem;
-}
-
-#root .w-full {
-  width: 100%;
-}
-
-#root .w-10 {
-  width: 2.5rem;
-}
-
-#root .w-11\/12 {
-  width: 91.666667%;
-}
-
-#root .w-8 {
-  width: 2rem;
-}
-
-#root .w-full {
-  width: 100%;
-}
-
-#root .w-10 {
-  width: 2.5rem;
-}
-
-#root .w-11\/12 {
-  width: 91.666667%;
-}
-
-#root .w-8 {
-  width: 2rem;
-}
-
-#root .w-full {
-  width: 100%;
-}
-
-#root .w-10 {
-  width: 2.5rem;
-}
-
-#root .w-11\/12 {
-  width: 91.666667%;
-}
-
-#root .w-8 {
-  width: 2rem;
-}
-
-#root .w-full {
-  width: 100%;
-}
-
-#root .w-10 {
-  width: 2.5rem;
-}
-
-#root .w-11\/12 {
-  width: 91.666667%;
+#root .w-6 {
+  width: 1.5rem;
 }
 
 #root .w-8 {
@@ -1204,38 +1004,6 @@ video {
   border-radius: 0.375rem;
 }
 
-#root .rounded-full {
-  border-radius: 9999px;
-}
-
-#root .rounded-md {
-  border-radius: 0.375rem;
-}
-
-#root .rounded-full {
-  border-radius: 9999px;
-}
-
-#root .rounded-md {
-  border-radius: 0.375rem;
-}
-
-#root .rounded-full {
-  border-radius: 9999px;
-}
-
-#root .rounded-md {
-  border-radius: 0.375rem;
-}
-
-#root .rounded-full {
-  border-radius: 9999px;
-}
-
-#root .rounded-md {
-  border-radius: 0.375rem;
-}
-
 #root .border {
   border-width: 1px;
 }
@@ -1262,46 +1030,6 @@ video {
 #root .border-pink-500 {
   --tw-border-opacity: 1;
   border-color: rgb(236 72 153 / var(--tw-border-opacity));
-}
-
-#root .border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
-}
-
-#root .border-blue-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 58 138 / var(--tw-border-opacity));
-}
-
-#root .border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
-}
-
-#root .border-blue-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 58 138 / var(--tw-border-opacity));
-}
-
-#root .border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
-}
-
-#root .border-blue-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 58 138 / var(--tw-border-opacity));
-}
-
-#root .border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
-}
-
-#root .border-blue-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 58 138 / var(--tw-border-opacity));
 }
 
 #root .border-blue-200 {
@@ -1436,140 +1164,9 @@ video {
   background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
-#root .bg-blue-900 {
+#root .bg-orange-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
-#root .bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#root .bg-transparent {
-  background-color: transparent;
-}
-
-#root .bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-#root .bg-\[\#87b07b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(135 176 123 / var(--tw-bg-opacity));
-}
-
-#root .bg-cyan-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
-}
-
-#root .bg-pink-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
-}
-
-#root .bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
-#root .bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#root .bg-transparent {
-  background-color: transparent;
-}
-
-#root .bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-#root .bg-\[\#87b07b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(135 176 123 / var(--tw-bg-opacity));
-}
-
-#root .bg-cyan-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
-}
-
-#root .bg-pink-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
-}
-
-#root .bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
-#root .bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#root .bg-transparent {
-  background-color: transparent;
-}
-
-#root .bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-#root .bg-\[\#87b07b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(135 176 123 / var(--tw-bg-opacity));
-}
-
-#root .bg-cyan-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
-}
-
-#root .bg-pink-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
-}
-
-#root .bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
-#root .bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#root .bg-transparent {
-  background-color: transparent;
-}
-
-#root .bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-#root .bg-\[\#87b07b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(135 176 123 / var(--tw-bg-opacity));
-}
-
-#root .bg-cyan-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
-}
-
-#root .bg-pink-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 #root .bg-opacity-50 {
@@ -1631,6 +1228,11 @@ video {
   padding-bottom: 3rem;
 }
 
+#root .py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 #root .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -1641,9 +1243,64 @@ video {
   padding-right: 2.5rem;
 }
 
+#root .py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+#root .py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 #root .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+#root .py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+#root .px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#root .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#root .py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#root .py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#root .py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+#root .py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 #root .py-2 {
@@ -1676,39 +1333,9 @@ video {
   padding-bottom: 3rem;
 }
 
-#root .py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-#root .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-#root .py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-#root .px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#root .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#root .py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-#root .py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+#root .py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 #root .py-10 {
@@ -1721,144 +1348,9 @@ video {
   padding-right: 2.5rem;
 }
 
-#root .py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-#root .px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#root .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#root .py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-#root .py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-#root .py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-#root .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-#root .py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-#root .px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#root .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#root .py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-#root .py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-#root .py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-#root .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-#root .py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-#root .px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#root .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#root .py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-#root .py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-#root .py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-#root .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-#root .py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-#root .px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#root .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-#root .py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-#root .py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-#root .py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-#root .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+#root .py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 #root .py-2 {
@@ -1870,8 +1362,12 @@ video {
   padding-top: 2.5rem;
 }
 
-#root .pb-5 {
-  padding-bottom: 1.25rem;
+#root .pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+#root .pb-4 {
+  padding-bottom: 1rem;
 }
 
 #root .pb-12 {
@@ -1880,6 +1376,26 @@ video {
 
 #root .pt-10 {
   padding-top: 2.5rem;
+}
+
+#root .pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+#root .pb-4 {
+  padding-bottom: 1rem;
+}
+
+#root .pt-10 {
+  padding-top: 2.5rem;
+}
+
+#root .pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+#root .pb-4 {
+  padding-bottom: 1rem;
 }
 
 #root .text-center {
@@ -1905,104 +1421,14 @@ video {
   line-height: 2rem;
 }
 
-#root .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-#root .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-#root .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-#root .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-#root .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-#root .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-#root .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-#root .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-#root .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-#root .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-#root .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-#root .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-#root .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-#root .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-#root .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-#root .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-#root .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-#root .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-#root .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-#root .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 #root .text-sm {
@@ -2030,6 +1456,41 @@ video {
   line-height: 2.5rem;
 }
 
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#root .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#root .text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+#root .text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#root .text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 #root .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -2039,12 +1500,12 @@ video {
   font-weight: 900;
 }
 
-#root .font-normal {
-  font-weight: 400;
-}
-
 #root .font-bold {
   font-weight: 700;
+}
+
+#root .font-normal {
+  font-weight: 400;
 }
 
 #root .font-extrabold {
@@ -2059,72 +1520,24 @@ video {
   font-weight: 900;
 }
 
-#root .font-normal {
-  font-weight: 400;
-}
-
 #root .font-bold {
   font-weight: 700;
+}
+
+#root .font-normal {
+  font-weight: 400;
 }
 
 #root .font-black {
   font-weight: 900;
 }
 
-#root .font-normal {
-  font-weight: 400;
-}
-
 #root .font-bold {
   font-weight: 700;
 }
 
-#root .font-black {
-  font-weight: 900;
-}
-
 #root .font-normal {
   font-weight: 400;
-}
-
-#root .font-bold {
-  font-weight: 700;
-}
-
-#root .font-black {
-  font-weight: 900;
-}
-
-#root .font-normal {
-  font-weight: 400;
-}
-
-#root .font-bold {
-  font-weight: 700;
-}
-
-#root .font-black {
-  font-weight: 900;
-}
-
-#root .font-normal {
-  font-weight: 400;
-}
-
-#root .font-bold {
-  font-weight: 700;
-}
-
-#root .font-black {
-  font-weight: 900;
-}
-
-#root .font-normal {
-  font-weight: 400;
-}
-
-#root .font-bold {
-  font-weight: 700;
 }
 
 #root .leading-7 {
@@ -2236,126 +1649,6 @@ video {
   color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
-#root .text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-#root .text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-#root .text-blue-200 {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
-}
-
-#root .text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-#root .text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-}
-
-#root .text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-#root .text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-#root .text-blue-200 {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
-}
-
-#root .text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-#root .text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-}
-
-#root .text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-#root .text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-#root .text-blue-200 {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
-}
-
-#root .text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-#root .text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-}
-
-#root .text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-#root .text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-#root .text-blue-200 {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
-}
-
-#root .text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-#root .text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-}
-
 #root .placeholder-gray-400::-webkit-input-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(156 163 175 / var(--tw-placeholder-opacity));
@@ -2364,6 +1657,10 @@ video {
 #root .placeholder-gray-400::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+}
+
+#root .opacity-0 {
+  opacity: 0;
 }
 
 #root .bg-blend-overlay {
@@ -2456,46 +1753,6 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
-#root .hover\:text-blue-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-#root .hover\:text-blue-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
 #root .focus\:border-indigo-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(99 102 241 / var(--tw-border-opacity));
@@ -2557,46 +1814,6 @@ video {
   --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
 }
 
-#root .focus\:ring-gray-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-blue-900:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-gray-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-blue-900:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-gray-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-blue-900:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-gray-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
-}
-
-#root .focus\:ring-blue-900:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(30 58 138 / var(--tw-ring-opacity));
-}
-
 #root .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
 }
@@ -2624,9 +1841,9 @@ video {
     padding-bottom: 0.75rem;
   }
 
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  #root .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   #root .sm\:px-6 {
@@ -2644,9 +1861,9 @@ video {
     padding-bottom: 0.75rem;
   }
 
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  #root .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   #root .sm\:px-8 {
@@ -2659,69 +1876,9 @@ video {
     padding-bottom: 0.75rem;
   }
 
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
-  #root .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  #root .sm\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
-  #root .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  #root .sm\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
-  #root .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  #root .sm\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
-  #root .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  #root .sm\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
-  #root .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  #root .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   #root .sm\:text-3xl {
@@ -2761,16 +1918,32 @@ video {
     margin-left: 1.25rem;
   }
 
+  #root .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  #root .md\:ml-5 {
+    margin-left: 1.25rem;
+  }
+
+  #root .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  #root .md\:ml-5 {
+    margin-left: 1.25rem;
+  }
+
+  #root .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   #root .md\:block {
     display: block;
   }
 
   #root .md\:flex {
     display: flex;
-  }
-
-  #root .md\:grid {
-    display: grid;
   }
 
   #root .md\:hidden {
@@ -2802,14 +1975,9 @@ video {
     padding-bottom: 0px;
   }
 
-  #root .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  #root .md\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
+  #root .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   #root .md\:px-5 {
@@ -2817,14 +1985,9 @@ video {
     padding-right: 1.25rem;
   }
 
-  #root .md\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  #root .md\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  #root .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 
   #root .md\:py-0 {
@@ -2837,6 +2000,16 @@ video {
     padding-bottom: 1.25rem;
   }
 
+  #root .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #root .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
   #root .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -2845,70 +2018,20 @@ video {
   #root .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  #root .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #root .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 
   #root .md\:pt-0 {
     padding-top: 0px;
-  }
-
-  #root .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  #root .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  #root .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  #root .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  #root .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  #root .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  #root .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  #root .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  #root .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  #root .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  #root .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  #root .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   #root .md\:text-base {
@@ -2993,66 +2116,6 @@ video {
   #root .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
-  }
-
-  #root .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  #root .lg\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  #root .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  #root .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  #root .lg\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  #root .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  #root .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  #root .lg\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  #root .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  #root .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  #root .lg\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  #root .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 
   #root .lg\:text-lg {
