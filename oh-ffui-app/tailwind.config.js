@@ -8,7 +8,8 @@ module.exports = {
     fontFamily: {
       sans: ['Raleway', 'sans-serif'],
       serif: ['Spicy Rice', 'serif'],},
-    extend: {},
+    },
+    extend: {
   },
   plugins: [],
 }

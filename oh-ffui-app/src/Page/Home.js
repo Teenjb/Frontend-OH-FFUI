@@ -6,6 +6,8 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
+import sayOne from "../Img/Group 28.png";
+import sayTwo from "../Img/Group 29.png";
 import Register from './Register';
 import { Navigate } from 'react-router-dom';
 
@@ -69,23 +71,42 @@ function Home(){
               </nav>
 
               <div className="relative">
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
+                  <div className="container mx-auto flex flex-col items-center py-12">
                       <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
                           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
                               <img src={hero} alt=""></img>
                           </h1>
                       </div>
                   </div>
-                  <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
-                        <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="font-serif text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+                  <div className="container mx-auto flex flex-col items-center py-12">
+                        <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
+                          <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                               What They Say?
                           </h1>
+                          <div>
+                              <div className='bg-[#87b07b] md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
+                                  <img src={sayOne} alt="" className='object-scale-down h-80 w-100'/>
+                                  <div>
+                                    <p className='text-white text-l px-10 py-5 '>" Open House FF UI menambah wawasan banget, banyak hal yang dibahas dan dibicarakan oleh kakak-kakaknya di acaranya. Semua yang aku ingin tahu tentang farmasi dibahas sama kakaknya. Mulai dari hal yang dipelajari di farmasi, prospek kerjanya, hingga budaya farmasi pun dibahas. Selain itu, acaranya bukan hanya seminar, tapi ada juga quiz dan sesi ngobrol dengan kakaknya jadi pasti seru acaranya. "</p>
+                                    <h3 className='font-serif text-2xl text-white text-l px-10 '>Kezya - FF 22</h3>
+                                    <h3 className='text-l text-white text-l px-10 '>Peserta Open House FF UI Vol.2</h3>
+                                  </div>
+                              </div>
+                              <div className='py-2 md:py-5'></div>
+                              <div className='bg-cyan-600 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
+                                  <img src={sayTwo} alt="" className='object-scale-down h-80 w-100'/>
+                                  <div>
+                                    <p className='text-white text-l px-10 py-5 '>" Dengan mengikuti Open House FF UI, aku jadi mengetahui sistem perkuliahan di farmasi serta prospek kerjanya. Selain itu, aku juga belajar menggerus obat dan membuat hand sanitizer melalui kegiatan workshop di Open House FF UI, juga terdapat kuis dan kompetisi yang berhadiah. Buat aku, Open House FF UI seru banget dan recommended untuk kalian yang penasaran tentang farmasi atau tertarik tapi masih ragu. Aku jadi semakin yakin untuk memilih jurusan farmasi setelah mengikuti Open House FF UI Vol.2. "</p>
+                                    <h3 className='font-serif text-2xl text-white text-l px-10 '>Amalia - FF 22</h3>
+                                    <h3 className='text-l text-white text-l px-10 '>Peserta Open House FF UI Vol.2</h3>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
                   </div>
                   <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
                         <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                          <h1 className="font-serif text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+                          <h1 className="font-serif text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                               Rangkaian Acara
                           </h1>
                       </div>
