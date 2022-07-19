@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Spicy Rice";
+    src: url("./Font/SpicyRice-Regular.ttf");
+  }

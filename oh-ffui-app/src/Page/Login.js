@@ -3,7 +3,7 @@ import logo from "../Img/logo.png";
 
 function Login (){
     return (
-        <div className='grid w-full h-full'>
+        <div className='grid w-full h-screen'>
         <div className="bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
         <div className="min-h-full flex">
             <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">

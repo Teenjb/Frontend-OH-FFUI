@@ -6,7 +6,7 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
-import Register from '../Page/Register';
+import Register from './Register';
 import { Navigate } from 'react-router-dom';
 
 function Home(){
@@ -17,18 +17,21 @@ function Home(){
         if(id === 'register'){
             window.location.href = '/register';
         }
+        if(id === 'login'){
+            window.location.href = '/login';
+        }
     }
 
     return(
         <div className="bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
-              <nav className="w-full bg-blue-900">
+              <nav className="w-full bg-blue-900 ">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
                           <img className="w-10 h-10 md:w-auto" src={logo} alt="" href="/Home"/>
                       </div>
                       <div>
-                          <button onClick={() => setShow(!show)} className={`${show ? 'hidden' : ''} sm:block md:hidden text-gray-500 hover:text-blue-200 focus:text-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-500`}>
-                              <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" className="md:hidden icon icon-tabler icon-tabler-menu" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round">
+                          <button onClick={() => setShow(!show)} className={`${show ? 'hidden' : ''} sm:block md:hidden text-white hover:text-blue-200 focus:text-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-500`}>
+                              <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" className="md:hidden icon icon-tabler icon-tabler-menu " width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round">
                                   <path stroke="none" d="M0 0h24v24H0z" />
                                   <line x1={4} y1={8} x2={20} y2={8} />
                                   <line x1={4} y1={16} x2={20} y2={16} />
@@ -42,7 +45,7 @@ function Home(){
                                       <line x1={6} y1={6} x2={18} y2={18} />
                                   </svg>
                               </button>
-                              <ul className="flex text-3xl font-black md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-20 right-0 bg-white md:bg-transparent z-20">
+                              <ul className="flex text-3xl font-black md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-5 lg:left-20 right-0 bg-white md:bg-transparent z-20">
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
                                       <a href="javascript: void(0)">About Us</a>
                                   </li>
@@ -59,13 +62,13 @@ function Home(){
                           </div>
                       </div>
                       <div className="inline-flex space-x-2 ">
-                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s">Login</button>
+                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s" id='login' onClick={(e)=>(handleClick(e))}>Login</button>
                         <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s" id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
                       </div>
                   </div>
               </nav>
 
-              <div className="">
+              <div className="relative">
                   <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
                       <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
                           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
