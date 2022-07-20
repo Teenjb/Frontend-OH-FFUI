@@ -215,7 +215,7 @@ function Home(){
                               Video Perkenalan
                           </h1>
                         </div>
-                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Video Perkenalan' className='bg-orange-400 md:items-center place-items-center py-10 px-10 rounded-md'></iframe>
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Video Perkenalan' className='bg-orange-400 md:items-center place-items-center p-5 md:p-10 rounded-md lg:w-3/4 lg:h-screen md:w-3/4 md:h-96'></iframe>
                     </div> 
               </div>
 
