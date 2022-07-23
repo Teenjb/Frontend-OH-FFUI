@@ -11,8 +11,6 @@ import sayTwo from "../Img/Group 29.png";
 import pic2 from "../Img/Group 33.png";
 import pic1 from "../Img/Group 34.png";
 import pic3 from "../Img/Group 35.png";
-import Register from './Register';
-import { Navigate } from 'react-router-dom';
 
 function Home(){
     const [show, setShow] = useState(false);
@@ -215,7 +213,7 @@ function Home(){
                               Video Perkenalan
                           </h1>
                         </div>
-                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Video Perkenalan' className='bg-orange-400 md:items-center place-items-center p-5 md:p-10 rounded-md lg:w-3/4 lg:h-screen md:w-3/4 md:h-96'></iframe>
+                        <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Video Perkenalan' className='bg-orange-400 md:items-center place-items-center p-5 md:p-10 rounded-md lg:w-11/12 lg:h-screen md:w-3/4 md:h-96'></iframe>
                     </div> 
               </div>
 

@@ -2,6 +2,26 @@ import '../index.css'
 import logo from "../Img/logo.png";
 
 function Login (){
+
+    //variable used in this page
+    const [identifier, setIdentifier] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    //funvtion to handle any change on input
+    const handleInputChange = (event) =>{
+        const {id,value} = event.target;
+        if(id === 'identifier'){
+            setIdentifier(value);
+        }
+        if(id === 'password'){
+            setPassword(value);
+        }
+    }
+
+    //function to handle submit login request
+    const handleSubmit = () =>{
+    }
+
     return (
         <div className='grid w-full h-screen'>
         <div className="bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
