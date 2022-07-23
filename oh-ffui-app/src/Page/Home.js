@@ -8,9 +8,12 @@ import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
 import sayOne from "../Img/Group 28.png";
 import sayTwo from "../Img/Group 29.png";
+import sayThree from "../Img/Group 40.png";
+import sayFour from "../Img/Group 41.png";
 import pic2 from "../Img/Group 33.png";
 import pic1 from "../Img/Group 34.png";
 import pic3 from "../Img/Group 35.png";
+import bg from "../Img/Group 42.png";
 
 function Home(){
     const [show, setShow] = useState(false);
@@ -26,8 +29,8 @@ function Home(){
     }
 
     return(
-        <div className="bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
-              <nav className="w-full bg-blue-900 ">
+        <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+              <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
                           <img className="w-10 h-10 md:w-auto" src={logo} alt="" href="/Home"/>
@@ -75,7 +78,7 @@ function Home(){
                   <div className="container mx-auto flex flex-col items-center py-12">
                       <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
                           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
-                              <img src={hero} alt=""></img>
+                              <img src={hero} alt="" className=''></img>
                           </h1>
                       </div>
                   </div>
@@ -85,6 +88,24 @@ function Home(){
                               What They Say?
                           </h1>
                           <div>
+                          <div className='bg-orange-400 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
+                                  <img src={sayFour} alt="" className='object-scale-down h-80 w-100'/>
+                                  <div>
+                                    <p className='text-white text-l px-10 py-5 '>" Dengan mengikuti Open House FF UI, aku jadi mengetahui sistem perkuliahan di farmasi serta prospek kerjanya. Selain itu, aku juga belajar menggerus obat dan membuat hand sanitizer melalui kegiatan workshop di Open House FF UI, juga terdapat kuis dan kompetisi yang berhadiah. Buat aku, Open House FF UI seru banget dan recommended untuk kalian yang penasaran tentang farmasi atau tertarik tapi masih ragu. Aku jadi semakin yakin untuk memilih jurusan farmasi setelah mengikuti Open House FF UI Vol.2. "</p>
+                                    <h3 className='font-serif text-2xl text-white text-l px-10 '>Mishbahus Surur - FF 19</h3>
+                                    <h3 className='text-l text-white text-l px-10 '>Ketua BEM FF UI 2022</h3>
+                                  </div>
+                              </div>
+                              <div className='py-3 md:py-5'></div>
+                            <div className='bg-cyan-600 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
+                                  <img src={sayTwo} alt="" className='object-scale-down h-80 w-100'/>
+                                  <div>
+                                    <p className='text-white text-l px-10 py-5 '>" Di fakultas farmasi, kalian akan banyak mempelajari hal mulai dari kimia, fisika, biologi. Tapi bagian terpentingnya adalah bagaimana kita dapat mengembangkan potensi diri untuk menjadi pribadi yang lebih baik. Mendaftarkan diri di IISMA adalah suatu perjalanan yang panjang, mulai dari mengumpulkan dokumen, seleksi berkas, wawancara hingga kemarin aku diterima menjadi perwakilan FF UI di IISMA tahun ini. Aku merasa honoured, dan aku percaya di IISMA aku dapat mengembangkan diriku untuk dapat memiliki mindset yang lebih global. "</p>
+                                    <h3 className='font-serif text-2xl text-white text-l px-10 '>Adriel Sebastian - FF 19</h3>
+                                    <h3 className='text-l text-white text-l px-10 '>Awardee IISMA</h3>
+                                  </div>
+                              </div>
+                              <div className='py-3 md:py-5'></div>
                               <div className='bg-[#87b07b] md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
                                   <img src={sayOne} alt="" className='object-scale-down h-80 w-100'/>
                                   <div>
@@ -94,8 +115,8 @@ function Home(){
                                   </div>
                               </div>
                               <div className='py-3 md:py-5'></div>
-                              <div className='bg-cyan-600 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
-                                  <img src={sayTwo} alt="" className='object-scale-down h-80 w-100'/>
+                              <div className='bg-[#f5145b] md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
+                                  <img src={sayThree} alt="" className='object-scale-down h-80 w-100'/>
                                   <div>
                                     <p className='text-white text-l px-10 py-5 '>" Dengan mengikuti Open House FF UI, aku jadi mengetahui sistem perkuliahan di farmasi serta prospek kerjanya. Selain itu, aku juga belajar menggerus obat dan membuat hand sanitizer melalui kegiatan workshop di Open House FF UI, juga terdapat kuis dan kompetisi yang berhadiah. Buat aku, Open House FF UI seru banget dan recommended untuk kalian yang penasaran tentang farmasi atau tertarik tapi masih ragu. Aku jadi semakin yakin untuk memilih jurusan farmasi setelah mengikuti Open House FF UI Vol.2. "</p>
                                     <h3 className='font-serif text-2xl text-white text-l px-10 '>Amalia - FF 22</h3>

@@ -111,8 +111,7 @@ function Register(){
                     </div>
                 </div>
                 <div className="hidden lg:block relative w-0 flex-1">
-                    <img className="absolute inset-0 h-full w-full object-cover bg-blend-overlay" src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80" alt=""/>
-                    <h1 className='grid h-full place-items-center relative w-full bg-yellow-300 bg-opacity-50 font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10'>Register</h1>
+                    <h1 className='grid h-full place-items-center relative w-full bg-orange-400 font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10'>Register</h1>
                 </div>
                 </div>
         </div>

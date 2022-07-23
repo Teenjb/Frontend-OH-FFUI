@@ -19,7 +19,7 @@ function Shop(){
     }
 
     return(
-        <div className="bg-gradient-to-b from-blue-900 to-blue-200 pb-12 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="grid h-full bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
@@ -63,6 +63,195 @@ function Shop(){
                       </div>
                   </div>
               </nav>
+
+              <div className='relative'>
+                <div className="bg-cyan-600 w-full mx-auto md:flex md:flex-col items-center py-12 sm:py-24">
+                    <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
+                        <h1 className="font-serif py-10 text-white text-5xl xl:text-6xl text-center leading-7 md:leading-10">Shop</h1>
+                    </div>
+                </div>
+                <div className='relative container mx-auto py-6 sm:py-12 lg:flex grid justify-around items-center flex-col mb-5 sm:mb-10'>
+                    <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Merch</h1>
+                    <div class="min-h-screen flex items-center justify-center">
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Kaos A</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Kaos B</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Stiker Set A</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Sticker Set B</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Tote Bag A</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Tote Bag B</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Notebook A</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Notebook B</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Pouch</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>E-Money</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Lanyard</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='relative container mx-auto lg:flex grid justify-around items-center flex-col'>
+                    <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Bundles</h1>
+                    <div class=" flex items-center justify-center">
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket A1</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>kaos A, sticker set A, notebook A, tote bag A, pouch, emoney + lanyard</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket A2</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Kaos B, sticker set B, notebook B, totebag B, pouch, emoney B + lanyard</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket B1</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Sticker set A, notebook A, tote bag A, pouch, emoney + lanyard</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket B2</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Sticker set B, notebook B, totebag B, pouch, emoney B + lanyard</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket C1</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Sticker set A, notebook A, kaos A, pouch</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div className=''>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket C2</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Sticker set B, notebook B, kaos b, pouch</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='relative container mx-auto lg:flex grid justify-around items-center flex-col'>
+                    <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Workshop</h1>
+                    <div class=" flex items-center justify-center">
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Pulverize Kit</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Tablet vitamin B, kertas perkamen, sudip, pot plastik, lumpang alu, cangkang kapsul, etiket putih</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                            <div className='rounded-md px-10 py-10 w-auto text-center'>
+                                <img src='' alt='' className=''/>
+                                    <div>
+                                        <h3 className='font-serif text-3xl text-black pb-2'>Sanitizer Kit</h3>
+                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
+                                        <p className='text-sm'>Texapon (SLES), nacl, glycerin, H2O2 3%, minyak atsiri/essence, aquades, beaker glass plastik, batang pengaduk, botol pump, botol plastik 10 ml, botol plastik 500 ml, corong plastik, wadah puding</p>
+                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
 
               <footer className='w-full border-b bg-blue-900'>
                   <div>
