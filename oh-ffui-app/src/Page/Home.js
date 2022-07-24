@@ -26,6 +26,12 @@ function Home(){
         if(id === 'login'){
             window.location.href = '/login';
         }
+        if(id === 'shop'){
+            window.location.href = '/shop';
+        }
+        if(id === 'home'){
+            window.location.href = '/home';
+        }
     }
 
     return(
@@ -33,11 +39,11 @@ function Home(){
               <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
-                          <img className="w-10 h-10 md:w-auto" src={logo} alt="" href="/Home"/>
+                          <img className="w-10 h-10 md:w-auto" src={logo} alt="" id='home' onClick={(e)=>(handleClick(e))}/>
                       </div>
                       <div>
                           <button onClick={() => setShow(!show)} className={`${show ? 'hidden' : ''} sm:block md:hidden text-white hover:text-blue-200 focus:text-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-500`}>
-                              <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" className="md:hidden icon icon-tabler icon-tabler-menu " width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round">
+                              <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" className="ml-64 md:hidden icon icon-tabler icon-tabler-menu " width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffff" fill="none" strokeLinecap="round">
                                   <path stroke="none" d="M0 0h24v24H0z" />
                                   <line x1={4} y1={8} x2={20} y2={8} />
                                   <line x1={4} y1={16} x2={20} y2={16} />
@@ -56,13 +62,19 @@ function Home(){
                                       <a href="javascript: void(0)">About Us</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a href="javascript: void(0)">Shop</a>
+                                      <a href="javascript: void(0)" id='shop' onClick={(e)=>(handleClick(e))}>Shop</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a href="javascript: void(0)">Tickets</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a href="javascript: void(0)">Submission</a>
+                                  </li>
+                                  <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                                      <a href="javascript: void(0)">login</a>
+                                  </li>
+                                  <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                                      <a href="javascript: void(0)">Register</a>
                                   </li>
                               </ul>
                           </div>
