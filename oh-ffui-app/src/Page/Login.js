@@ -1,6 +1,8 @@
 import '../index.css'
 import logo from "../Img/logo.png";
 import React, { useState } from "react";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 const axios = require('axios');
 const endpoint = 'http://localhost:1337/graphql';
@@ -47,6 +49,33 @@ function Login (){
         };
         const response = await axios.post(endpoint, graphqlQuery, {headers: headers})
         console.log(response.data);
+        if(response.data.errors){
+            Toastify({
+                text: "Login Gagal",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        }else{
+            Toastify({
+                text: "Login Success",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        }
     }
 
     return (
