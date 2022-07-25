@@ -1,6 +1,6 @@
 import '../index.css'
 import logo from "../Img/logo.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
@@ -12,6 +12,11 @@ function Login (){
     //variable used in this page
     const [identifier, setIdentifier] = useState(null);
     const [password, setPassword] = useState(null);
+    const [token, setToken] = useState(null);
+
+    useEffect(() => {
+        localStorage.setItem('token', token);
+      }, [token]);
 
     //funvtion to handle any change on input
     const handleInputChange = (event) =>{
@@ -58,10 +63,11 @@ function Login (){
                 position: "left", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  background: "#FF0000",
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
+              setToken(null);
         }else{
             Toastify({
                 text: "Login Success",
@@ -71,10 +77,12 @@ function Login (){
                 position: "left", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  background: "#87B07B",
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
+              setToken(response.data.data.login.jwt);
+              window.location.href = '/';
         }
     }
 

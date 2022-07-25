@@ -1,5 +1,5 @@
 import '../index.css';
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from "../Img/logo.png";
 import hero from "../Img/Hero Banner.png";
 import instagram from "../Img/icons8-instagram-100.svg";
@@ -14,9 +14,24 @@ import pic2 from "../Img/Group 33.png";
 import pic1 from "../Img/Group 34.png";
 import pic3 from "../Img/Group 35.png";
 import bg from "../Img/Group 42.png";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function Home(){
     const [show, setShow] = useState(false);
+    const [token, setToken] = useState(null);
+    const [authenticated, setAuthenticated] = useState(false);
+
+    useEffect(() => {
+        localStorage.getItem('token')?setToken(localStorage.getItem('token')):setToken(null);
+        if(token === null){
+            setAuthenticated(false);
+        }else{
+            setAuthenticated(true);
+        }
+        console.log(token);
+        console.log(authenticated);
+        }, [token]);
 
     const handleClick = (event) =>{
         const {id} = event.target;
@@ -31,6 +46,23 @@ function Home(){
         }
         if(id === 'home'){
             window.location.href = '/home';
+        }
+        if(id === 'logout'){
+            localStorage.removeItem('token');
+            setToken(null);
+            setAuthenticated(false);
+            Toastify({
+                text: "Logout Success",
+                duration: 3000,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#87B07B",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
         }
     }
 
@@ -73,15 +105,17 @@ function Home(){
                                   <li className="block md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a href="javascript: void(0)">login</a>
                                   </li>
-                                  <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                                  <li className="block md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a href="javascript: void(0)">Register</a>
                                   </li>
                               </ul>
                           </div>
                       </div>
                       <div className="inline-flex space-x-2 ">
-                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s" id='login' onClick={(e)=>(handleClick(e))}>Login</button>
-                        <button className="focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden md:block bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s" id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
+                        <button className={`${!authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='login' onClick={(e)=>(handleClick(e))}>Login</button>
+                        <button className={`${!authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
+                        <button className={`${!authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='User' onClick={(e)=>(handleClick(e))}>HI! USER</button>
+                        <button className={`${!authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='logout' onClick={(e)=>(handleClick(e))}>Log Out</button>
                       </div>
                   </div>
               </nav>
