@@ -30,7 +30,8 @@ function Login (){
     }
 
     //function to handle submit login request
-    const handleSubmit = async () =>{
+    const handleSubmit = async (event) =>{
+        event.preventDefault();
         const headers = {
             "content-type": "application/json"
         };
@@ -119,7 +120,7 @@ function Login (){
                         </div>
 
                         <div>
-                        <button type="submit" className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700" onClick={()=>(handleSubmit())}>Login</button>
+                        <button type="submit" className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700" onClick={(e)=>(handleSubmit(e))}>Login</button>
                         </div>
                     </form>
                     </div>

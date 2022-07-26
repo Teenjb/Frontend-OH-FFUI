@@ -6,7 +6,7 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const endpoint = "https://api-oh-ffui-2022.herokuapp.com/graphql";
+const endpoint = "http://localhost:1337/graphql";
 const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
 const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
 
@@ -31,6 +31,7 @@ function Register(){
     const [loadingkota, setLoadingkota] = useState(false);
     const [selectedProvinsi, setSelectedProvinsi] = useState(0);
     const [token, setToken] = useState(null);
+    const [notMatch, setNotMatch] = useState(false);
 
     async function loadData(){
         setLoading(true);
@@ -61,8 +62,10 @@ function Register(){
     },[selectedProvinsi])
     
     const handleInputChange = (event) => {
-        const { id, value, checked } = event.target;
+        const { id, value, checked, options} = event.target;
+
         if (id === "name") {
+            console.log(value);
             setName(value);
         }
         if (id === "username") {
@@ -75,6 +78,12 @@ function Register(){
             setPassword(value);
         }
         if (id === "confirmPassword") {
+            console.log(value);
+            if(password !== value){
+                setNotMatch(true);
+            }else{
+                setNotMatch(false);
+            }
             setConfirmPassword(value);
         }
         if (id === "whatsapp") {
@@ -84,6 +93,8 @@ function Register(){
             setSchoolOrigin(value);
         }
         if (id === "provinsi") {
+            const selectedIndex = event.target.options.selectedIndex;
+            setSelectedProvinsi(options[selectedIndex].getAttribute("dataKey"));
             setProvinsi(value);
         }
         if (id === "kota") {
@@ -98,12 +109,10 @@ function Register(){
         if (id === "dataConfirm") {
             setDataConfirm(checked);
         }
-        if (id === "selectedProvinsi") {
-            setSelectedProvinsi(value);
-        }
     }
     
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         const headers = {
             "content-type": "application/json"
         };
@@ -134,11 +143,12 @@ function Register(){
 
             }
         };
+        console.log(graphqlQuery);
         const response = await axios.post(endpoint, graphqlQuery, {headers: headers})
         console.log(response.data);
         if(response.data.errors){
             Toastify({
-                text: "Login Gagal",
+                text: "Register Gagal",
                 duration: 3000,
                 close: true,
                 gravity: "top", // `top` or `bottom`
@@ -152,7 +162,7 @@ function Register(){
               setToken(null);
         }else{
             Toastify({
-                text: "Login Success",
+                text: "Register Berhasil",
                 duration: 3000,
                 close: true,
                 gravity: "top", // `top` or `bottom`
@@ -184,57 +194,58 @@ function Register(){
                             <div>
                             <label for="name" className="block text-sm font-medium text-gray-700"> Nama Lengkap </label>
                             <div className="mt-1">
-                                <input id="name" name="name" type="name" autocomplete="name" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="name" name="name" type="name" autocomplete="name" required value={name} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
                             
                             <div>
                             <label for="name" className="block text-sm font-medium text-gray-700"> Username </label>
                             <div className="mt-1">
-                                <input id="username" name="name" type="name" autocomplete="name" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="username" name="name" type="name" autocomplete="name" required value={username} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
                             <label for="email" className="block text-sm font-medium text-gray-700"> Alamat Email </label>
                             <div className="mt-1">
-                                <input id="email" name="email" type="email" autocomplete="email" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="email" name="email" type="email" autocomplete="email" required value={email} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div className="space-y-1">
                             <label for="password" className="block text-sm font-medium text-gray-700"> Password </label>
                             <div className="mt-1">
-                                <input id="password" name="password" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="password" name="password" type="password" autocomplete="current-password" value={password} required onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div className="space-y-1">
                             <label for="confirmPassword" className="block text-sm font-medium text-gray-700"> Konfirmasi Password </label>
                             <div className="mt-1">
-                                <input id="confirmpassword" name="confirmpassword" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="confirmPassword" name="confirmpassword" type="password" autocomplete="current-password" value={confirmPassword} required onChange={(e)=>(handleInputChange(e))} className={`${notMatch ? "border-red-500" : "border-green-500" } appearance-none block w-full px-3 py-2 border  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
+                                {notMatch && <p className="block text-xs mt-1 font-medium text-red-500">Password tidak cocok</p>}
                             </div>
                             </div>
 
                             <div>
                             <label for="phoneNumber" className="block text-sm font-medium text-gray-700"> Nomor Whatsapp </label>
                             <div className="mt-1">
-                                <input id="whatsapp" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="whatsapp" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required value={whatsapp} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
                             <label for="school" className="block text-sm font-medium text-gray-700"> Asal Sekolah </label>
                             <div className="mt-1">
-                                <input id="schoolOrigin" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="schoolOrigin" name="school" type="school" autocomplete="school" required value={schoolOrigin} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
                                 <div className='w-50 w-2/5'>
                                 <label for="school" className="block text-sm font-medium text-gray-700"> Provinsi </label>
-                                {!loading && <select id='selectedProvinsi' className="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value={selectedProvinsi} onChange={(e)=>(handleInputChange(e))}>
+                                {!loading && <select id='provinsi' className="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" key="0" dataKey="0" value={provinsi} onChange={(e)=>(handleInputChange(e))}>
                                     <option key="0" value="0">Pilih Provinsi</option>
                                     {dataProvinsi.map((item) => {
-                                        return <option key={item} value={item.id}>{item.nama}</option>
+                                        return <option key={item.id} dataKey={item.id} value={item.name}>{item.nama}</option>
                                     }
                                     )}
                                 </select>}
@@ -247,10 +258,10 @@ function Register(){
                                 </div>
                                 <div className='w-50 w-3/5'>
                                 <label for="school" className="block text-sm font-medium text-gray-700"> Kota </label>
-                                {!loadingkota && <select className="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                {!loadingkota && <select id='kota' className="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value={kota} onChange={(e)=>(handleInputChange(e))}>
                                     <option key="0" value="0">Pilih Kota</option>
                                     {dataKota.map((item, index) => {
-                                        return <option key={index} value={item.id}>{item.nama}</option>
+                                        return <option key={item.id} value={item.name}>{item.nama}</option>
                                     }
                                     )}
                                 </select>}
@@ -264,14 +275,14 @@ function Register(){
                             <div>
                             <label for="postal code" className="block text-sm font-medium text-gray-700"> Kode Pos </label>
                             <div className="mt-1">
-                                <input id="kodePos" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="kodePos" name="school" type="school" autocomplete="school" required value={kodePos} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
                                 <label for="address" className="block text-sm font-medium text-gray-700"> Alamat </label>
                                 <div className="mt-1">
-                                <textarea id="alamat" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                                <textarea id="alamat" rows="4" value={alamat} onChange={(e)=>(handleInputChange(e))} class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                                 </div>
                             </div>
                                 
@@ -283,7 +294,7 @@ function Register(){
                             </div>
 
                             <div>
-                            <button type="submit" className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Register</button>
+                            <button type="submit" disabled={dataConfirm && !notMatch} className= {`${dataConfirm && !notMatch ? 'text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700':'text-gray-400 bg-white border-gray-500'} w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`} onClick={(e)=>(handleSubmit(e))}>Register</button>
                             </div>
                         </form>
                         </div>
