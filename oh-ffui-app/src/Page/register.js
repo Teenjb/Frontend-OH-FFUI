@@ -1,8 +1,112 @@
 import '../index.css';
 
 import logo from "../Img/logo.png";
+import React, { useEffect, useState } from "react";
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+
+const axios = require("axios");
+const endpoint = "https://api-oh-ffui-2022.herokuapp.com/graphql";
+const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
+const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
+
+
 
 function Register(){
+    const [name, setName] = useState(null);
+    const [username, setUsername] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
+    const [whatsapp, setWhatsapp] = useState(null);
+    const [schoolOrigin, setSchoolOrigin] = useState(null);
+    const [provinsi, setProvinsi] = useState(null);
+    const [kota, setKota] = useState(null);
+    const [kodePos, setKodePos] = useState(null);
+    const [alamat, setAlamat] = useState(null);
+    const [dataConfirm, setDataConfirm] = useState(false);
+    const [dataProvinsi, setDataProvinsi] = useState([]);
+    const [dataKota, setDataKota] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [loadingkota, setLoadingkota] = useState(false);
+    const [selectedProvinsi, setSelectedProvinsi] = useState(0);
+
+    async function loadData(){
+        setLoading(true);
+        axios.get(provinsiEndpoint).then(response => {
+            console.log(response.data.provinsi);
+            setDataProvinsi(response.data.provinsi);
+            setLoading(false);
+        }).catch(error => {
+            console.log(error);
+        });
+        console.log(dataProvinsi);
+    }
+
+    async function loadDataKota(){
+        setLoadingkota(true);
+        axios.get(kotaEndpoint,{params:{id_provinsi:selectedProvinsi}}).then(response => {
+            console.log(response.data.kota_kabupaten);
+            setDataKota(response.data.kota_kabupaten);
+            setLoadingkota(false);
+        }).catch(error => {
+            console.log(error);
+        });
+        console.log(dataProvinsi);
+    }
+
+    useEffect(() => {
+        loadData();
+    },[])
+
+    useEffect(() => {
+        loadDataKota();
+    },[selectedProvinsi])
+    
+    const handleInputChange = (event) => {
+        const { id, value, checked } = event.target;
+        if (id === "name") {
+            setName(value);
+        }
+        if (id === "username") {
+            setUsername(value);
+        }
+        if (id === "email") {
+            setEmail(value);
+        }
+        if (id === "password") {
+            setPassword(value);
+        }
+        if (id === "confirmPassword") {
+            setConfirmPassword(value);
+        }
+        if (id === "whatsapp") {
+            setWhatsapp(value);
+        }
+        if (id === "schoolOrigin") {
+            setSchoolOrigin(value);
+        }
+        if (id === "provinsi") {
+            setProvinsi(value);
+        }
+        if (id === "kota") {
+            setKota(value);
+        }
+        if (id === "kodePos") {
+            setKodePos(value);
+        }
+        if (id === "alamat") {
+            setAlamat(value);
+        }
+        if (id === "dataConfirm") {
+            setDataConfirm(checked);
+        }
+        if (id === "selectedProvinsi") {
+            console.log(value);
+            setSelectedProvinsi(value);
+        }
+    }
+
     return(
         <div className="bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
             <div className="min-h-full flex">
@@ -22,6 +126,13 @@ function Register(){
                                 <input id="name" name="name" type="name" autocomplete="name" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
+                            
+                            <div>
+                            <label for="name" className="block text-sm font-medium text-gray-700"> Username </label>
+                            <div className="mt-1">
+                                <input id="username" name="name" type="name" autocomplete="name" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                            </div>
+                            </div>
 
                             <div>
                             <label for="email" className="block text-sm font-medium text-gray-700"> Alamat Email </label>
@@ -38,66 +149,74 @@ function Register(){
                             </div>
 
                             <div className="space-y-1">
-                            <label for="password" className="block text-sm font-medium text-gray-700"> Konfirmasi Password </label>
+                            <label for="confirmPassword" className="block text-sm font-medium text-gray-700"> Konfirmasi Password </label>
                             <div className="mt-1">
-                                <input id="password" name="password" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="confirmpassword" name="confirmpassword" type="password" autocomplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
                             <label for="phoneNumber" className="block text-sm font-medium text-gray-700"> Nomor Whatsapp </label>
                             <div className="mt-1">
-                                <input id="phoneNumber" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="whatsapp" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
                             <label for="school" className="block text-sm font-medium text-gray-700"> Asal Sekolah </label>
                             <div className="mt-1">
-                                <input id="school" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="schoolOrigin" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
-
-                            <div>
-                                <div class="flex selection:mb-3">
-                                    <div className='w-50 w-2/5'>
-                                    <label for="school" className="block text-sm font-medium text-gray-700"> Provinsi </label>
-                                    <select class="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                        <option selected>Pilih Provinsi</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    </div>
-                                    <div className='w-50 w-3/5'>
-                                    <label for="school" className="block text-sm font-medium text-gray-700"> Kota </label>
-                                    <select class="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                        <option selected>Pilih Kota</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    </div>
+                                <div className='w-50 w-2/5'>
+                                <label for="school" className="block text-sm font-medium text-gray-700"> Provinsi </label>
+                                {!loading && <select id='selectedProvinsi' className="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value={selectedProvinsi} onChange={(e)=>(handleInputChange(e))}>
+                                    <option key="0" value="0">Pilih Provinsi</option>
+                                    {dataProvinsi.map((item) => {
+                                        return <option key={item} value={item.id}>{item.nama}</option>
+                                    }
+                                    )}
+                                </select>}
+                                {loading && <div className="w-full h-full flex justify-center items-center">
+                                    <svg role="status" className="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-sky-900 fill-gray-600 dark:fill-orange-500" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
                                 </div>
-                            </div>
-
+                                }
+                                </div>
+                                <div className='w-50 w-3/5'>
+                                <label for="school" className="block text-sm font-medium text-gray-700"> Kota </label>
+                                {!loadingkota && <select className="form-select block block- px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option key="0" value="0">Pilih Kota</option>
+                                    {dataKota.map((item, index) => {
+                                        return <option key={index} value={item.id}>{item.nama}</option>
+                                    }
+                                    )}
+                                </select>}
+                                {loadingkota && <div className="w-full h-full flex justify-center items-center">
+                                    <svg role="status" className="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-sky-900 fill-gray-600 dark:fill-orange-500" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+                                </div>
+                                }
+                                </div>
                             <div>
-                            <label for="school" className="block text-sm font-medium text-gray-700"> Kode Pos </label>
+                            <label for="postal code" className="block text-sm font-medium text-gray-700"> Kode Pos </label>
                             <div className="mt-1">
-                                <input id="school" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="kodePos" name="school" type="school" autocomplete="school" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                             </div>
                             </div>
 
                             <div>
-                                <label for="school" className="block text-sm font-medium text-gray-700"> Alamat </label>
+                                <label for="address" className="block text-sm font-medium text-gray-700"> Alamat </label>
                                 <div className="mt-1">
-                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                                <textarea id="alamat" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                                 </div>
                             </div>
                                 
                             <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"/>
+                                <input id="dataConfirm" name="remember-me" value={dataConfirm} onChange={(e)=>(handleInputChange(e))} type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"/>
                                 <label for="remember-me" className="ml-2 block text-sm text-gray-900"> Data yang saya isikan adalah data yang sebenar-benarnya. </label>
                             </div>
                             </div>
