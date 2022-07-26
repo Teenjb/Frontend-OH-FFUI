@@ -4,6 +4,7 @@ import Home from './Page/Home';
 import Login from './Page/Login';
 import Register from './Page/Register';
 import Shop from './Page/Shop';
+import Cart from './Page/Cart';
 
 import React, { useState } from "react";
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/shop" element={<Shop />} />
+            <Route exact path="/Cart" element={<Cart />} />
             <Route
               path="*"
               element = {<Navigate to="/home" />}
