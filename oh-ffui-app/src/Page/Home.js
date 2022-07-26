@@ -25,9 +25,10 @@ function Home(){
 
     useEffect(() => {
         async function fetchData() {
-            const token = await localStorage.getItem('token');
-            console.log(token);
-            if (token !== "null") {
+            setLoading(true);
+            const tokenLocal = localStorage.getItem('token');
+            console.log(tokenLocal);
+            if (tokenLocal !== null && tokenLocal !== "null") {
                 setToken(token);
                 setAuthenticated(true);
             }
