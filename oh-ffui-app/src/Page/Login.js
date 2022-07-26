@@ -31,12 +31,10 @@ function Login (){
 
     //function to handle submit login request
     const handleSubmit = async () =>{
-        console.log(identifier,password);
         const headers = {
             "content-type": "application/json"
         };
         const graphqlQuery = {
-            //"operationName": "fetchAuthor",
             query: `mutation($identifier: String!,$password: String!){
                 login(
                     input:{

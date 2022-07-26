@@ -30,29 +30,26 @@ function Register(){
     const [loading, setLoading] = useState(false);
     const [loadingkota, setLoadingkota] = useState(false);
     const [selectedProvinsi, setSelectedProvinsi] = useState(0);
+    const [token, setToken] = useState(null);
 
     async function loadData(){
         setLoading(true);
         axios.get(provinsiEndpoint).then(response => {
-            console.log(response.data.provinsi);
             setDataProvinsi(response.data.provinsi);
             setLoading(false);
         }).catch(error => {
             console.log(error);
         });
-        console.log(dataProvinsi);
     }
 
     async function loadDataKota(){
         setLoadingkota(true);
         axios.get(kotaEndpoint,{params:{id_provinsi:selectedProvinsi}}).then(response => {
-            console.log(response.data.kota_kabupaten);
             setDataKota(response.data.kota_kabupaten);
             setLoadingkota(false);
         }).catch(error => {
             console.log(error);
         });
-        console.log(dataProvinsi);
     }
 
     useEffect(() => {
@@ -102,8 +99,72 @@ function Register(){
             setDataConfirm(checked);
         }
         if (id === "selectedProvinsi") {
-            console.log(value);
             setSelectedProvinsi(value);
+        }
+    }
+    
+    const handleSubmit = async () => {
+        const headers = {
+            "content-type": "application/json"
+        };
+        const graphqlQuery = {
+            query: `mutation register ($username: String!, $email: String!, $password: String!, $fullName: String!, $phoneNumber: String, $schoolOrigin: String!, $address: String!) {
+                register (
+                    input: {
+                        username: $username,
+                        email: $email,
+                        password: $password,
+                        fullName: $fullName,
+                        phoneNumber: $phoneNumber,
+                        schoolOrigin: $schoolOrigin,
+                        address: $address
+                    }
+                ){
+                    jwt
+                }
+            }`,
+            variables: {
+                username: username,
+                email: email,
+                password: password,
+                fullName: name,
+                phoneNumber: whatsapp,
+                schoolOrigin: schoolOrigin,
+                address:`${alamat}, ${kodePos}, ${kota}, ${provinsi}`
+
+            }
+        };
+        const response = await axios.post(endpoint, graphqlQuery, {headers: headers})
+        console.log(response.data);
+        if(response.data.errors){
+            Toastify({
+                text: "Login Gagal",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#FF0000",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+              setToken(null);
+        }else{
+            Toastify({
+                text: "Login Success",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#87B07B",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+              setToken(response.data.data.login.jwt);
+              window.location.href = '/';
         }
     }
 
