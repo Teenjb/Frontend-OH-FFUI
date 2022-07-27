@@ -294,7 +294,7 @@ function Register(){
                             </div>
 
                             <div>
-                            <button type="submit" disabled={dataConfirm && !notMatch} className= {`${dataConfirm && !notMatch ? 'text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700':'text-gray-400 bg-white border-gray-500'} w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`} onClick={(e)=>(handleSubmit(e))}>Register</button>
+                            <button type="submit" disabled={!dataConfirm && notMatch} className= {`${dataConfirm && !notMatch ? 'text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700':'text-gray-400 bg-white border-gray-500'} w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`} onClick={(e)=>(handleSubmit(e))}>Register</button>
                             </div>
                         </form>
                         </div>
