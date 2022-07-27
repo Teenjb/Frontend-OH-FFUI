@@ -164,7 +164,7 @@ function Home(){
                           <div className='bg-orange-400 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
                                   <img src={sayFour} alt="" className='object-scale-down h-80 w-100'/>
                                   <div>
-                                    <p className='text-white text-l px-10 py-5 '>" Dengan mengikuti Open House FF UI, aku jadi mengetahui sistem perkuliahan di farmasi serta prospek kerjanya. Selain itu, aku juga belajar menggerus obat dan membuat hand sanitizer melalui kegiatan workshop di Open House FF UI, juga terdapat kuis dan kompetisi yang berhadiah. Buat aku, Open House FF UI seru banget dan recommended untuk kalian yang penasaran tentang farmasi atau tertarik tapi masih ragu. Aku jadi semakin yakin untuk memilih jurusan farmasi setelah mengikuti Open House FF UI Vol.2. "</p>
+                                    <p className='text-white text-l px-10 py-5 '>" Di fakultas farmasi, kami dipertemukan dengan dosen-dosen yang ahli dan kompeten dalam bidang masing-masing, juga fasilitas yang memadai. Kami diajari beragam mata kuliah spesifik mengenai farmasi, ilmu pengetahuan alam, hingga ilmu kesehatan. Kami juga bebas mengakses kegiatan-kegiatan non akademik, seperti perlombaan, organisasi, hingga magang. So, jika kalian tertarik untuk mengetahui jurusan farmasi lebih lanjut, yuk ikuti Open House FF UI Vol. III! "</p>
                                     <h3 className='font-serif text-2xl text-white text-l px-10 '>Mishbahus Surur - FF 19</h3>
                                     <h3 className='text-l text-white text-l px-10 '>Ketua BEM FF UI 2022</h3>
                                   </div>
