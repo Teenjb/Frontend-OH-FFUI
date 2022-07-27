@@ -40,6 +40,12 @@ function Shop(){
         if(id === 'home'){
             window.location.href = '/home';
         }
+        if(id === 'submission'){
+            window.location.href = '/submission';
+        }
+        if(id === 'about'){
+            window.location.href = '/about';
+        }
         if(id === 'logout'){
             localStorage.removeItem('token');
             setToken(null);
@@ -83,17 +89,17 @@ function Shop(){
                                   </svg>
                               </button>
                               <ul className="flex text-3xl font-black md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-20 right-0 bg-white md:bg-transparent z-20">
-                                  <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
-                                      <a href="javascript: void(0)">About Us</a>
+                              <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
+                                      <a id='about' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">About Us</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a href="javascript: void(0)">Shop</a>
+                                      <a  id='shop' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Shop</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a href="javascript: void(0)">Tickets</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a href="javascript: void(0)">Submission</a>
+                                      <a id='submission' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Submission</a>
                                   </li>
                                   <li className={`${authenticated ? 'hidden' : 'block'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
                                       <a id='login' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">login</a>
