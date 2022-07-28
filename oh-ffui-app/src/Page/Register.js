@@ -6,7 +6,8 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const endpoint = "http://localhost:1337/graphql";
+const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const endpoint = "http://localhost:1337/";
 const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
 const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
 
@@ -127,7 +128,7 @@ function Register(){
     async function inputCheck() {
         const json = JSON.stringify({username: username,email: email,phoneNumber: whatsapp})
         console.log(json);
-        await axios.post("http://localhost:1337/api/users-permissions/users/check", json, {
+        await axios.post(hostEndpoint+"api/users-permissions/users/check", json, {
         headers: {
             // Overwrite Axios's automatically set Content-Type
             'Content-Type': 'application/json'
@@ -194,7 +195,7 @@ function Register(){
             }
         };
         console.log(graphqlQuery);
-        const response = await axios.post(endpoint, graphqlQuery, {headers: headers})
+        const response = await axios.post(hostEndpoint+"graphql", graphqlQuery, {headers: headers})
         console.log(response.data);
         if(response.data.errors){
             Toastify({
