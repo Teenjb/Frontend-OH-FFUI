@@ -5,7 +5,7 @@ import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 const axios = require('axios');
-const endpoint = 'https://api-oh-ffui-2022.herokuapp.com/graphql';
+const endpoint = 'http://localhost:1337/graphql';
 
 function Login (){
 
@@ -18,8 +18,7 @@ function Login (){
     useEffect(() => {
         localStorage.setItem('token', token);
       }, [token]);
-
-    //funvtion to handle any change on input
+    //function to handle any change on input
     const handleInputChange = (event) =>{
         const {id,value} = event.target;
         if(id === 'identifier'){

@@ -46,6 +46,9 @@ function Shop(){
         if(id === 'about'){
             window.location.href = '/about';
         }
+        if(id === 'cart'){
+            window.location.href = '/cart';
+        }
         if(id === 'logout'){
             localStorage.removeItem('token');
             setToken(null);
@@ -101,6 +104,9 @@ function Shop(){
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                                       <a id='submission' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Submission</a>
                                   </li>
+                                  <li className="block md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                                      <a id='cart' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Cart</a>
+                                  </li>
                                   <li className={`${authenticated ? 'hidden' : 'block'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
                                       <a id='login' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">login</a>
                                   </li>
@@ -116,7 +122,12 @@ function Shop(){
                               </ul>
                           </div>
                       </div>
-                      <div className="inline-flex space-x-2 ">
+                      <div className={`inline-flex space-x-2 items-center`}>
+                      <a href="javascript: void(0)" id='cart' onClick={(e)=>(handleClick(e))} role="button" className="hidden relative md:flex">
+                            <svg className="flex-1 w-8 h-6 fill-blue-200 pointer-events-none" viewbox="0 0 24 24">
+                            <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"/>
+                            </svg>
+                        </a>
                         <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='login' onClick={(e)=>(handleClick(e))}>Login</button>
                         <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
                         <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='User' onClick={(e)=>(handleClick(e))}>HI! USER</button>

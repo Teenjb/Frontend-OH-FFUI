@@ -32,6 +32,9 @@ function Register(){
     const [selectedProvinsi, setSelectedProvinsi] = useState(0);
     const [token, setToken] = useState(null);
     const [notMatch, setNotMatch] = useState(false);
+    const [usernameFlag, setUsernameFlag] = useState(true);
+    const [emailFlag, setEmailFlag] = useState(true);
+    const [phoneNumberFlag, setPhoneNumberFlag] = useState(true);
 
     async function loadData(){
         setLoading(true);
@@ -56,6 +59,16 @@ function Register(){
     useEffect(() => {
         loadData();
     },[])
+
+    useEffect(() => {
+        setTimeout(() => {
+            inputCheck();
+        }, 500);
+    },[username,email,whatsapp])
+
+    useEffect(() => {
+        localStorage.setItem('token', token);
+      }, [token]);
 
     useEffect(() => {
         loadDataKota();
@@ -110,6 +123,43 @@ function Register(){
             setDataConfirm(checked);
         }
     }
+
+    async function inputCheck() {
+        const json = JSON.stringify({username: username,email: email,phoneNumber: whatsapp})
+        console.log(json);
+        await axios.post("http://localhost:1337/api/users-permissions/users/check", json, {
+        headers: {
+            // Overwrite Axios's automatically set Content-Type
+            'Content-Type': 'application/json'
+        }
+        }).then(response => {
+            if(response.data.errors){
+                console.log(response.data);
+                //setDataConfirm(true);
+            }else{
+                console.log(response.data);
+                if(response.data.usernameFlag === "Username available"){
+                    setUsernameFlag(true);
+                }else{
+                    setUsernameFlag(false);
+                }
+                if(response.data.emailFlag === "Email available"){
+                    setEmailFlag(true);
+                }else{
+                    setEmailFlag(false);
+                }
+                if(response.data.phoneNumberFlag === "Phone number available"){
+                    setPhoneNumberFlag(true);
+                }else{
+                    setPhoneNumberFlag(false);
+                }
+            }
+        }).catch(error => {
+            console.log(error);
+        }
+        );
+    }
+
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -173,8 +223,9 @@ function Register(){
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
-              setToken(response.data.data.login.jwt);
-              window.location.href = '/';
+              console.log(response.data.data.register.jwt);
+              setToken(response.data.data.register.jwt);
+              window.location.href = '/home';
         }
     }
 
@@ -201,14 +252,16 @@ function Register(){
                             <div>
                             <label for="name" className="block text-sm font-medium text-gray-700"> Username </label>
                             <div className="mt-1">
-                                <input id="username" name="name" type="name" autocomplete="name" required value={username} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="username" name="name" type="name" autocomplete="name" required value={username} onChange={(e)=>(handleInputChange(e))} className={`${!usernameFlag ? "border-red-500" : "border-gray-300" }appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
+                                {!usernameFlag && <p className="block text-xs mt-1 font-medium text-red-500">Username is Already Taken</p>}
                             </div>
                             </div>
 
                             <div>
                             <label for="email" className="block text-sm font-medium text-gray-700"> Alamat Email </label>
                             <div className="mt-1">
-                                <input id="email" name="email" type="email" autocomplete="email" required value={email} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="email" name="email" type="email" autocomplete="email" required value={email} onChange={(e)=>(handleInputChange(e))} className={`${!emailFlag ? "border-red-500" : "border-gray-300" }appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
+                                {!emailFlag && <p className="block text-xs mt-1 font-medium text-red-500">Email is Already Registered</p>}
                             </div>
                             </div>
 
@@ -222,7 +275,7 @@ function Register(){
                             <div className="space-y-1">
                             <label for="confirmPassword" className="block text-sm font-medium text-gray-700"> Konfirmasi Password </label>
                             <div className="mt-1">
-                                <input id="confirmPassword" name="confirmpassword" type="password" autocomplete="current-password" value={confirmPassword} required onChange={(e)=>(handleInputChange(e))} className={`${notMatch ? "border-red-500" : "border-green-500" } appearance-none block w-full px-3 py-2 border  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
+                                <input id="confirmPassword" name="confirmpassword" type="password" autocomplete="current-password" value={confirmPassword} required onChange={(e)=>(handleInputChange(e))} className={`${notMatch ? "border-red-500" : "border-gray-300" } appearance-none block w-full px-3 py-2 border  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
                                 {notMatch && <p className="block text-xs mt-1 font-medium text-red-500">Password tidak cocok</p>}
                             </div>
                             </div>
@@ -230,7 +283,8 @@ function Register(){
                             <div>
                             <label for="phoneNumber" className="block text-sm font-medium text-gray-700"> Nomor Whatsapp </label>
                             <div className="mt-1">
-                                <input id="whatsapp" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required value={whatsapp} onChange={(e)=>(handleInputChange(e))} className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                <input id="whatsapp" name="phoneNumber" type="phoneNumber" autocomplete="phoneNumber" required value={whatsapp} onChange={(e)=>(handleInputChange(e))} className={`${!phoneNumberFlag ? "border-red-500" : "border-gray-300" }appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}/>
+                                {!phoneNumberFlag && <p className="block text-xs mt-1 font-medium text-red-500">Number is Already Registered</p>}
                             </div>
                             </div>
 
