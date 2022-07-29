@@ -8,8 +8,12 @@ import "toastify-js/src/toastify.css";
 const axios = require("axios");
 const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
 const endpoint = "http://localhost:1337/";
-const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
-const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
+const provinsiEndpoint = "http://api.rajaongkir.com/starter/province";
+const kotaEndpoint = "http://api.rajaongkir.com/starter/city";
+const headerRajaongkir = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "key": "bf773f446e4e594998b9a609040850d7"
+}
 
 
 
@@ -39,8 +43,9 @@ function Register(){
 
     async function loadData(){
         setLoading(true);
-        axios.get(provinsiEndpoint).then(response => {
-            setDataProvinsi(response.data.provinsi);
+        axios.get(provinsiEndpoint,{headers: headerRajaongkir}).then(response => {
+            setDataProvinsi(response.data.rajaongkir.results);
+            console.log(response.data.rajaongkir.results);
             setLoading(false);
         }).catch(error => {
             console.log(error);
@@ -49,8 +54,8 @@ function Register(){
 
     async function loadDataKota(){
         setLoadingkota(true);
-        axios.get(kotaEndpoint,{params:{id_provinsi:selectedProvinsi}}).then(response => {
-            setDataKota(response.data.kota_kabupaten);
+        axios.get(kotaEndpoint,{params:{province:selectedProvinsi}},{headers: headerRajaongkir}).then(response => {
+            setDataKota(response.data.rajaongkir.results);
             setLoadingkota(false);
         }).catch(error => {
             console.log(error);
@@ -293,7 +298,7 @@ function Register(){
                                 {!loading && <select id='provinsi' className="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" key="0" dataKey="0" value={provinsi} onChange={(e)=>(handleInputChange(e))}>
                                     <option key="0" value="0">Pilih Provinsi</option>
                                     {dataProvinsi.map((item) => {
-                                        return <option key={item.id} dataKey={item.id} value={item.name}>{item.nama}</option>
+                                        return <option key={item.province_id} dataKey={item.province_id} value={item.province}>{item.province}</option>
                                     }
                                     )}
                                 </select>}
