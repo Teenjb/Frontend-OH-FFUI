@@ -54,7 +54,6 @@ function Login (){
             }
         };
         const response = await axios.post(hostEndpoint+"graphql", graphqlQuery, {headers: headers})
-        console.log(response.data);
         setLoading(false);
         if(response.data.errors){
             Toastify({

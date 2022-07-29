@@ -79,7 +79,6 @@ function Register(){
         const { id, value, checked, options} = event.target;
 
         if (id === "name") {
-            console.log(value);
             setName(value);
         }
         if (id === "username") {
@@ -92,7 +91,6 @@ function Register(){
             setPassword(value);
         }
         if (id === "confirmPassword") {
-            console.log(value);
             if(password !== value){
                 setNotMatch(true);
             }else{
@@ -127,7 +125,6 @@ function Register(){
 
     async function inputCheck() {
         const json = JSON.stringify({username: username,email: email,phoneNumber: whatsapp})
-        console.log(json);
         await axios.post(hostEndpoint+"api/users-permissions/users/check", json, {
         headers: {
             // Overwrite Axios's automatically set Content-Type
@@ -138,7 +135,6 @@ function Register(){
                 console.log(response.data);
                 //setDataConfirm(true);
             }else{
-                console.log(response.data);
                 if(response.data.usernameFlag === "Username available"){
                     setUsernameFlag(true);
                 }else{
@@ -194,9 +190,7 @@ function Register(){
 
             }
         };
-        console.log(graphqlQuery);
         const response = await axios.post(hostEndpoint+"graphql", graphqlQuery, {headers: headers})
-        console.log(response.data);
         if(response.data.errors){
             Toastify({
                 text: "Register Gagal",
@@ -224,7 +218,6 @@ function Register(){
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
-              console.log(response.data.data.register.jwt);
               setToken(response.data.data.register.jwt);
               window.location.href = '/home';
         }

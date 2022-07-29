@@ -9,6 +9,8 @@ import Register from '../Page/Register';
 import { Navigate } from 'react-router-dom';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
+import ShopCard from '../Component/ShopCard';
+import ShopCardWithDesc from '../Component/ShopCardWithDesc';
 
 function Shop(){
     const [show, setShow] = useState(false);
@@ -19,7 +21,6 @@ function Shop(){
     useEffect(() => {
         async function fetchData() {
             const tokenLocal = await localStorage.getItem('token');
-            console.log(tokenLocal);
             if (tokenLocal !== null && tokenLocal !== "null") {
                 setToken(token);
                 setAuthenticated(true);
@@ -67,6 +68,8 @@ function Shop(){
               }).showToast();
         }
     }
+
+    
 
     return(
         <div className="grid h-full bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
@@ -146,94 +149,17 @@ function Shop(){
                     <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Merch</h1>
                     <div class="min-h-screen flex items-center justify-center">
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Kaos A</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Kaos B</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Stiker Set A</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Sticker Set B</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Tote Bag A</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Tote Bag B</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Notebook A</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Notebook B</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Pouch</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>E-Money</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Lanyard</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
+                            <ShopCard id='kaosA' name='Kaos A' price='99.000' />
+                            <ShopCard id='kasoB' name='Kaos B' price='99.000' />
+                            <ShopCard id='stikerSetA' name='Stiker Set A' price='99.000' />
+                            <ShopCard id='stikerSetB' name='Stiker Set B' price='99.000' />
+                            <ShopCard id='toteBagA' name='Tote Bag A' price='99.000' />
+                            <ShopCard id='toteBagB' name='Tote Bag B' price='99.000' />
+                            <ShopCard id='notebookA' name='Notebook A' price='99.000' />
+                            <ShopCard id='notebookB' name='Notebook B' price='99.000' />
+                            <ShopCard id='pouch' name='Pouch' price='99.000' />
+                            <ShopCard id='eMoney' name='E-Money' price='99.000' />
+                            <ShopCard id='lanyard' name='Lanyard' price='99.000' />
                         </div>
                     </div>
                 </div>
@@ -241,60 +167,12 @@ function Shop(){
                     <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Bundles</h1>
                     <div class=" flex items-center justify-center">
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket A1</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>kaos A, sticker set A, notebook A, tote bag A, pouch, emoney + lanyard</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket A2</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Kaos B, sticker set B, notebook B, totebag B, pouch, emoney B + lanyard</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket B1</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Sticker set A, notebook A, tote bag A, pouch, emoney + lanyard</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket B2</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Sticker set B, notebook B, totebag B, pouch, emoney B + lanyard</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket C1</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Sticker set A, notebook A, kaos A, pouch</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div className=''>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Paket C2</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Sticker set B, notebook B, kaos b, pouch</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
+                            <ShopCardWithDesc id='pakeA1' name='Paket A1' price='99.000' desc='kaos A, sticker set A, notebook A, tote bag A, pouch, emoney + lanyard' />
+                            <ShopCardWithDesc id='paketA2' name='Paket A2' price='99.000' desc='Kaos B, sticker set B, notebook B, totebag B, pouch, emoney B + lanyard' />
+                            <ShopCardWithDesc id='paketB1' name='Paket B1' price='99.000' desc='Sticker set A, notebook A, tote bag A, pouch, emoney + lanyard' />
+                            <ShopCardWithDesc id='paketB2' name='Paket B2' price='99.000' desc='Sticker set B, notebook B, totebag B, pouch, emoney B + lanyard' />
+                            <ShopCardWithDesc id='pakeC1' name='Paket C1' price='99.000' desc='Sticker set A, notebook A, kaos A, pouch' />
+                            <ShopCardWithDesc id='pakeC2' name='Paket C2' price='99.000' desc='Sticker set B, notebook B, kaos B, pouch' />
                         </div>
                     </div>
                 </div>
@@ -302,24 +180,8 @@ function Shop(){
                     <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">Workshop</h1>
                     <div class=" flex items-center justify-center">
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Pulverize Kit</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Tablet vitamin B, kertas perkamen, sudip, pot plastik, lumpang alu, cangkang kapsul, etiket putih</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
-                            <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <img src='' alt='' className=''/>
-                                    <div>
-                                        <h3 className='font-serif text-3xl text-black pb-2'>Sanitizer Kit</h3>
-                                        <h5 className='text-xl text-black pb-2 font-semibold'>Rp 99.000</h5>
-                                        <p className='text-sm'>Texapon (SLES), nacl, glycerin, H2O2 3%, minyak atsiri/essence, aquades, beaker glass plastik, batang pengaduk, botol pump, botol plastik 10 ml, botol plastik 500 ml, corong plastik, wadah puding</p>
-                                        <button type="submit" className="w-full my-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700">Add to cart</button>
-                                    </div>
-                            </div>
+                            <ShopCardWithDesc id='pulverizeKit' name='Pulverize Kit' price='99.000' desc='Tablet vitamin B, kertas perkamen, sudip, pot plastik, lumpang alu, cangkang kapsul, etiket putih' />
+                            <ShopCardWithDesc id='sanitizerKit' name='Sanitizer Kit' price='99.000' desc='Texapon (SLES), nacl, glycerin, H2O2 3%, minyak atsiri/essence, aquades, beaker glass plastik, batang pengaduk, botol pump, botol plastik 10 ml, botol plastik 500 ml, corong plastik, wadah puding' />
                         </div>
                     </div>
                 </div>
