@@ -6,14 +6,10 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const endpoint = "http://localhost:1337/";
-const provinsiEndpoint = "http://api.rajaongkir.com/starter/province";
-const kotaEndpoint = "http://api.rajaongkir.com/starter/city";
-const headerRajaongkir = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    "key": "bf773f446e4e594998b9a609040850d7"
-}
+const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const hostEndpoint = "http://localhost:1337/";
+const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
+const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
 
 
 
@@ -43,9 +39,8 @@ function Register(){
 
     async function loadData(){
         setLoading(true);
-        axios.get(provinsiEndpoint,{headers: headerRajaongkir}).then(response => {
-            setDataProvinsi(response.data.rajaongkir.results);
-            console.log(response.data.rajaongkir.results);
+        axios.get(provinsiEndpoint).then(response => {
+            setDataProvinsi(response.data.provinsi);
             setLoading(false);
         }).catch(error => {
             console.log(error);
@@ -54,8 +49,8 @@ function Register(){
 
     async function loadDataKota(){
         setLoadingkota(true);
-        axios.get(kotaEndpoint,{params:{province:selectedProvinsi}},{headers: headerRajaongkir}).then(response => {
-            setDataKota(response.data.rajaongkir.results);
+        axios.get(kotaEndpoint,{params:{id_provinsi:selectedProvinsi}}).then(response => {
+            setDataKota(response.data.kota_kabupaten);
             setLoadingkota(false);
         }).catch(error => {
             console.log(error);
@@ -130,7 +125,7 @@ function Register(){
 
     async function inputCheck() {
         const json = JSON.stringify({username: username,email: email,phoneNumber: whatsapp})
-        await axios.post(hostEndpoint+"api/users-permissions/users/check", json, {
+        await axios.post(endpoint+"api/users-permissions/users/check", json, {
         headers: {
             // Overwrite Axios's automatically set Content-Type
             'Content-Type': 'application/json'
@@ -195,7 +190,7 @@ function Register(){
 
             }
         };
-        const response = await axios.post(hostEndpoint+"graphql", graphqlQuery, {headers: headers})
+        const response = await axios.post(endpoint+"graphql", graphqlQuery, {headers: headers})
         if(response.data.errors){
             Toastify({
                 text: "Register Gagal",
@@ -298,7 +293,7 @@ function Register(){
                                 {!loading && <select id='provinsi' className="form-select block px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" key="0" dataKey="0" value={provinsi} onChange={(e)=>(handleInputChange(e))}>
                                     <option key="0" value="0">Pilih Provinsi</option>
                                     {dataProvinsi.map((item) => {
-                                        return <option key={item.province_id} dataKey={item.province_id} value={item.province}>{item.province}</option>
+                                        return <option key={item.id} dataKey={item.id} value={item.name}>{item.nama}</option>
                                     }
                                     )}
                                 </select>}

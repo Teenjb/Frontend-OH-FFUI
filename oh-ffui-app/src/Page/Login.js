@@ -5,8 +5,8 @@ import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 const axios = require('axios');
-const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const endpoint = "http://localhost:1337/";
+const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const hostendpoint = "http://localhost:1337/";
 
 function Login (){
 
@@ -53,7 +53,7 @@ function Login (){
                 password: password
             }
         };
-        const response = await axios.post(hostEndpoint+"graphql", graphqlQuery, {headers: headers})
+        const response = await axios.post(endpoint+"graphql", graphqlQuery, {headers: headers})
         setLoading(false);
         if(response.data.errors){
             Toastify({

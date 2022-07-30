@@ -1,13 +1,11 @@
 import '../index.css';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
-import { useState } from 'react';
+import AddCart from '../helper/AddCart';
 
 function ShopCardWithDesc(props){
-    const [items,setItems] = useState(props);
-    console.log(items);
-    const handleAddCart = (event) =>{
-        const id = event.target.id;
+    const handleAddCart = () =>{
+        AddCart(props);
         Toastify({
             text: props.name + " added to Cart",
             duration: 3000,

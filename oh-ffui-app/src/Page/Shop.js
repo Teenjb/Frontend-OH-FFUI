@@ -96,45 +96,45 @@ function Shop(){
                               </button>
                               <ul className="flex text-3xl font-black md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-20 right-0 bg-white md:bg-transparent z-20">
                               <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
-                                      <a id='about' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">About Us</a>
+                                      <a id='about' onClick={(e)=>(handleClick(e))} >About Us</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a  id='shop' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Shop</a>
+                                      <a  id='shop' onClick={(e)=>(handleClick(e))} >Shop</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a href="javascript: void(0)">Tickets</a>
+                                      <a >Tickets</a>
                                   </li>
                                   <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a id='submission' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Submission</a>
+                                      <a id='submission' onClick={(e)=>(handleClick(e))} >Submission</a>
                                   </li>
                                   <li className="block md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                                      <a id='cart' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Cart</a>
+                                      <a id='cart' onClick={(e)=>(handleClick(e))} >Cart</a>
                                   </li>
                                   <li className={`${authenticated ? 'hidden' : 'block'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
-                                      <a id='login' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">login</a>
+                                      <a id='login' onClick={(e)=>(handleClick(e))} >login</a>
                                   </li>
                                   <li className={`${authenticated ? 'hidden' : 'block'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
-                                      <a id='register' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Register</a>
+                                      <a id='register' onClick={(e)=>(handleClick(e))} >Register</a>
                                   </li>
                                   <li className={`${authenticated ? 'block' : 'hidden'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
-                                      <a id='user' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">User</a>
+                                      <a id='user' onClick={(e)=>(handleClick(e))} >User</a>
                                   </li>
                                   <li className={`${authenticated ? 'block' : 'hidden'} md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}>
-                                      <a id='logout' onClick={(e)=>(handleClick(e))} href="javascript: void(0)">Logout</a>
+                                      <a id='logout' onClick={(e)=>(handleClick(e))} >Logout</a>
                                   </li>
                               </ul>
                           </div>
                       </div>
                       <div className={`inline-flex space-x-2 items-center`}>
-                      <a href="javascript: void(0)" id='cart' onClick={(e)=>(handleClick(e))} role="button" className="hidden relative md:flex">
+                      <a  id='cart' onClick={(e)=>(handleClick(e))} role="button" className="hidden relative md:flex">
                             <svg className="flex-1 w-8 h-6 fill-blue-200 pointer-events-none" viewbox="0 0 24 24">
                             <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"/>
                             </svg>
                         </a>
-                        <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='login' onClick={(e)=>(handleClick(e))}>Login</button>
-                        <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
-                        <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='User' onClick={(e)=>(handleClick(e))}>HI! USER</button>
-                        <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='logout' onClick={(e)=>(handleClick(e))}>Log Out</button>
+                        <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-100 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='login' onClick={(e)=>(handleClick(e))}>Login</button>
+                        <button className={`${authenticated ? 'md:hidden' : 'md:block'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-100 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='register' onClick={(e)=>(handleClick(e))}>Sign Up</button>
+                        <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-100 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='User' onClick={(e)=>(handleClick(e))}>HI! USER</button>
+                        <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-100 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='logout' onClick={(e)=>(handleClick(e))}>Log Out</button>
                       </div>
                   </div>
               </nav>
@@ -193,14 +193,14 @@ function Shop(){
                       <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bla blaaaa</p>
                       <ul className='flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0'>
                           <li>
-                              <img className='h-10 w-10' src={tiktok} alt='' href="javascript: void(0)"/></li>
+                              <img className='h-10 w-10' src={tiktok} alt='' /></li>
                           <li>
-                              <img className='h-10 w-10' src={instagram} alt='' href="javascript: void(0)"/>
+                              <img className='h-10 w-10' src={instagram} alt='' />
                           </li>
                           <li>
-                              <img className='h-10 w-10' src={line} alt='' href="javascript: void(0)"/></li>
+                              <img className='h-10 w-10' src={line} alt='' /></li>
                           <li>
-                              <img className='h-8 w-8' src={whatsapp} alt='' href="javascript: void(0)"/>
+                              <img className='h-8 w-8' src={whatsapp} alt='' />
                           </li>
                       </ul>
                   </div>
