@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 function Submission() {
     return (
-        <div className="bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="bg-white h-screen overflow-y-hidden relative" style={{ minHeight: 700 }}>
             <div className="min-h-full flex">
                 <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                     <div className="mx-auto w-full max-w-sm lg:w-96">

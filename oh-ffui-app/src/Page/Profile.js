@@ -5,8 +5,67 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function Profile() {
+    const [show, setShow] = useState(false);
+    const [authenticated, setAuthenticated] = useState(false);
+    const [token, setToken] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        async function fetchData() {
+            setLoading(true);
+            const tokenLocal = localStorage.getItem('token');
+            if (tokenLocal !== null && tokenLocal !== "null") {
+                setToken(token);
+                setAuthenticated(true);
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, []);
+
+    const handleClick = (event) =>{
+        const {id} = event.target;
+        if(id === 'register'){
+            window.location.href = '/register';
+        }
+        if(id === 'login'){
+            window.location.href = '/login';
+        }
+        if(id === 'shop'){
+            window.location.href = '/shop';
+        }
+        if(id === 'home'){
+            window.location.href = '/home';
+        }
+        if(id === 'submission'){
+            window.location.href = '/submission';
+        }
+        if(id === 'about'){
+            window.location.href = '/about';
+        }
+        if(id === 'logout'){
+            localStorage.removeItem('token');
+            setToken(null);
+            setAuthenticated(false);
+            Toastify({
+                text: "Logout Success",
+                duration: 3000,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#87B07B",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        }
+    }
+
     return (
         <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full bg-blue-900">
@@ -67,7 +126,7 @@ function Profile() {
                 <div class="md:flex no-wrap md:mx-5 mx-auto ">
                     <div class="w-full mx-2 h-64">
                         <div class="bg-white p-3 shadow-sm rounded-md">
-                            <div class="flex items-center my-3 items-center space-x-2 font-semibold text-gray-900 leading-8">
+                            <div class="flex my-3 items-center space-x-2 font-semibold text-gray-900 leading-8">
                                 <span clas="text-green-500">
                                     <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">

@@ -6,8 +6,8 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const hostEndpoint = "http://localhost:1337/";
+const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const endpoint = "http://localhost:1337/";
 const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
 const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
 
