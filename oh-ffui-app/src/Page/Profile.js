@@ -8,7 +8,7 @@ import tiktok from "../Img/icons8-tiktok-100.svg";
 
 function Profile() {
     return (
-        <div className="grid h-full bg-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
