@@ -8,8 +8,8 @@ import tiktok from "../Img/icons8-tiktok-100.svg";
 
 function Profile() {
     return (
-        <div className="grid h-full bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
-              {/* <nav className="w-full bg-blue-900">
+        <div className="grid h-full bg-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+              <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
                           <img className="w-10 h-10 md:w-auto" src={logo} alt="" id='home' onClick={(e)=>(handleClick(e))}/>
@@ -59,13 +59,71 @@ function Profile() {
                         <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='logout' onClick={(e)=>(handleClick(e))}>Log Out</button>
                       </div>
                   </div>
-              </nav> */}
+              </nav>
+              
 
-              <div className='relative'>
-                
+              <div className='relative mb-20'>
+                    <div class="container mx-auto my-5 p-5">
+                <div class="md:flex no-wrap md:mx-5 mx-auto ">
+                    <div class="w-full mx-2 h-64">
+                        <div class="bg-white p-3 shadow-sm rounded-md">
+                            <div class="flex items-center my-3 items-center space-x-2 font-semibold text-gray-900 leading-8">
+                                <span clas="text-green-500">
+                                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                </span>
+                                <span class="tracking-wide">About</span>
+                            </div>
+                            <div class="text-gray-700">
+                                <div class="grid md:grid-cols-2 text-sm">
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Username</div>
+                                        <div class="px-4 py-2">Jane</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Nama Lengkap</div>
+                                        <div class="px-4 py-2">Doe</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Email</div>
+                                        <div class="px-4 py-2">Female</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Nomor Telepon</div>
+                                        <div class="px-4 py-2">+11 998001001</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Asal Sekolah</div>
+                                        <div class="px-4 py-2">SMAN 7 Tangsel</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Alamat</div>
+                                        <div class="px-4 py-2">Alamat lengkap</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Provinsi</div>
+                                        <div class="px-4 py-2">Banten</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Kota</div>
+                                        <div class="px-4 py-2">Tangerang Selatan</div>
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <div class="px-4 py-2 font-semibold">Kode Pos</div>
+                                        <div class="px-4 py-2">15310</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
                 </div>
 
-                <footer className='w-full border-b bg-blue-900'>
+                <footer className='mt-14 w-full border-b bg-blue-900'>
                   <div>
                       <h2 className='text-pink-500 font-black flex md:text-3xl text-base items-center py-10 flex-row justify-center relative top-0 bottom-0 left-0 right-0'> Open House FF UI Vol.III </h2>
                       <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bla blaaaa</p>
