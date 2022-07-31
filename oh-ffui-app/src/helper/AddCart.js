@@ -1,5 +1,3 @@
-import {useState} from 'react';
-
 async function AddCart (props){
     let cart = [];
     const {id, name, price} = props;

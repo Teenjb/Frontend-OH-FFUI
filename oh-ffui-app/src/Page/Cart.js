@@ -56,7 +56,6 @@ function Cart() {
 
     const handleFileChange = async (e)=>{
         const {files} = e.target;
-        console.log(files[0]);
         setPaymentProof(files[0]);
     }
 
