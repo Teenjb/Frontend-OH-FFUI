@@ -81,33 +81,69 @@ function About() {
               </nav> */}
 
               <div className='relative'>
-                <div className="bg-orange-400 w-full mx-auto md:flex md:flex-col items-center py-12 sm:py-24">
-                    <div className="md:w-11/12 flex justify-center items-center w-full mb-5 sm:mb-10">
+                <div className="bg-orange-400 mx-auto md:flex md:flex-col items-center py-12 sm:py-24">
+                    <div className="md:w-11/12 flex justify-center items-center ">
                         <h1 className="font-serif py-10 text-white text-5xl xl:text-6xl text-center leading-7 md:leading-10">About Us</h1>
                     </div>
                 </div>
-                
             </div>
-            
-            <Carousel>
-                <div>
-                    <img src={am1} />
-                    <p className="legend">Legend 1</p>
+            <div className='container relative rounded-md mx-auto grid md:flex md:flex-col items-center py-6 sm:py-12'>
+                <div className='bg-cyan-700 rounded-md pt-8 px-10 lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10'>
+                <Carousel>
+                    <div>
+                        <img src={am1}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am2} alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am3}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am4}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am5}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am6}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung FF UI</p>
+                    </div>
+                    <div>
+                        <img src={am7}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                    <div>
+                        <img src={am8}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                    <div>
+                        <img src={am9}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                    <div>
+                        <img src={am10}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                    <div>
+                        <img src={am11}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                    <div>
+                        <img src={am12}  alt=""/>
+                        <p className="legend bg-pink-600">Gedung RIK</p>
+                    </div>
+                </Carousel>
                 </div>
-                <div>
-                    <img src={am2} />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src={am3} />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
-
-
+            </div>
                 <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                        <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Sejarah</h1>
+                        <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Sejarah</h1>
                         <div className='bg-pink-600 md:flex md:text-xl text-medium text-white md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md'>
                             <p>Farmasi merupakan ilmu dan seni yang berkaitan dengan obat. Mereka yang berkecimpung di bidang kefarmasian adalah para ahli obat yang menguasai ilmu dan pengetahuan obat-obatan secara mendalam dari segala aspek, mulai dari identifikasi, seleksi, preservasi, kombinasi, aksi farmakologi, analisis dan standarisasi obat dan bahan obat, serta cara distribusi, penyimpanan dan penggunaan yang tepat dan aman.
                             Farmasi UI didirikan pada bulan September 1965 di Jl. Diponegoro, Jakarta Pusat. Jurusan Farmasi UI awalnya berada di bawah Fakultas Ilmu Pasti dan Ilmu Alam (FIPIA) yang kemudian berdasarkan Kepres No. 44 tahun 1982, berubah menjadi Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA). Pada tanggal 18 Januari 2003, Jurusan Farmasi FMIPA UI berubah menjadi Departemen Farmasi FMIPA UI. Selanjutnya dalam rangka mendukung pendirian Rumpun Ilmu Kesehatan, pada tanggal 29 November 2011, Departemen Farmasi FMIPA UI berubah menjadi Fakultas Farmasi Universitas Indonesia (FF UI).</p>
@@ -115,8 +151,8 @@ function About() {
                     </div>
                 <div className="container mx-auto grid md:flex md:flex-col items-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                        <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Program Pendidikan</h1>
-                        <p className="text-medium text-xl justify-center mb-5 items-center">Fakultas farmasi Universitas Indonesia menyediakan 5 jenis program pendidikan, yaitu:</p>
+                        <h1 className="font-serif py-10 text-white  text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Program Pendidikan</h1>
+                        <p className="text-medium text-xl text-white  justify-center mb-5 items-center">Fakultas farmasi Universitas Indonesia menyediakan 5 jenis program pendidikan, yaitu:</p>
                         <div class="container bg-[#87b07b] rounded-md flex items-center justify-center">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
@@ -160,8 +196,8 @@ function About() {
                 </div>
                 <div className="container mx-auto grid md:flex md:flex-col items-start py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                        <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Jalur Masuk</h1>
-                        <p className="text-medium text-xl justify-center items-center">Terdapat 5 jalur masuk untuk Fakultas Farmasi UI, yaitu :</p>
+                        <h1 className="font-serif py-10 text-white  text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Jalur Masuk</h1>
+                        <p className="text-medium text-xl justify-center text-white  items-center">Terdapat 5 jalur masuk untuk Fakultas Farmasi UI, yaitu :</p>
                         <div class="container rounded-md flex items-start justify-center">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
                             <div className='rounded-md px-10 py-10 w-auto'>
@@ -185,11 +221,11 @@ function About() {
                 </div>
                 <div className="container mx-auto grid md:flex md:flex-col items-center text-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                        <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Daya Tampung & Keketatan</h1>
-                        <p className="text-medium text-xl justify-center items-center">Berdasarkan jalur masuknya, pada tahun 2022 Fakultas Farmasi UI jenjang sarjana (S1) memiliki daya tampung dan keketatan sebagai berikut :</p>
+                        <h1 className="font-serif py-10 text-white  text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Daya Tampung & Keketatan</h1>
+                        <p className="text-medium text-xl text-white justify-center items-center">Berdasarkan jalur masuknya, pada tahun 2022 Fakultas Farmasi UI jenjang sarjana (S1) memiliki daya tampung dan keketatan sebagai berikut :</p>
                         <div class="container rounded-md flex items-start justify-center">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
-                            <div className='rounded-md px-10 py-10 w-auto'>
+                            <div className='rounded-md px-10 py-6 w-auto'>
                                 <div className='container rounded-md bg-pink-600 px-5 py-5'>
                                     <h3 className='font-serif text-3xl text-center text-white pb-2 mb-3'>Paralel</h3>
                                     <p className='text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md'>PPKB : 30 orang (8.04%)</p>
@@ -210,25 +246,25 @@ function About() {
                 </div>
                 <div className="container mx-auto grid md:flex md:flex-col items-center text-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                        <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Organisasi</h1>
+                        <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Organisasi</h1>
                         <div class="container bg-[#f0eaa3] rounded-md flex items-center justify-center">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-start text-medium">
                             <div className='rounded-md px-10 py-10 w-auto'>
                                 <div className='container rounded-md bg-pink-600 px-5 py-5'>
-                                    <h3 className='font-serif text-3xl text-center  pb-2 mb-3'>Badan Eksekutif Mahasiswa (BEM)</h3>
-                                    <p className='text-white text-small'>BEM FF UI adalah lembaga eksekutif dari Fakultas Farmasi Universitas Indonesia yang memiliki tiga fungsi utama. Diantaranya, pertama sebagai wadah untuk menampung dan mengembangkan potensi, minat, dan bakat para mahasiswanya. Kedua, sebagai pintu untuk menyalurkan kepedulian sosialnya bagi masyarakat di sekitar. Ketiga, organisasi ini juga berperan dalam mengadvokasikan dan menyampaikan kebutuhan mahasiswanya kepada stakeholder terkait. Didirikan sejak tahun 2012 dan BEM FF UI bertanggung jawab langsung kepada BPM FF UI.</p>
+                                    <h3 className='font-serif text-white text-3xl text-center  pb-2 mb-3'>Badan Eksekutif Mahasiswa (BEM)</h3>
+                                    <p className='text-small container bg-white mx-auto mb-4 px-2 py-2 rounded-md'>BEM FF UI adalah lembaga eksekutif dari Fakultas Farmasi Universitas Indonesia yang memiliki tiga fungsi utama. Diantaranya, pertama sebagai wadah untuk menampung dan mengembangkan potensi, minat, dan bakat para mahasiswanya. Kedua, sebagai pintu untuk menyalurkan kepedulian sosialnya bagi masyarakat di sekitar. Ketiga, organisasi ini juga berperan dalam mengadvokasikan dan menyampaikan kebutuhan mahasiswanya kepada stakeholder terkait. Didirikan sejak tahun 2012 dan BEM FF UI bertanggung jawab langsung kepada BPM FF UI.</p>
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto'>
                                 <div className='container rounded-md bg-red-600 px-5 py-5'>
-                                    <h3 className='font-serif text-3xl text-center  pb-2 mb-3'>Badan Perwakilan Mahasiswa (BPM)</h3>
-                                    <p className='text-white text-small'>BPM FF UI adalah sebuah organisasi kemahasiswaan Fakultas Farmasi Universitas Indonesia yang memiliki fungsi sebagai lembaga legislatif, yudikatif, serta pengendalian dan audit keuangan lembaga kemahasiswaan dalam IKM FF UI . BPM FF UI didirikan pada tanggal 10 juni 2012.</p>
+                                    <h3 className='font-serif text-white text-3xl text-center  pb-2 mb-3'>Badan Perwakilan Mahasiswa (BPM)</h3>
+                                    <p className='text-small container bg-white mx-auto mb-4 px-2 py-2 rounded-md'>BPM FF UI adalah sebuah organisasi kemahasiswaan Fakultas Farmasi Universitas Indonesia yang memiliki fungsi sebagai lembaga legislatif, yudikatif, serta pengendalian dan audit keuangan lembaga kemahasiswaan dalam IKM FF UI . BPM FF UI didirikan pada tanggal 10 juni 2012.</p>
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto'>
                                 <div className='container rounded-md bg-orange-400 px-5 py-5'>
-                                    <h3 className='font-serif text-3xl text-center  pb-2 mb-3'>Syiar Islam Farmasi (SYIFA FF UI)</h3>
-                                    <p className='text-white text-small'>SYIFA FF UI adalah sebuah organisasi dan lembaga dakwah fakultas yang didirikan sejak tahun 2012. Organisasi ini digunakan sebagai wadah untuk mempererat persaudaraan antara sesama mahasiswa farmasi yang beragama islam serta tempat untuk berbagi kisah bermanfaat bersama melalui kegiatan yang diadakan, yaitu seperti Sulfa.</p>
+                                    <h3 className='font-serif text-white text-3xl text-center  pb-2 mb-3'>Syiar Islam Farmasi (SYIFA FF UI)</h3>
+                                    <p className='text-small container bg-white mx-auto mb-4 px-2 py-2 rounded-md'>SYIFA FF UI adalah sebuah organisasi dan lembaga dakwah fakultas yang didirikan sejak tahun 2012. Organisasi ini digunakan sebagai wadah untuk mempererat persaudaraan antara sesama mahasiswa farmasi yang beragama islam serta tempat untuk berbagi kisah bermanfaat bersama melalui kegiatan yang diadakan, yaitu seperti Sulfa.</p>
                                 </div>
                             </div>
                         </div>

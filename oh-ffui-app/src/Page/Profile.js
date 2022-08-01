@@ -5,66 +5,66 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
-// import Toastify from 'toastify-js'
-// import "toastify-js/src/toastify.css"
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function Profile() {
-    // const [show, setShow] = useState(false);
-    // const [authenticated, setAuthenticated] = useState(false);
-    // const [token, setToken] = useState(null);
-    // const [loading, setLoading] = useState(false);
+    const [show, setShow] = useState(false);
+    const [authenticated, setAuthenticated] = useState(false);
+    const [token, setToken] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         setLoading(true);
-    //         const tokenLocal = localStorage.getItem('token');
-    //         if (tokenLocal !== null && tokenLocal !== "null") {
-    //             setToken(token);
-    //             setAuthenticated(true);
-    //         }
-    //         setLoading(false);
-    //     }
-    //     fetchData();
-    // }, []);
+    useEffect(() => {
+        async function fetchData() {
+            setLoading(true);
+            const tokenLocal = localStorage.getItem('token');
+            if (tokenLocal !== null && tokenLocal !== "null") {
+                setToken(token);
+                setAuthenticated(true);
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, []);
 
-    // const handleClick = (event) =>{
-    //     const {id} = event.target;
-    //     if(id === 'register'){
-    //         window.location.href = '/register';
-    //     }
-    //     if(id === 'login'){
-    //         window.location.href = '/login';
-    //     }
-    //     if(id === 'shop'){
-    //         window.location.href = '/shop';
-    //     }
-    //     if(id === 'home'){
-    //         window.location.href = '/home';
-    //     }
-    //     if(id === 'submission'){
-    //         window.location.href = '/submission';
-    //     }
-    //     if(id === 'about'){
-    //         window.location.href = '/about';
-    //     }
-    //     if(id === 'logout'){
-    //         localStorage.removeItem('token');
-    //         setToken(null);
-    //         setAuthenticated(false);
-    //         Toastify({
-    //             text: "Logout Success",
-    //             duration: 3000,
-    //             close: true,
-    //             gravity: "bottom", // `top` or `bottom`
-    //             position: "left", // `left`, `center` or `right`
-    //             stopOnFocus: true, // Prevents dismissing of toast on hover
-    //             style: {
-    //               background: "#87B07B",
-    //             },
-    //             onClick: function(){} // Callback after click
-    //           }).showToast();
-    //     }
-    // }
+    const handleClick = (event) =>{
+        const {id} = event.target;
+        if(id === 'register'){
+            window.location.href = '/register';
+        }
+        if(id === 'login'){
+            window.location.href = '/login';
+        }
+        if(id === 'shop'){
+            window.location.href = '/shop';
+        }
+        if(id === 'home'){
+            window.location.href = '/home';
+        }
+        if(id === 'submission'){
+            window.location.href = '/submission';
+        }
+        if(id === 'about'){
+            window.location.href = '/about';
+        }
+        if(id === 'logout'){
+            localStorage.removeItem('token');
+            setToken(null);
+            setAuthenticated(false);
+            Toastify({
+                text: "Logout Success",
+                duration: 3000,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "#87B07B",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        }
+    }
 
     return (
         <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
