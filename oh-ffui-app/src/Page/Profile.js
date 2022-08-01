@@ -5,75 +5,75 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
-import Toastify from 'toastify-js'
-import "toastify-js/src/toastify.css"
+// import Toastify from 'toastify-js'
+// import "toastify-js/src/toastify.css"
 
 function Profile() {
-    const [show, setShow] = useState(false);
-    const [authenticated, setAuthenticated] = useState(false);
-    const [token, setToken] = useState(null);
-    const [loading, setLoading] = useState(false);
+    // const [show, setShow] = useState(false);
+    // const [authenticated, setAuthenticated] = useState(false);
+    // const [token, setToken] = useState(null);
+    // const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        async function fetchData() {
-            setLoading(true);
-            const tokenLocal = localStorage.getItem('token');
-            if (tokenLocal !== null && tokenLocal !== "null") {
-                setToken(token);
-                setAuthenticated(true);
-            }
-            setLoading(false);
-        }
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         setLoading(true);
+    //         const tokenLocal = localStorage.getItem('token');
+    //         if (tokenLocal !== null && tokenLocal !== "null") {
+    //             setToken(token);
+    //             setAuthenticated(true);
+    //         }
+    //         setLoading(false);
+    //     }
+    //     fetchData();
+    // }, []);
 
-    const handleClick = (event) =>{
-        const {id} = event.target;
-        if(id === 'register'){
-            window.location.href = '/register';
-        }
-        if(id === 'login'){
-            window.location.href = '/login';
-        }
-        if(id === 'shop'){
-            window.location.href = '/shop';
-        }
-        if(id === 'home'){
-            window.location.href = '/home';
-        }
-        if(id === 'submission'){
-            window.location.href = '/submission';
-        }
-        if(id === 'about'){
-            window.location.href = '/about';
-        }
-        if(id === 'logout'){
-            localStorage.removeItem('token');
-            setToken(null);
-            setAuthenticated(false);
-            Toastify({
-                text: "Logout Success",
-                duration: 3000,
-                close: true,
-                gravity: "bottom", // `top` or `bottom`
-                position: "left", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                  background: "#87B07B",
-                },
-                onClick: function(){} // Callback after click
-              }).showToast();
-        }
-    }
+    // const handleClick = (event) =>{
+    //     const {id} = event.target;
+    //     if(id === 'register'){
+    //         window.location.href = '/register';
+    //     }
+    //     if(id === 'login'){
+    //         window.location.href = '/login';
+    //     }
+    //     if(id === 'shop'){
+    //         window.location.href = '/shop';
+    //     }
+    //     if(id === 'home'){
+    //         window.location.href = '/home';
+    //     }
+    //     if(id === 'submission'){
+    //         window.location.href = '/submission';
+    //     }
+    //     if(id === 'about'){
+    //         window.location.href = '/about';
+    //     }
+    //     if(id === 'logout'){
+    //         localStorage.removeItem('token');
+    //         setToken(null);
+    //         setAuthenticated(false);
+    //         Toastify({
+    //             text: "Logout Success",
+    //             duration: 3000,
+    //             close: true,
+    //             gravity: "bottom", // `top` or `bottom`
+    //             position: "left", // `left`, `center` or `right`
+    //             stopOnFocus: true, // Prevents dismissing of toast on hover
+    //             style: {
+    //               background: "#87B07B",
+    //             },
+    //             onClick: function(){} // Callback after click
+    //           }).showToast();
+    //     }
+    // }
 
     return (
         <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
-              <nav className="w-full bg-blue-900">
+              {/* <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
                           <img className="w-10 h-10 md:w-auto" src={logo} alt="" id='home' onClick={(e)=>(handleClick(e))}/>
-                      </div>
-                      <div>
+                      </div> */}
+                      {/* <div>
                           <button onClick={() => setShow(!show)} className={`${show ? 'hidden' : ''} sm:block md:hidden text-gray-500 hover:text-blue-200 focus:text-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-50 ml-64`}>
                               <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" className="md:hidden icon icon-tabler icon-tabler-menu" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffff" fill="none" strokeLinecap="round">
                                   <path stroke="none" d="M0 0h24v24H0z" />
@@ -118,7 +118,7 @@ function Profile() {
                         <button className={`${authenticated ? 'md:block' : 'md:hidden'} focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden bg-transparent transition duration-150 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`} id='logout' onClick={(e)=>(handleClick(e))}>Log Out</button>
                       </div>
                   </div>
-              </nav>
+              </nav> */}
               
 
               <div className='relative mb-20'>

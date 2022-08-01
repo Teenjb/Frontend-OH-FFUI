@@ -18,9 +18,72 @@ import am10 from "../Img/ABOUTME10.png";
 import am11 from "../Img/ABOUTME11.png";
 import am12 from "../Img/ABOUTME12.jpg";
 
+function Carousel(){
+    const items = [
+        {
+            position: 0,
+            el: document.getElementById('carousel-item-1')
+        },
+        {
+            position: 1,
+            el: document.getElementById('carousel-item-2')
+        },
+        {
+            position: 2,
+            el: document.getElementById('carousel-item-3')
+        },
+        {
+            position: 3,
+            el: document.getElementById('carousel-item-4')
+        },
+    ];
+    
+    const options = {
+        activeItemPosition: 1,
+        interval: 3000,
+    
+        indicators: {
+            activeClasses: 'bg-white dark:bg-gray-800',
+            inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
+            items: [
+                {
+                    position: 0,
+                    el: document.getElementById('carousel-indicator-1')
+                },
+                {
+                    position: 1,
+                    el: document.getElementById('carousel-indicator-2')
+                },
+                {
+                    position: 2,
+                    el: document.getElementById('carousel-indicator-3')
+                },
+                {
+                    position: 3,
+                    el: document.getElementById('carousel-indicator-4')
+                },
+            ]
+        },
+    
+        // callback functions
+        onNext: () => {
+            console.log('next slider item is shown');
+        },
+        onPrev: ( ) => {
+            console.log('previous slider item is shown');
+        },
+        onChange: ( ) => {
+            console.log('new slider item has been shown');
+        }
+    };
+
+    const carousel = new Carousel(items, options);
+    
+}
+
 function About() {
     return (
-        <div className="grid h-full bg-white overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               {/* <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
@@ -79,173 +142,45 @@ function About() {
                         <h1 className="font-serif py-10 text-white text-5xl xl:text-6xl text-center leading-7 md:leading-10">About Us</h1>
                     </div>
                 </div>
-                <div>
-                    <div className='container mx-auto py-10 px-5 grid'>
-                    <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
-                    <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-                        <button
-                        type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="Slide 1"
-                        ></button>
-                        <button
-                        type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"
-                        ></button>
-                        <button
-                        type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"
-                        ></button>
+                
+            </div>
+            
+            <div class="relative">
+                <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                    <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
+                        <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                        <img src="/docs/images/carousel/carousel-1.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
                     </div>
-                    <div class="carousel-inner relative w-full overflow-hidden">
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am1}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am2}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am3}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am4}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am5}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am6}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung FF UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am7}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am8}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am9}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am10}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am11}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
-                        <div class="carousel-item active relative float-left w-full">
-                        <img
-                            src={am12}
-                            class="block w-full"
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Gedung RIK UI</h5>
-                        </div>
-                        </div>
+                    <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
+                        <img src={am1} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
                     </div>
-                    <button
-                        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-                        type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev"
-                    >
-                        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-                        type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="next"
-                    >
-                        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
+                        <img src={am2} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
+                    </div>
+                    <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
+                        <img src={am3} class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
                     </div>
                 </div>
+                <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                    <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
+                    <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
+                    <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"></button>
+                    <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"></button>
+                </div>
+                <button id="data-carousel-prev" type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+                    <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button id="data-carousel-next" type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+                    <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+
                 <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
                         <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Sejarah</h1>
@@ -254,7 +189,6 @@ function About() {
                             Farmasi UI didirikan pada bulan September 1965 di Jl. Diponegoro, Jakarta Pusat. Jurusan Farmasi UI awalnya berada di bawah Fakultas Ilmu Pasti dan Ilmu Alam (FIPIA) yang kemudian berdasarkan Kepres No. 44 tahun 1982, berubah menjadi Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA). Pada tanggal 18 Januari 2003, Jurusan Farmasi FMIPA UI berubah menjadi Departemen Farmasi FMIPA UI. Selanjutnya dalam rangka mendukung pendirian Rumpun Ilmu Kesehatan, pada tanggal 29 November 2011, Departemen Farmasi FMIPA UI berubah menjadi Fakultas Farmasi Universitas Indonesia (FF UI).</p>
                         </div>
                     </div>
-                </div>
                 <div className="container mx-auto grid md:flex md:flex-col items-center py-6 sm:py-12">
                     <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
                         <h1 className="font-serif py-10 text-black text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">Program Pendidikan</h1>
@@ -262,13 +196,13 @@ function About() {
                         <div class="container bg-[#87b07b] rounded-md flex items-center justify-center">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <div className='container rounded-md  px-5 py-5'>
+                                <div className='container rounded-md bg-[#f0eaa3] px-10 py-10'>
                                     <h3 className='font-serif text-3xl text-black pb-2 mb-3'>Program Pendidikan Sarjana (S1) Farmasi</h3>
                                     <p className='text-medium'>Dalam jenjang ini, diberikan dasar–dasar ilmu pengetahuan dan teknologi bidang kefarmasian. Tersedia dalam dua kelas yaitu S1 Reguler dan S1 Paralel. Lulusan akan mendapatkan gelar S.Farm.</p>
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <div className='container rounded-md bg-[#f0eaa3] px-10 py-10'>
+                                <div className='container rounded-md px-10 py-10'>
                                     <h3 className='font-serif text-3xl text-black pb-2 mb-3'>Program Pendidikan Profesi Apoteker</h3>
                                     <p className='text-medium'>Program pendidikan ini diperlukan untuk memperoleh keahlian dengan gelar Apoteker/Farmasis (Apt.). Merupakan salah satu program pendidikan setelah Program Sarjana (S1) Farmasi. Terdapat 2 macam peminatan yaitu:
                                     Praktek Kerja Profesi Apoteker di Industri Farmasi dan Praktek Kerja Profesi Apoteker di Rumah Sakit dan Puskesmas
@@ -276,14 +210,14 @@ function About() {
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <div className='container rounded-md text-white md:text-black md:bg-[#f0eaa3] md:px-10 py-10'>
-                                    <h3 className='font-serif text-3xl text-black pb-2'>Program Pendidikan Magister Ilmu Kefarmasian (S2)</h3>
+                                <div className='container rounded-md  bg-[#f0eaa3] md:bg-transparent md:text-black px-10 py-10'>
+                                    <h3 className='font-serif text-3xl text-black pb-2 mb-3'>Program Pendidikan Magister Ilmu Kefarmasian (S2)</h3>
                                     <p className='text-medium'>Lulusan program pendidikan ini akan mendapatkan gelar M.Farm. Terdiri dari 6 peminatan yaitu:
                                     Program Pendidikan Magister Farmasi kekhususan Biologi Farmasi, Program Pendidikan Magister Farmasi kekhususan Farmasi Klinik, Program Pendidikan Magister Farmasi kekhususan Kimia Farmasi, Program Pendidikan Magister Farmasi kekhususan Teknologi Farmasi, Program Pendidikan Magister Farmasi kekhususan Bioteknologi Farmasi, Program Pendidikan Magister Farmasi kekhususan Farmakologi dan Toksikologi</p>
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <div className='container rounded-md bg-[#f0eaa3] md:text-white md:bg-transparent px-10 py-10'>
+                                <div className='container rounded-md  md:bg-[#f0eaa3] px-10 py-10'>
                                     <h3 className='font-serif text-3xl text-black pb-2 mb-3'>Program Pendidikan Magister Ilmu Herbal (S2)</h3>
                                     <p className='text-medium'>Lulusan program pendidikan ini akan mendapatkan gelar M.Farm. Terdiri dari 2 peminatan yaitu:
                                     Program Pendidikan Magister Ilmu Herbal Kekhususan Herbal Medis dan Program Pendidikan Magister Ilmu Herbal Kekhususan Herbal dalam Keperawatan dan Estetika Indonesia
@@ -291,7 +225,7 @@ function About() {
                                 </div>
                             </div>
                             <div className='rounded-md px-10 py-10 w-auto text-center'>
-                                <div className='container rounded-md text-white px-5 py-5'>
+                                <div className='container rounded-md bg-[#f0eaa3] px-10 py-10'>
                                     <h3 className='font-serif text-3xl text-black pb-2 mb-3'>Doktor Ilmu Farmasi (S3)</h3>
                                     <p className='text-medium'>Program ini merupakan tingkat pendidikan tenaga farmasis yang paling tinggi secara formal dan lulusan akan mendapat gelar Dr. Program Doktor ini didasari kenyataan bahwa dalam kebutuhan penelitian bidang farmasi saat ini mencakup ilmu dasar farmasi serta ilmu terapan bidang farmasi klinik.</p>
                                 </div>
@@ -401,7 +335,6 @@ function About() {
                   </div>
               </footer>
             </div>
-        </div>
     );
 }
 
