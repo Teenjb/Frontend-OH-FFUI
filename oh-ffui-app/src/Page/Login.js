@@ -14,11 +14,15 @@ function Login (){
     const [identifier, setIdentifier] = useState(null);
     const [password, setPassword] = useState(null);
     const [token, setToken] = useState(null);
+    const [name, setName] = useState(null);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        localStorage.setItem('token', token);
+        const obj = {name: name, token: token};
+        console.log(obj);
+        localStorage.setItem('token', JSON.stringify(obj));
       }, [token]);
+      
     //function to handle any change on input
     const handleInputChange = (event) =>{
         const {id,value} = event.target;
@@ -45,7 +49,9 @@ function Login (){
                         password: $password
                     }
                 ){
-                    jwt
+                    jwt,user{
+                        username
+                    }
                 }
             }`,
             variables: {
@@ -83,6 +89,7 @@ function Login (){
                 onClick: function(){} // Callback after click
               }).showToast();
               setToken(response.data.data.login.jwt);
+              setName(response.data.data.login.user.username)
               window.location.href = '/';
         }
     }

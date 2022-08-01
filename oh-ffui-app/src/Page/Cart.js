@@ -16,7 +16,8 @@ function Cart() {
     const endpoint = "http://localhost:1337/api/preorders/create";
 
     useEffect(() => {
-        setToken(localStorage.getItem('token'));
+        const obj = JSON.parse(localStorage.getItem('token'));
+        setToken(obj.token);
     }, []);
 
 
@@ -41,6 +42,7 @@ function Cart() {
         const newCart = await cart.map(item => {
             if(item.id === id){
                 item.quantity = parseInt(value);
+                console.log(item.quantity);
             }
             return item;
         }
@@ -56,12 +58,12 @@ function Cart() {
 
     const handleFileChange = async (e)=>{
         const {files} = e.target;
+        console.log(files[0]);
         setPaymentProof(files[0]);
     }
 
     const handleOnSubmit = async (e)=>{
         e.preventDefault();
-        console.log(token);
         setLoading(true);
         const formData = new FormData();
         const data = '{"merchandises": ["8", "9"], "status": "Requested"}'
@@ -122,8 +124,8 @@ function Cart() {
                     <h1 className="font-serif text-2xl md:text-4xl">Shopping Cart</h1>
                     <h2 className="font-semibold text-xl">{cart.length} Items</h2>
                     </div>
-                    <div className="flex mt-10 mb-5">
-                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6">Product Details</h3>
+                    <div className="flex mt-10 mb-5 px-2">
+                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6">Product</h3>
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">Quantity</h3>
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/6 text-center">Price</h3>
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/6 text-center">Total</h3>
@@ -157,9 +159,9 @@ function Cart() {
                 </div>
                 </div>
                 {popup && <div>
-                    <div id="popup-modal" className="overflow-y-auto overflow-x-hidden fixed flex items-center justify-center top-0 right-0 left-0 z-30 h-modal h-full bg-black bg-opacity-30">
+                    <div id="popup-modal" className="overflow-y-auto overflow-x-hidden fixed flex items-center justify-center top-0 right-0 left-0 z-30 h-full bg-black bg-opacity-30">
                         <div className="relative p-4 w-full max-w-md h-full md:h-auto">
-                            <div className="relative bg-white rounded-lg shadow dark:bg-blue-900">
+                            <div className="relative bg-blue-900 rounded-lg shadow dark:bg-blue-900">
                                 <button id='close' type="button" className="absolute top-3 right-2.5 text-blue-200 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="popup-modal" onClick={(e)=>(handleClick(e))}>
                                     <svg aria-hidden="true" className="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                     <span className="sr-only">Close modal</span>

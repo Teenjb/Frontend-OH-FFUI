@@ -68,7 +68,9 @@ function Register(){
     },[username,email,whatsapp])
 
     useEffect(() => {
-        localStorage.setItem('token', token);
+        const obj = {name: username, token: token};
+        console.log(obj);
+        localStorage.setItem('token', JSON.stringify(obj));
       }, [token]);
 
     useEffect(() => {
