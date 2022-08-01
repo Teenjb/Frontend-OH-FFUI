@@ -87,8 +87,8 @@ function About() {
                     </div>
                 </div>
             </div>
-            <div className='container relative rounded-md mx-auto grid md:flex md:flex-col items-center py-6 sm:py-12'>
-                <div className='bg-cyan-700 rounded-md pt-8 px-10 lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10'>
+            <div className='container mx-auto flex flex-col items-center py-6 sm:py-12'>
+                <div className='w-11/12 md:w-2/3 lg:flex justify-center items-center flex-col'>
                 <Carousel>
                     <div>
                         <img src={am1}  alt=""/>
