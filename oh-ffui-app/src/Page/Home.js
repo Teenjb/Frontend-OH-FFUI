@@ -13,7 +13,6 @@ import sayFour from "../Img/Group 41.png";
 import pic2 from "../Img/Group 33.png";
 import pic1 from "../Img/Group 34.png";
 import pic3 from "../Img/Group 35.png";
-import bg from "../Img/Group 42.png";
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
@@ -28,8 +27,7 @@ function Home(){
         async function fetchData() {
             setLoading(true);
             const tokenLocal = JSON.parse(localStorage.getItem('token'));
-            console.log(tokenLocal);
-            if (tokenLocal !== null && tokenLocal !== "null") {
+            if (tokenLocal.token !== null && tokenLocal.token !== "null") {
                 setToken(tokenLocal.token);
                 setName(tokenLocal.name);
                 setAuthenticated(true);

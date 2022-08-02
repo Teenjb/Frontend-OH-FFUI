@@ -12,8 +12,8 @@ function Cart() {
     const [paymentProof, setPaymentProof] = useState(null);
     const [loading, setLoading] = useState(false);
     const [token, setToken] = useState(null);
-    const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
-    const endpoint = "http://localhost:1337/api/preorders/create";
+    const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
+    const hostendpoint = "http://localhost:1337/api/preorders/create";
 
     useEffect(() => {
         const obj = JSON.parse(localStorage.getItem('token'));
@@ -66,7 +66,7 @@ function Cart() {
         e.preventDefault();
         setLoading(true);
         const formData = new FormData();
-        const data = '{"merchandises": ["8", "9"], "status": "Requested"}'
+        const data = '{"merchandises": ["1", "2", "3"], "status": "Requested"}'
         formData.append('data', data);
         formData.append('files.paymentPhoto', paymentProof);
         console.log(formData);
@@ -124,7 +124,7 @@ function Cart() {
                     <h1 className="font-serif text-2xl md:text-4xl">Shopping Cart</h1>
                     <h2 className="font-semibold text-xl">{cart.length} Items</h2>
                     </div>
-                    <div className="flex mt-10 mb-5 px-2">
+                    <div className="flex mt-10 mb-5">
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6">Product</h3>
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">Quantity</h3>
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/6 text-center">Price</h3>

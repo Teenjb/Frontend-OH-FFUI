@@ -22,7 +22,7 @@ function Shop(){
     useEffect(() => {
         async function fetchData() {
             const tokenLocal = JSON.parse(localStorage.getItem('token'));
-            if (tokenLocal !== null && tokenLocal !== "null") {
+            if (tokenLocal.token !== null && tokenLocal.token !== "null") {
                 setToken(tokenLocal.token);
                 setName(tokenLocal.name);
                 setAuthenticated(true);

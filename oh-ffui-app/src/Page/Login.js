@@ -5,8 +5,8 @@ import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 const axios = require('axios');
-const hostEndpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const endpoint = "http://localhost:1337/";
+const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const hostendpoint = "http://localhost:1337/";
 
 function Login (){
 
@@ -22,7 +22,7 @@ function Login (){
         console.log(obj);
         localStorage.setItem('token', JSON.stringify(obj));
       }, [token]);
-      
+
     //function to handle any change on input
     const handleInputChange = (event) =>{
         const {id,value} = event.target;

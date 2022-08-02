@@ -9,7 +9,8 @@ function Submission() {
     const [namaProyek, setNamaProyek] = useState(null);
     const [jenisLomba, setJenisLomba] = useState(null);
     const [fileLomba, setFileLomba] = useState(null);
-    const endpoint = "http://localhost:1337/api/competitions/create";
+    const hostendpoint = "http://localhost:1337/api/competitions/create";
+    const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api/competitions/create";
     
     useEffect(() => {
         setToken(localStorage.getItem('token'));
