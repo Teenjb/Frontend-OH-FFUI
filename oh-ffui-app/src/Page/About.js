@@ -27,7 +27,7 @@ function About() {
 
 
     return (
-        <div className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
+        <div className="bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative" style={{ minHeight: 700 }}>
               {/* <nav className="w-full bg-blue-900">
                   <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
                       <div aria-label="Home. logo" role="img">
@@ -86,7 +86,7 @@ function About() {
                         <h1 className="font-serif py-10 text-white text-5xl xl:text-6xl text-center leading-7 md:leading-10">About Us</h1>
                     </div>
                 </div>
-            </div>
+            <div  className='container mx-auto flex flex-col items-center py-12'>
             <div className='container mx-auto flex flex-col items-center py-6 sm:py-12'>
                 <div className='w-11/12 md:w-2/3 lg:flex justify-center items-center flex-col'>
                 <Carousel>
@@ -271,6 +271,8 @@ function About() {
                         </div>
                     </div>
                 </div>
+                </div>
+                 </div>
                 </div>
 
                 <footer className='w-full border-b bg-blue-900'>
