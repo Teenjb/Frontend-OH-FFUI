@@ -9,6 +9,7 @@ import About from './Page/About';
 import Profile from './Page/Profile';
 import Submission from './Page/Submission';
 import Tickets from './Page/Tickets';
+import TicketsNot from './Page/TicketsNot';
 
 import React from "react";
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/tickets" element={<Tickets />} />
+            <Route exact path="/ticketsnot" element={<TicketsNot />} />
             <Route exact path="/submission" element={<Submission />} />
             <Route
               path="*"
