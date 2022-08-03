@@ -12,8 +12,8 @@ function Cart() {
   const [paymentProof, setPaymentProof] = useState(null);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
-  const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
-  const hostendpoint = "http://localhost:1337/api/preorders/create";
+  const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
+  const endpoint = "http://localhost:1337/api/preorders/create";
 
   useEffect(() => {
     const obj = JSON.parse(localStorage.getItem("token"));
