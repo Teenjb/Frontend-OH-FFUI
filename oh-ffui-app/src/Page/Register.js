@@ -197,7 +197,7 @@ function Register() {
         fullName: name,
         phoneNumber: whatsapp,
         schoolOrigin: schoolOrigin,
-        address: `${alamat}, ${kodePos}, ${kota}, ${provinsi}`,
+        address: `${alamat}, ${kota}, ${provinsi}, ${kodePos}`,
       },
     };
     const response = await axios.post(endpoint + "graphql", graphqlQuery, {

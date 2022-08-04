@@ -47,6 +47,12 @@ function Header() {
     if (id === "user") {
       window.location.href = "/profile";
     }
+    if (id === "tickets") {
+      window.location.href = "/tickets";
+    }
+    if (id === "cart") {
+      window.location.href = "/cart";
+    }
     if (id === "logout") {
       localStorage.removeItem("token");
       setToken(null);
@@ -140,7 +146,9 @@ function Header() {
                 </a>
               </li>
               <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                <a>Tickets</a>
+                <a id="tickets" onClick={(e) => handleClick(e)}>
+                  Tickets
+                </a>
               </li>
               <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                 <a id="submission" onClick={(e) => handleClick(e)}>

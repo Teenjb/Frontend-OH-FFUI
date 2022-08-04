@@ -12,12 +12,17 @@ function Cart() {
   const [paymentProof, setPaymentProof] = useState(null);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
-  const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
-  const endpoint = "http://localhost:1337/api/preorders/create";
+  const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
+  const hostendpoint = "http://localhost:1337/api/preorders/create";
 
   useEffect(() => {
-    const obj = JSON.parse(localStorage.getItem("token"));
-    setToken(obj.token);
+    const tokenLocal = JSON.parse(localStorage.getItem("token"));
+    console.log(tokenLocal);
+    if (tokenLocal) {
+        if (tokenLocal.token !== null && tokenLocal.token !== "null") {
+        setToken(tokenLocal.token);
+        }
+    }
   }, []);
 
   const handleClick = (event) => {
@@ -26,6 +31,7 @@ function Cart() {
       window.location.href = "/shop";
     }
     if (id === "checkout") {
+        console.log(cart);
       setPopup(true);
     }
     if (id === "close") {
@@ -41,7 +47,6 @@ function Cart() {
     const newCart = await cart.map((item) => {
       if (item.id === id) {
         item.quantity = parseInt(value);
-        console.log(item.quantity);
       }
       return item;
     });
@@ -56,7 +61,6 @@ function Cart() {
 
   const handleFileChange = async (e) => {
     const { files } = e.target;
-    console.log(files[0]);
     setPaymentProof(files[0]);
   };
 
@@ -78,6 +82,8 @@ function Cart() {
       },
     }).then((res) => {
       console.log(res);
+      setCart(null);
+      localStorage.removeItem("cart");
       setLoading(false);
       setPopup(false);
     });

@@ -9,50 +9,58 @@ function Submission() {
   const [namaProyek, setNamaProyek] = useState(null);
   const [jenisLomba, setJenisLomba] = useState(null);
   const [fileLomba, setFileLomba] = useState(null);
-  const [jenisLombaFlag, setJenisLombaFlag] = useState(false);
+  const [jenisLombaFlag, setJenisLombaFlag] = useState(true);
   const endpoint = "http://localhost:1337/api/competitions/create";
+  // const checkEndpoint =
+  //   "http://localhost:1337/api/competitions/checkMyCompetition";
   const checkEndpoint =
-    "http://localhost:1337/api/competitions/checkMyCompetition";
+    "https://api-oh-ffui-2022.herokuapp.com/api/competitions/checkMyCompetition";
   const hostendpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/competitions/create";
 
   useEffect(() => {
     const obj = JSON.parse(localStorage.getItem("token"));
-    setToken(obj.token);
+    if (obj !== null) {
+      setToken(obj.token);
+    }
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
       checkMyCompetition();
-    }, 500);
+    }, 250);
   }, [jenisLomba]);
 
   async function checkMyCompetition() {
-    let config = {
-      headers: { Authorization: `Bearer ${token}` },
-      params: {
-        jenisLomba: jenisLomba,
-      },
-    };
+    if (jenisLomba !== null) {
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+        params: {
+          jenisLomba: jenisLomba,
+        },
+      };
 
-    await axios
-      .get(checkEndpoint, config)
-      .then((response) => {
-        if (response.data.errors) {
-          console.log(response.data);
-        } else {
-          if (response.data.status === "Competition exists") {
-            setJenisLombaFlag(false);
-            console.log("Competition exists");
+      await axios
+        .get(checkEndpoint, config)
+        .then((response) => {
+          if (response.data.errors) {
+            console.log(response.data);
           } else {
-            setJenisLombaFlag(true);
-            console.log("Competition does not exist");
+            if (response.data.status === "Competition exists") {
+              setJenisLombaFlag(false);
+              console.log("Competition exists");
+            } else {
+              setJenisLombaFlag(true);
+              console.log("Competition does not exist");
+            }
           }
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      setJenisLombaFlag(false);
+    }
   }
 
   const handleOnSelect = (e) => {
@@ -126,7 +134,7 @@ function Submission() {
         </div>
       )}
       <div
-        className="bg-white h-screen overflow-y-hidden relative"
+        className="bg-white h-full overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         <div className="min-h-full flex">
@@ -177,16 +185,18 @@ function Submission() {
                           value={jenisLomba}
                           onChange={(e) => handleOnSelect(e)}
                           className={`${
-                            !jenisLombaFlag ? "border-red-500" : "border-gray-300"
+                            !jenisLombaFlag
+                              ? "border-red-500"
+                              : "border-gray-300"
                           }appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
                         >
-                          <option value="Select" disabled>Pilih Jenis Lomba</option>
+                          <option value="Select">Pilih Jenis Lomba</option>
                           <option value="Desain">Desain</option>
                           <option value="Poster">Poster</option>
                         </select>
                         {!jenisLombaFlag && (
                           <div className="block text-xs mt-1 font-medium text-red-500">
-                            Submission for this Competition is Already Taken
+                            Please select a valid Competition
                           </div>
                         )}
                       </div>
@@ -276,9 +286,14 @@ function Submission() {
                     </div>
 
                     <div>
-                      <button disabled={jenisLombaFlag ? false : true}
+                      <button
+                        disabled={!jenisLombaFlag}
                         type="submit"
-                        className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
+                        className={`${
+                          jenisLombaFlag
+                            ? "text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
+                            : "text-gray-400 bg-white border-gray-500"
+                        } w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`}
                         onClick={(e) => handleOnSubmit(e)}
                       >
                         Upload
