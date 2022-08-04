@@ -47,6 +47,9 @@ function Header() {
     if (id === "user") {
       window.location.href = "/profile";
     }
+    if (id === "cart") {
+        window.location.href = "/cart";
+    }
     if (id === "logout") {
       localStorage.removeItem("token");
       setToken(null);
