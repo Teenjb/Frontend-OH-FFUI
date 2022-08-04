@@ -1285,6 +1285,56 @@ input:checked + .toggle-bg {
   margin-bottom: 1rem;
 }
 
+#root .my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#root .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#root .my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#root .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#root .my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#root .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#root .my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#root .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#root .my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#root .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #root .ml-4 {
   margin-left: 1rem;
 }
@@ -1475,6 +1525,14 @@ input:checked + .toggle-bg {
 
 #root .mb-4 {
   margin-bottom: 1rem;
+}
+
+#root .mt-20 {
+  margin-top: 5rem;
+}
+
+#root .mt-32 {
+  margin-top: 8rem;
 }
 
 #root .block {
@@ -3371,6 +3429,56 @@ input:checked + .toggle-bg {
   padding-bottom: 5rem;
 }
 
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#root .px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 #root .pt-10 {
   padding-top: 2.5rem;
 }
@@ -3443,12 +3551,24 @@ input:checked + .toggle-bg {
   padding-top: 5rem;
 }
 
+#root .pt-24 {
+  padding-top: 6rem;
+}
+
+#root .pt-28 {
+  padding-top: 7rem;
+}
+
 #root .text-left {
   text-align: left;
 }
 
 #root .text-center {
   text-align: center;
+}
+
+#root .align-middle {
+  vertical-align: middle;
 }
 
 #root .font-serif {
@@ -3663,6 +3783,51 @@ input:checked + .toggle-bg {
 #root .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#root .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#root .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#root .text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 #root .font-bold {
@@ -4129,6 +4294,11 @@ input:checked + .toggle-bg {
 #root .text-pink-500 {
   --tw-text-opacity: 1;
   color: rgb(231 70 148 / var(--tw-text-opacity));
+}
+
+#root .text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 #root .underline {
