@@ -196,7 +196,7 @@ function Submission() {
                         </select>
                         {!jenisLombaFlag && (
                           <div className="block text-xs mt-1 font-medium text-red-500">
-                            Please select a valid Competition
+                            Please select a valid competition type
                           </div>
                         )}
                       </div>
