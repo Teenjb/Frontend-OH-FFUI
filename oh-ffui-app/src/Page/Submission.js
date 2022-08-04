@@ -11,14 +11,18 @@ function Submission() {
   const [fileLomba, setFileLomba] = useState(null);
   const [jenisLombaFlag, setJenisLombaFlag] = useState(true);
   const endpoint = "http://localhost:1337/api/competitions/create";
+  // const checkEndpoint =
+  //   "http://localhost:1337/api/competitions/checkMyCompetition";
   const checkEndpoint =
-    "http://localhost:1337/api/competitions/checkMyCompetition";
+    "https://api-oh-ffui-2022.herokuapp.com/api/competitions/checkMyCompetition";
   const hostendpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/competitions/create";
 
   useEffect(() => {
     const obj = JSON.parse(localStorage.getItem("token"));
-    setToken(obj.token);
+    if (obj !== null) {
+      setToken(obj.token);
+    }
   }, []);
 
   useEffect(() => {
@@ -130,7 +134,7 @@ function Submission() {
         </div>
       )}
       <div
-        className="bg-white h-screen overflow-y-hidden relative"
+        className="bg-white h-full overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         <div className="min-h-full flex">

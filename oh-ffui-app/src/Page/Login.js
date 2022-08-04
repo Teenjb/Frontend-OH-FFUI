@@ -5,8 +5,8 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const endpoint = "http://localhost:1337/";
+const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const hostendpoint = "http://localhost:1337/";
 
 function Login() {
   //variable used in this page
