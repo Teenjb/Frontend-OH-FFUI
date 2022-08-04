@@ -9,21 +9,66 @@ function Submission() {
   const [namaProyek, setNamaProyek] = useState(null);
   const [jenisLomba, setJenisLomba] = useState(null);
   const [fileLomba, setFileLomba] = useState(null);
-  const hostendpoint = "http://localhost:1337/api/competitions/create";
-  const endpoint =
+  const [jenisLombaFlag, setJenisLombaFlag] = useState(false);
+  const endpoint = "http://localhost:1337/api/competitions/create";
+  const checkEndpoint =
+    "http://localhost:1337/api/competitions/checkMyCompetition";
+  const hostendpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/competitions/create";
 
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
+    const obj = JSON.parse(localStorage.getItem("token"));
+    setToken(obj.token);
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      checkMyCompetition();
+    }, 500);
+  }, [jenisLomba]);
+
+  async function checkMyCompetition() {
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+      params: {
+        jenisLomba: jenisLomba,
+      },
+    };
+
+    await axios
+      .get(checkEndpoint, config)
+      .then((response) => {
+        if (response.data.errors) {
+          console.log(response.data);
+        } else {
+          if (response.data.status === "Competition exists") {
+            setJenisLombaFlag(false);
+            console.log("Competition exists");
+          } else {
+            setJenisLombaFlag(true);
+            console.log("Competition does not exist");
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  const handleOnSelect = (e) => {
+    const { value } = e.target;
+
+    if (value === "Select") {
+      setJenisLomba(null);
+    } else {
+      setJenisLomba(value);
+    }
+  };
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
     if (id === "namaProyek") {
       setNamaProyek(value);
-    }
-    if (id === "jenisLomba") {
-      setJenisLomba(value);
     }
   };
 
@@ -35,9 +80,11 @@ function Submission() {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
+    console.log(token);
     const formData = new FormData();
     const data = `{"namaProyek": "${namaProyek}", "jenisLomba": "${jenisLomba}"}`;
     formData.append("data", data);
+    console.log(data);
     formData.append("files.fileLomba", fileLomba);
     axios({
       method: "POST",
@@ -125,17 +172,23 @@ function Submission() {
                         {" "}
                         Jenis Lomba{" "}
                       </label>
-                      <div className="mt-1">
-                        <input
-                          id="jenisLomba"
-                          name="name"
-                          type="name"
-                          autocomplete="name"
-                          required
-                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      <div>
+                        <select
                           value={jenisLomba}
-                          onChange={(e) => handleInputChange(e)}
-                        />
+                          onChange={(e) => handleOnSelect(e)}
+                          className={`${
+                            !jenisLombaFlag ? "border-red-500" : "border-gray-300"
+                          }appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                        >
+                          <option value="Select" disabled>Pilih Jenis Lomba</option>
+                          <option value="Desain">Desain</option>
+                          <option value="Poster">Poster</option>
+                        </select>
+                        {!jenisLombaFlag && (
+                          <div className="block text-xs mt-1 font-medium text-red-500">
+                            Submission for this Competition is Already Taken
+                          </div>
+                        )}
                       </div>
                     </div>
 
@@ -223,7 +276,7 @@ function Submission() {
                     </div>
 
                     <div>
-                      <button
+                      <button disabled={jenisLombaFlag ? false : true}
                         type="submit"
                         className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
                         onClick={(e) => handleOnSubmit(e)}
