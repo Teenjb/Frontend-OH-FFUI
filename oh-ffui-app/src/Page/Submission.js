@@ -10,12 +10,10 @@ function Submission() {
   const [jenisLomba, setJenisLomba] = useState(null);
   const [fileLomba, setFileLomba] = useState(null);
   const [jenisLombaFlag, setJenisLombaFlag] = useState(true);
-  const endpoint = "http://localhost:1337/api/competitions/create";
-  // const checkEndpoint =
-  //   "http://localhost:1337/api/competitions/checkMyCompetition";
+  const [dataConfirm, setDataConfirm] = useState(false);
   const checkEndpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/competitions/checkMyCompetition";
-  const hostendpoint =
+  const endpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/competitions/create";
 
   useEffect(() => {
@@ -48,10 +46,8 @@ function Submission() {
           } else {
             if (response.data.status === "Competition exists") {
               setJenisLombaFlag(false);
-              console.log("Competition exists");
             } else {
               setJenisLombaFlag(true);
-              console.log("Competition does not exist");
             }
           }
         })
@@ -74,9 +70,12 @@ function Submission() {
   };
 
   const handleInputChange = (event) => {
-    const { id, value } = event.target;
+    const { id, checked, value } = event.target;
     if (id === "namaProyek") {
       setNamaProyek(value);
+    }
+    if (id === "dataConfirm") {
+      setDataConfirm(checked);
     }
   };
 
@@ -105,6 +104,7 @@ function Submission() {
     }).then((res) => {
       console.log(res);
       setLoading(false);
+      window.location.href = "/home";
     });
   };
 
@@ -134,7 +134,7 @@ function Submission() {
         </div>
       )}
       <div
-        className="bg-white h-full overflow-y-hidden relative"
+        className="bg-white h-screen overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         <div className="min-h-full flex">
@@ -270,7 +270,9 @@ function Submission() {
                         <input
                           id="dataConfirm"
                           name="remember-me"
+                          onChange={(e) => handleInputChange(e)}
                           type="checkbox"
+                          value={dataConfirm}
                           className="h-6 w-6 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                         />
                         <label
@@ -287,10 +289,10 @@ function Submission() {
 
                     <div>
                       <button
-                        disabled={!jenisLombaFlag}
+                        disabled={!dataConfirm || !jenisLombaFlag || fileLomba === null}
                         type="submit"
                         className={`${
-                          jenisLombaFlag
+                          jenisLombaFlag && fileLomba !== null && dataConfirm
                             ? "text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
                             : "text-gray-400 bg-white border-gray-500"
                         } w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`}
