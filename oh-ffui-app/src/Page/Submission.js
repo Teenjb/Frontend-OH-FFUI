@@ -134,7 +134,7 @@ function Submission() {
         </div>
       )}
       <div
-        className="bg-white h-screen overflow-y-hidden relative"
+        className="bg-white h-full overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         <div className="min-h-full flex">
