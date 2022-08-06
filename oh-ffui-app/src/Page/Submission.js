@@ -143,7 +143,7 @@ function Submission() {
               <div className="">
                 <img className="h-12 w-auto" src={logo} alt="Workflow" />
                 <h2 className="mt-6 text-3xl font-extrabold text-middle text-gray-900">
-                  Submission htmlFor Lomba
+                  Submission For Lomba
                 </h2>
               </div>
 
