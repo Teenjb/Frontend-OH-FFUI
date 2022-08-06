@@ -6,8 +6,8 @@ import axios from "axios";
 function Submission() {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [namaProyek, setNamaProyek] = useState(null);
-  const [jenisLomba, setJenisLomba] = useState(null);
+  const [namaProyek, setNamaProyek] = useState("");
+  const [jenisLomba, setJenisLomba] = useState("");
   const [fileLomba, setFileLomba] = useState(null);
   const [jenisLombaFlag, setJenisLombaFlag] = useState(true);
   const [dataConfirm, setDataConfirm] = useState(false);
@@ -30,7 +30,7 @@ function Submission() {
   }, [jenisLomba]);
 
   async function checkMyCompetition() {
-    if (jenisLomba !== null) {
+    if (jenisLomba !== "") {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
         params: {
@@ -129,7 +129,7 @@ function Submission() {
                 fill="currentFill"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )}
@@ -143,7 +143,7 @@ function Submission() {
               <div className="">
                 <img className="h-12 w-auto" src={logo} alt="Workflow" />
                 <h2 className="mt-6 text-3xl font-extrabold text-middle text-gray-900">
-                  Submission for Lomba
+                  Submission htmlFor Lomba
                 </h2>
               </div>
 
@@ -152,7 +152,7 @@ function Submission() {
                   <form action="#" method="POST" className="space-y-6">
                     <div>
                       <label
-                        for="name"
+                        htmlFor="name"
                         className="block text-sm font-medium text-gray-700"
                       >
                         {" "}
@@ -163,7 +163,7 @@ function Submission() {
                           id="namaProyek"
                           name="name"
                           type="name"
-                          autocomplete="name"
+                          autoComplete="name"
                           required
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           value={namaProyek}
@@ -174,7 +174,7 @@ function Submission() {
 
                     <div>
                       <label
-                        for="name"
+                        htmlFor="name"
                         className="block text-sm font-medium text-gray-700"
                       >
                         {" "}
@@ -204,13 +204,13 @@ function Submission() {
 
                     <div>
                       <label
-                        for="confirmPassword"
+                        htmlFor="confirmPassword"
                         className="block text-sm font-medium text-gray-700"
                       >
                         {" "}
                         Upload File{" "}
                       </label>
-                      <div class="flex justify-center items-center w-full">
+                      <div className="flex justify-center items-center w-full">
                         <label
                           htmlFor="dropzone-file"
                           className="flex flex-col justify-center items-center w-full h-64 mb-10 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 hover:bg-gray-100"
@@ -257,6 +257,7 @@ function Submission() {
                           )}
                           <input
                             id="dropzone-file"
+                            value={fileLomba}
                             onChange={(e) => handleFileChange(e)}
                             type="file"
                             className="hidden"
@@ -276,7 +277,7 @@ function Submission() {
                           className="h-6 w-6 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                         />
                         <label
-                          for="remember-me"
+                          htmlFor="remember-me"
                           className="ml-5 block text-sm text-gray-900"
                         >
                           {" "}

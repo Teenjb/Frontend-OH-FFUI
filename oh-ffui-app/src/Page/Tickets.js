@@ -6,6 +6,7 @@ import Footer from "../Component/Footer";
 
 function Tickets() {
   const [tickets, setTickets] = useState(null);
+  const [ticketCount, setTicketCount] = useState(null);
   const [token, setToken] = useState(null);
   const [name, setName] = useState(null);
   const [file, setFile] = useState(null);
@@ -15,19 +16,23 @@ function Tickets() {
 
   const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api";
 
-  useEffect(() => {
-    const tokenLocal = JSON.parse(localStorage.getItem("token"));
-    console.log(tokenLocal);
-    if (tokenLocal) {
-      if (tokenLocal.token !== null && tokenLocal.token !== "null") {
-        setToken(tokenLocal.token);
-        setName(tokenLocal.name);
-      }
-    }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
+  function loadTicketsCount() {
+    axios
+      .get(endpoint + "/tickets/count"
+      , {
+        headers: {
+          Authorization: "Bearer " + token
+          }
+          })
+      .then((res) => {
+        setTicketCount(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        //console.log(err);
+      });
+  }
+  function loadTickets() {
     axios
       .get(endpoint + "/tickets/getTicket", {
         headers: {
@@ -44,9 +49,33 @@ function Tickets() {
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
+  }
+
+  useEffect(() => {
+    const tokenLocal = JSON.parse(localStorage.getItem("token"));
+    if (tokenLocal) {
+      if (tokenLocal.token !== null && tokenLocal.token !== "null") {
+        setToken(tokenLocal.token);
+        setName(tokenLocal.name);
+        loadTicketsCount();
+      }
+    }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if(token !== null){
+      loadTickets();
+    }
   }, [token]);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      loadTicketsCount();
+    }, 3000);
+  }, [ticketCount]);
 
   const handleFileChange = async (e) => {
     const { files } = e.target;
@@ -84,9 +113,8 @@ function Tickets() {
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => {
-      console.log(res);
       setLoading(false);
-      window.location.href = "/home";
+      window.location.href = "/tickets";
     });
   };
 
@@ -125,22 +153,25 @@ function Tickets() {
             <h1 className="font-serif pt-20 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
               Buy Tickets
             </h1>
-            <div class="flex justify-center my-5 mx-auto py-10 px-5">
-              <div class="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlocked The Ticket!
                 </h1>
-                <div class="p-6 flex flex-col justify-start px-10">
-                  <h5 class="text-gray-900 text-xl font-medium mb-2">
+                {ticketCount && <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                {75 - ticketCount.countHybrid} left
+                </h1>}
+                <div className="p-6 flex flex-col justify-start px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
                     Open House Fakultas Farmasi UI Vol.III - Hybrid
                   </h5>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     19 November 2022 - Online
                   </p>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     26 November 2022 - Fakultas Farmasi UI, Depok
                   </p>
-                  <p class="text-pink-500 text-md font-semibold">
+                  <p className="text-pink-500 text-md font-semibold">
                     Price : Rp. 35.000
                   </p>
                   <button
@@ -157,22 +188,25 @@ function Tickets() {
             <h1 className="font-serif  text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
               Or
             </h1>
-            <div class="flex justify-center my-5 mx-auto py-10 px-5">
-              <div class="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlocked The Ticket!
                 </h1>
-                <div class="p-6 flex flex-col justify-start px-10">
-                  <h5 class="text-gray-900 text-xl font-medium mb-2">
+                {ticketCount && <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                  {500 - ticketCount.countOnline} left
+                </h1>}
+                <div className="p-6 flex flex-col justify-start px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
                     Open House Fakultas Farmasi UI Vol.III - Online
                   </h5>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     19 November 2022 - Online
                   </p>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     26 November 2022 - Online
                   </p>
-                  <p class="text-pink-500 text-md font-semibold">
+                  <p className="text-pink-500 text-md font-semibold">
                     Price : Rp. 25.000
                   </p>
                   <button
@@ -190,23 +224,30 @@ function Tickets() {
         )}
         {tickets && (
           <>
-            <div class="flex justify-center my-5 mx-auto py-10 px-5">
-              <div class="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-pink-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Tickets to the Best Day of Your Life!
                 </h1>
-                <div class="p-6 flex flex-col justify-center px-10">
-                  <h5 class="text-gray-900 text-xl font-medium mb-2">
-                    Open House Fakultas Farmasi UI Vol.III - {tickets.ticketType}
+                <div className="p-6 flex flex-col justify-center px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
+                    Open House Fakultas Farmasi UI Vol.III -{" "}
+                    {tickets.ticketType}
                   </h5>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     19 November 2022 - Online
                   </p>
-                  <p class="text-gray-700 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-4">
                     26 November 2022 - {tickets.ticketType}
                   </p>
-                  <p class="text-pink-500 text-md font-semibold">
-                    Price : {tickets.ticketType === "Hybrid" ? "Rp. 35.000" : "Rp. 25.000"}
+                  <p className="text-gray-700 text-sm mb-4">
+                    ID: {tickets.ticketID}
+                  </p>
+                  <p className="text-pink-500 text-md font-semibold">
+                    Price :{" "}
+                    {tickets.ticketType === "Hybrid"
+                      ? "Rp. 35.000"
+                      : "Rp. 25.000"}
                   </p>
                 </div>
               </div>
@@ -324,7 +365,11 @@ function Tickets() {
                   <button
                     data-modal-toggle="popup-modal"
                     type="button"
-                    className= {`${file ? 'bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800':"text-gray-400 bg-white border-gray-500"} text-white font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
+                    className={`${
+                      file
+                        ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
+                        : "text-gray-400 bg-white border-gray-500"
+                    } text-white font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                     onClick={(e) => handleOnSubmit(e)}
                   >
                     Submit

@@ -10,15 +10,14 @@ const hostendpoint = "http://localhost:1337/";
 
 function Login() {
   //variable used in this page
-  const [identifier, setIdentifier] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
   const [token, setToken] = useState(null);
   const [name, setName] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const obj = { name: name, token: token };
-    console.log(obj);
     localStorage.setItem("token", JSON.stringify(obj));
   }, [token]);
 
@@ -116,7 +115,7 @@ function Login() {
                 fill="currentFill"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )}
@@ -139,7 +138,7 @@ function Login() {
                   <form action="#" method="POST" className="space-y-6">
                     <div>
                       <label
-                        for="email"
+                        htmlFor="email"
                         className="block text-sm font-medium text-gray-700"
                       >
                         {" "}
@@ -150,7 +149,7 @@ function Login() {
                           id="identifier"
                           name="email"
                           type="email"
-                          autocomplete="email"
+                          autoComplete="email"
                           required
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           value={identifier}
@@ -161,7 +160,7 @@ function Login() {
 
                     <div className="space-y-1">
                       <label
-                        for="password"
+                        htmlFor="password"
                         className="block text-sm font-medium text-gray-700"
                       >
                         {" "}
@@ -172,7 +171,7 @@ function Login() {
                           id="password"
                           name="password"
                           type="password"
-                          autocomplete="current-password"
+                          autoComplete="current-password"
                           required
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           value={password}
@@ -189,7 +188,7 @@ function Login() {
                           className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                         />
                         <label
-                          for="remember-me"
+                          htmlFor="remember-me"
                           className="ml-2 block text-sm text-gray-900"
                         >
                           {" "}
