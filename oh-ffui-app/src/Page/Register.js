@@ -2,27 +2,29 @@ import "../index.css";
 
 import logo from "../Img/logo.png";
 import React, { useEffect, useState } from "react";
+import Loading from "../Component/Loading";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
 const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
 const hostendpoint = "http://localhost:1337/";
-const provinsiEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
+const provinsiEndpoint =
+  "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
 const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
 
 function Register() {
   const [name, setName] = useState(null);
-  const [username, setUsername] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
-  const [whatsapp, setWhatsapp] = useState(null);
-  const [schoolOrigin, setSchoolOrigin] = useState(null);
-  const [provinsi, setProvinsi] = useState(null);
-  const [kota, setKota] = useState(null);
-  const [kodePos, setKodePos] = useState(null);
-  const [alamat, setAlamat] = useState(null);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [schoolOrigin, setSchoolOrigin] = useState("");
+  const [provinsi, setProvinsi] = useState("");
+  const [kota, setKota] = useState("");
+  const [kodePos, setKodePos] = useState("");
+  const [alamat, setAlamat] = useState("");
   const [dataConfirm, setDataConfirm] = useState(false);
   const [dataProvinsi, setDataProvinsi] = useState([]);
   const [dataKota, setDataKota] = useState([]);
@@ -34,6 +36,8 @@ function Register() {
   const [usernameFlag, setUsernameFlag] = useState(true);
   const [emailFlag, setEmailFlag] = useState(true);
   const [phoneNumberFlag, setPhoneNumberFlag] = useState(true);
+  const [space, setSpace] = useState(false);
+  const [submissionLoading, setSubmissionLoading] = useState(false);
 
   async function loadData() {
     setLoading(true);
@@ -88,6 +92,11 @@ function Register() {
       setName(value);
     }
     if (id === "username") {
+      if (value.indexOf(" ") >= 0) {
+        setSpace(true);
+      } else {
+        setSpace(false);
+      }
       setUsername(value);
     }
     if (id === "email") {
@@ -171,6 +180,7 @@ function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSubmissionLoading(true);
     const headers = {
       "content-type": "application/json",
     };
@@ -216,6 +226,7 @@ function Register() {
         },
         onClick: function () {}, // Callback after click
       }).showToast();
+      setSubmissionLoading(false);
       setToken(null);
     } else {
       Toastify({
@@ -231,6 +242,7 @@ function Register() {
         onClick: function () {}, // Callback after click
       }).showToast();
       setToken(response.data.data.register.jwt);
+      setSubmissionLoading(false);
       window.location.href = "/home";
     }
   };
@@ -240,6 +252,7 @@ function Register() {
       className="bg-white overflow-y-hidden relative"
       style={{ minHeight: 700 }}
     >
+      {submissionLoading && <Loading />}
       <div className="min-h-full flex">
         <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -299,6 +312,11 @@ function Register() {
                       {!usernameFlag && (
                         <p className="block text-xs mt-1 font-medium text-red-500">
                           Username is Already Taken
+                        </p>
+                      )}
+                      {space && (
+                        <p className="block text-xs mt-1 font-medium text-red-500">
+                          there is space in username
                         </p>
                       )}
                     </div>
@@ -602,9 +620,9 @@ function Register() {
                   <div>
                     <button
                       type="submit"
-                      disabled={!dataConfirm && notMatch}
+                      disabled={!dataConfirm || notMatch || space}
                       className={`${
-                        dataConfirm && !notMatch
+                        dataConfirm && !notMatch && !space
                           ? "text-pink-500 bg-white border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
                           : "text-gray-400 bg-white border-gray-500"
                       } w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-mediu`}

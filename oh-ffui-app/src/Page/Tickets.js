@@ -3,12 +3,16 @@ import axios from "axios";
 import "../index.css";
 import Header from "../Component/Header";
 import Footer from "../Component/Footer";
+import Loading from "../Component/Loading";
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
 
 function Tickets() {
   const [tickets, setTickets] = useState(null);
   const [ticketCount, setTicketCount] = useState(null);
   const [token, setToken] = useState(null);
   const [name, setName] = useState(null);
+  const [authenticated, setAuthenticated] = useState(false);
   const [file, setFile] = useState(null);
   const [popUp, setPopUp] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -18,12 +22,7 @@ function Tickets() {
 
   function loadTicketsCount() {
     axios
-      .get(endpoint + "/tickets/count"
-      , {
-        headers: {
-          Authorization: "Bearer " + token
-          }
-          })
+      .get(endpoint + "/tickets/count")
       .then((res) => {
         setTicketCount(res.data);
         setLoading(false);
@@ -54,23 +53,24 @@ function Tickets() {
   }
 
   useEffect(() => {
+    loadTicketsCount();
     const tokenLocal = JSON.parse(localStorage.getItem("token"));
     if (tokenLocal) {
       if (tokenLocal.token !== null && tokenLocal.token !== "null") {
         setToken(tokenLocal.token);
         setName(tokenLocal.name);
-        loadTicketsCount();
+        setAuthenticated(true);
       }
     }
     setLoading(false);
   }, []);
 
   useEffect(() => {
-    if(token !== null){
+    if (token !== null) {
       loadTickets();
     }
   }, [token]);
-  
+
   useEffect(() => {
     setTimeout(() => {
       loadTicketsCount();
@@ -99,7 +99,7 @@ function Tickets() {
     setLoading(true);
     const formData = new FormData();
     const data = `{"ticketID": "${
-      "ticket" + name
+      "ticket" + name.replace(/\s/g, "")
     }", "ticketType": "${typeClicked}"}`;
     formData.append("data", data);
     console.log(data);
@@ -112,37 +112,61 @@ function Tickets() {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,
       },
-    }).then((res) => {
-      setLoading(false);
-      window.location.href = "/tickets";
-    });
+    })
+      .then((res) => {
+        if (res.data.errors) {
+          Toastify({
+            text: "Buying Failed please contact admin",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#FF0000",
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
+          setLoading(false);
+        } else {
+          Toastify({
+            text: "Buying Success",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#87B07B",
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
+          setTimeout(() => {
+            setLoading(false);
+            window.location.reload();
+          }, 2000);
+        }
+      })
+      .catch((err) => {
+        Toastify({
+          text: "Buying Failed please contact admin",
+          duration: 3000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#FF0000",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+        setLoading(false);
+      });
   };
 
   return (
     <div>
-      {loading && (
-        <div className="flex absolute z-50 h-screen w-full items-center justify-center bg-black bg-opacity-50">
-          <div role="status">
-            <svg
-              aria-hidden="true"
-              className="mr-2 w-16 h-16 text-gray-200 animate-spin dark:text-white fill-pink-500"
-              viewBox="0 0 100 101"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                fill="currentColor"
-              />
-              <path
-                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                fill="currentFill"
-              />
-            </svg>
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
-      )}
+      {loading && <Loading />}
       <Header />
       <div
         className="flex-col bg-gradient-to-b from-blue-900 to-blue-200 items-center h-full overflow-y-hidden relative"
@@ -158,9 +182,11 @@ function Tickets() {
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlocked The Ticket!
                 </h1>
-                {ticketCount && <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
-                {75 - ticketCount.countHybrid} left
-                </h1>}
+                {ticketCount && (
+                  <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {75 - ticketCount.countHybrid} left
+                  </h1>
+                )}
                 <div className="p-6 flex flex-col justify-start px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
                     Open House Fakultas Farmasi UI Vol.III - Hybrid
@@ -176,11 +202,21 @@ function Tickets() {
                   </p>
                   <button
                     id="open"
-                    className="w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
-                    value="Hybrid"
+                    className={`${
+                      !authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Online"
                     onClick={(e) => handleOnClick(e)}
                   >
                     Buy Here!
+                  </button>
+                  <button
+                    className={`${
+                      authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-gray-500 bg-white  border-gray-500`}
+                    value="Online"
+                  >
+                    Login First
                   </button>
                 </div>
               </div>
@@ -193,9 +229,11 @@ function Tickets() {
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlocked The Ticket!
                 </h1>
-                {ticketCount && <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
-                  {500 - ticketCount.countOnline} left
-                </h1>}
+                {ticketCount && (
+                  <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {500 - ticketCount.countOnline} left
+                  </h1>
+                )}
                 <div className="p-6 flex flex-col justify-start px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
                     Open House Fakultas Farmasi UI Vol.III - Online
@@ -211,11 +249,21 @@ function Tickets() {
                   </p>
                   <button
                     id="open"
-                    className="w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700"
+                    className={`${
+                      !authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
                     value="Online"
                     onClick={(e) => handleOnClick(e)}
                   >
                     Buy Here!
+                  </button>
+                  <button
+                    className={`${
+                      authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-gray-500 bg-white  border-gray-500`}
+                    value="Online"
+                  >
+                    Login First
                   </button>
                 </div>
               </div>
@@ -229,6 +277,21 @@ function Tickets() {
                 <h1 className="bg-pink-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Tickets to the Best Day of Your Life!
                 </h1>
+                {tickets.paymentValidation === null && (
+                  <h1 className="absolute bg-orange-500 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    Validating Payment...
+                  </h1>
+                )}
+                {tickets.paymentValidation === true && (
+                  <h1 className="absolute bg-green-500 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    Valid
+                  </h1>
+                )}
+                {tickets.paymentValidation === false && (
+                  <h1 className="absolute bg-yellow-300 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    refunded
+                  </h1>
+                )}
                 <div className="p-6 flex flex-col justify-center px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
                     Open House Fakultas Farmasi UI Vol.III -{" "}

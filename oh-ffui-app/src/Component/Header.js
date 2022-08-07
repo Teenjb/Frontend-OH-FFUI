@@ -68,7 +68,7 @@ function Header() {
       window.location.href = "/tickets";
     }
     if (id === "cart") {
-      authenticated ? window.location.href = "/cart" : notLoginYet();
+      authenticated ? window.location.href = "/shop" : notLoginYet();
     }
     if (id === "logout") {
       localStorage.removeItem("token");
