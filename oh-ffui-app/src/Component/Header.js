@@ -86,6 +86,7 @@ function Header() {
         },
         onClick: function () {}, // Callback after click
       }).showToast();
+      window.location.href = "/home";
     }
   };
 

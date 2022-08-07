@@ -195,7 +195,7 @@ function Tickets() {
                     19 November 2022 - Online
                   </p>
                   <p className="text-gray-700 text-sm mb-4">
-                    26 November 2022 - Fakultas Farmasi UI, Depok
+                    26 November 2022 - Offline (Fakultas Farmasi UI, Depok)
                   </p>
                   <p className="text-pink-500 text-md font-semibold">
                     Price : Rp. 35.000
