@@ -2550,6 +2550,10 @@ input:checked + .toggle-bg {
   fill: currentColor;
 }
 
+#root .fill-pink-600 {
+  fill: #D61F69;
+}
+
 #root .fill-gray-600 {
   fill: #4B5563;
 }
@@ -2560,10 +2564,6 @@ input:checked + .toggle-bg {
 
 #root .fill-blue-600 {
   fill: #1C64F2;
-}
-
-#root .fill-pink-600 {
-  fill: #D61F69;
 }
 
 #root .fill-purple-600 {

@@ -257,7 +257,7 @@ function Submission() {
                           )}
                           <input
                             id="dropzone-file"
-                            value={fileLomba}
+                            // value={fileLomba}
                             onChange={(e) => handleFileChange(e)}
                             type="file"
                             className="hidden"

@@ -144,7 +144,7 @@ function Tickets() {
           setTimeout(() => {
             setLoading(false);
             window.location.reload();
-          }, 2000);
+          }, 500);
         }
       })
       .catch((err) => {
@@ -205,7 +205,7 @@ function Tickets() {
                     className={`${
                       !authenticated ? "hidden" : "block"
                     } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
-                    value="Online"
+                    value="Hybrid"
                     onClick={(e) => handleOnClick(e)}
                   >
                     Buy Here!
