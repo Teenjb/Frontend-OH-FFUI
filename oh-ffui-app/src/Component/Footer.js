@@ -12,7 +12,7 @@ function Footer(){
             Open House FF UI Vol.III{" "}
           </h2>
           <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">
-            Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bla blaaaa
+            Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bl
           </p>
           <ul className="flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
             <li>
