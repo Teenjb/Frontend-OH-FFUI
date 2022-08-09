@@ -21,7 +21,7 @@ function ShopCardWithDesc(props){
     }
     return(
         <div className='rounded-md px-10 py-10 w-auto text-center'>
-            <img src={props.image} alt='' className=''/>
+            <img src={props.image} alt='' className='rounded-xl w-96 mb-4'/>
                 <div className=''>
                     <h3 className='font-serif text-3xl text-black pb-2'>{props.name}</h3>
                     <h5 className='text-xl text-black pb-2 font-semibold'>Rp {props.price}</h5>

@@ -1,5 +1,5 @@
 import "../index.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
@@ -8,6 +8,25 @@ import "toastify-js/src/toastify.css";
 import ShopCard from "../Component/ShopCard";
 import ShopCardWithDesc from "../Component/ShopCardWithDesc";
 import Header from "../Component/Header";
+import kaosA from "../Img/kaos A web.png";
+import kaosB from "../Img/kaos B web.png";
+import stikerA from "../Img/Stiker A web.png";
+import stikerB from "../Img/Stiker B web.png";
+import toteBagA from "../Img/totebag A web.png";
+import toteBagB from "../Img/totebag B web.png";
+import notebook from "../Img/notebook web.png";
+import pouch from "../Img/pouch web.png";
+import emoney from "../Img/emoney web.png";
+import lanyard from "../Img/Lanyard web.png";
+import paketA1 from "../Img/paket A1 web.png";
+import paketA2 from "../Img/paket A2 web.png";
+import paketB1 from "../Img/paket B1 web.png";
+import paketB2 from "../Img/paket B2 web.png";
+import paketC1 from "../Img/paket C1 web.png";
+import paketC2 from "../Img/paket C2 web.png";
+import workshopPulv from "../Img/workshop pulverize kit.png";
+import workshopSani from "../Img/workshop sanitizer kit.png";
+
 
 function Shop() {
   return (
@@ -29,18 +48,17 @@ function Shop() {
             Merch
           </h1>
           <div class="min-h-screen flex items-center justify-center">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
-              <ShopCard id="kaosA" name="Kaos A" price="99.000" />
-              <ShopCard id="kasoB" name="Kaos B" price="99.000" />
-              <ShopCard id="stikerSetA" name="Stiker Set A" price="99.000" />
-              <ShopCard id="stikerSetB" name="Stiker Set B" price="99.000" />
-              <ShopCard id="toteBagA" name="Tote Bag A" price="99.000" />
-              <ShopCard id="toteBagB" name="Tote Bag B" price="99.000" />
-              <ShopCard id="notebookA" name="Notebook A" price="99.000" />
-              <ShopCard id="notebookB" name="Notebook B" price="99.000" />
-              <ShopCard id="pouch" name="Pouch" price="99.000" />
-              <ShopCard id="eMoney" name="E-Money" price="99.000" />
-              <ShopCard id="lanyard" name="Lanyard" price="99.000" />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+              <ShopCard image={kaosA} id="kaosA" name="Kaos A" price="75.000" />
+              <ShopCard image={kaosB}id="kasoB" name="Kaos B" price="75.000" />
+              <ShopCard image={stikerA} id="stikerSetA" name="Stiker Set A" price="10.000" />
+              <ShopCard image={stikerB} id="stikerSetB" name="Stiker Set B" price="10.000" />
+              <ShopCard image={toteBagA} id="toteBagA" name="Tote Bag A" price="40.000" />
+              <ShopCard image={toteBagB} id="toteBagB" name="Tote Bag B" price="40.000" />
+              <ShopCard image={notebook} id="notebook" name="Notebook" price="30.000" />
+              <ShopCard image={pouch} id="pouch" name="Pouch" price="45.000" />
+              <ShopCard image={emoney} id="eMoney" name="E-Money" price="50.000" />
+              <ShopCard image={lanyard} id="lanyard" name="Lanyard" price="20.000" />
             </div>
           </div>
         </div>
@@ -49,41 +67,47 @@ function Shop() {
             Bundles
           </h1>
           <div class=" flex items-center justify-center">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
               <ShopCardWithDesc
+                image={paketA1}
                 id="pakeA1"
                 name="Paket A1"
-                price="99.000"
+                price="215.000"
                 desc="kaos A, sticker set A, notebook A, tote bag A, pouch, emoney + lanyard"
               />
               <ShopCardWithDesc
+                image={paketA2}
                 id="paketA2"
                 name="Paket A2"
-                price="99.000"
+                price="215.000"
                 desc="Kaos B, sticker set B, notebook B, totebag B, pouch, emoney B + lanyard"
               />
               <ShopCardWithDesc
+                image={paketB1}
                 id="paketB1"
                 name="Paket B1"
-                price="99.000"
+                price="135.000"
                 desc="Sticker set A, notebook A, tote bag A, pouch, emoney + lanyard"
               />
               <ShopCardWithDesc
+                image={paketB2}
                 id="paketB2"
                 name="Paket B2"
-                price="99.000"
+                price="135.000"
                 desc="Sticker set B, notebook B, totebag B, pouch, emoney B + lanyard"
               />
               <ShopCardWithDesc
+                image={paketC1}
                 id="pakeC1"
                 name="Paket C1"
-                price="99.000"
+                price="100.000"
                 desc="Sticker set A, notebook A, kaos A, pouch"
               />
               <ShopCardWithDesc
+                image={paketC2}
                 id="pakeC2"
                 name="Paket C2"
-                price="99.000"
+                price="100.000"
                 desc="Sticker set B, notebook B, kaos B, pouch"
               />
             </div>
@@ -94,17 +118,19 @@ function Shop() {
             Workshop
           </h1>
           <div class=" flex items-center justify-center">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
               <ShopCardWithDesc
+                image={workshopPulv}
                 id="pulverizeKit"
                 name="Pulverize Kit"
-                price="99.000"
+                price="40.000"
                 desc="Tablet vitamin B, kertas perkamen, sudip, pot plastik, lumpang alu, cangkang kapsul, etiket putih"
               />
               <ShopCardWithDesc
+                image={workshopSani}
                 id="sanitizerKit"
                 name="Sanitizer Kit"
-                price="99.000"
+                price="45.000"
                 desc="Texapon (SLES), nacl, glycerin, H2O2 3%, minyak atsiri/essence, aquades, beaker glass plastik, batang pengaduk, botol pump, botol plastik 10 ml, botol plastik 500 ml, corong plastik, wadah puding"
               />
             </div>

@@ -180,7 +180,7 @@ function Tickets() {
             <div className="flex justify-center my-5 mx-auto py-10 px-5">
               <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
-                  Buy To Unlocked The Ticket!
+                  Buy To Unlock The Ticket!
                 </h1>
                 {ticketCount && (
                   <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
@@ -227,7 +227,7 @@ function Tickets() {
             <div className="flex justify-center my-5 mx-auto py-10 px-5">
               <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
-                  Buy To Unlocked The Ticket!
+                  Buy To Unlock The Ticket!
                 </h1>
                 {ticketCount && (
                   <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">

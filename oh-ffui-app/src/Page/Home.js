@@ -1,5 +1,5 @@
 import "../index.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import hero from "../Img/Hero Banner.png";
 import sayOne from "../Img/Group 28.png";
 import sayTwo from "../Img/Group 29.png";
@@ -106,7 +106,7 @@ function Home() {
                     Kezya - FF 22
                   </h3>
                   <h3 className="text-l text-white text-l px-10 ">
-                    Peserta Open House FF UI Vol.2
+                    Peserta Open House FF UI Vol.II
                   </h3>
                 </div>
               </div>
@@ -127,13 +127,13 @@ function Home() {
                     Open House FF UI seru banget dan recommended untuk kalian
                     yang penasaran tentang farmasi atau tertarik tapi masih
                     ragu. Aku jadi semakin yakin untuk memilih jurusan farmasi
-                    setelah mengikuti Open House FF UI Vol.2. "
+                    setelah mengikuti Open House FF UI Vol.II "
                   </p>
                   <h3 className="font-serif text-2xl text-white text-l px-10 ">
                     Amalia - FF 22
                   </h3>
                   <h3 className="text-l text-white text-l px-10 ">
-                    Peserta Open House FF UI Vol.2
+                    Peserta Open House FF UI Vol.II
                   </h3>
                 </div>
               </div>
