@@ -134,10 +134,10 @@ function Profile() {
                 </div>
                 <div className="flex mt-10 mb-5">
                   <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
-                    Preorder Id
+                    Id
                   </h3>
                   <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
-                    Tanggal Order
+                    Tanggal
                   </h3>
                   <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
                     Status
