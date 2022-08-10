@@ -433,7 +433,7 @@ function Tickets() {
                       file
                         ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
                         : "text-gray-400 bg-white border-gray-500"
-                    } text-white font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
+                    } font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                     onClick={(e) => handleOnSubmit(e)}
                   >
                     Submit
