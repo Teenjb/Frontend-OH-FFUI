@@ -372,9 +372,9 @@ function Tickets() {
                     Pembayaran Melalui:
                   </h5>
                   <ul className="mb-5 text-left text-sm font-normal text-blue-200">
-                    <li>Gopay</li>
-                    <li>Bank Mandiri</li>
-                    <li>Bank BNI</li>
+                    <li>BNI 1262422154 a.n. Jazmina Nur Shobrina</li>
+                    <li>OVO 081292718692</li>
+                    <li>GOPAY 081292718692</li>
                   </ul>
                   <label
                     htmlFor="dropzone-file"
