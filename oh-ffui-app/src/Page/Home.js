@@ -5,9 +5,13 @@ import sayOne from "../Img/Group 28.png";
 import sayTwo from "../Img/Group 29.png";
 import sayThree from "../Img/Group 40.png";
 import sayFour from "../Img/Group 41.png";
-import pic2 from "../Img/Group 33.png";
-import pic1 from "../Img/Group 34.png";
-import pic3 from "../Img/Group 35.png";
+import pic5 from "../Img/Group 33.png";
+import pic6 from "../Img/Group 34.png";
+import pic7 from "../Img/Group 35.png";
+import pic1 from "../Img/Group 36.png";
+import pic2 from "../Img/Group 37.png";
+import pic4 from "../Img/Group 38.png";
+import pic3 from "../Img/Group 39.png";
 import Header from "../Component/Header";
 import Footer from "../Component/Footer";
 
@@ -26,6 +30,40 @@ function Home() {
             </h1>
           </div>
         </div>
+        <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
+          <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
+            <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+            Get To Know Our Mascot!
+            </h1>
+            <div>
+              <div className="bg-orange-400 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md">
+                <img
+                  src={sayFour}
+                  alt=""
+                  className="object-scale-down h-80 w-100"
+                />
+                <div>
+                  <p className="text-white text-l px-10 py-5 ">
+                    " Di fakultas farmasi, kami dipertemukan dengan dosen-dosen
+                    yang ahli dan kompeten dalam bidang masing-masing, juga
+                    fasilitas yang memadai. Kami diajari beragam mata kuliah
+                    spesifik mengenai farmasi, ilmu pengetahuan alam, hingga
+                    ilmu kesehatan. Kami juga bebas mengakses kegiatan-kegiatan
+                    non akademik, seperti perlombaan, organisasi, hingga magang.
+                    So, jika kalian tertarik untuk mengetahui jurusan farmasi
+                    lebih lanjut, yuk ikuti Open House FF UI Vol. III! "
+                  </p>
+                  <h3 className="font-serif text-2xl text-white text-l px-10 ">
+                    Mishbahus Surur - FF 19
+                  </h3>
+                  <h3 className="text-l text-white text-l px-10 ">
+                    Ketua BEM FF UI 2022
+                  </h3>
+                </div>
+              </div>
+              </div>
+              </div>
+            </div>
         <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
             <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
@@ -226,7 +264,7 @@ function Home() {
                     masuk UI.
                   </p>
                 </div>
-                <img src={pic1} alt="" className="hidden md:block md:px-5" />
+                <img src={pic4} alt="" className="hidden md:block md:px-5" />
                 <div className="hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full"></div>
                 <div className="grid md:hidden mx-auto py-5">
                   <div className="w-6 h-6 rounded-full bg-blue-900" />
@@ -236,7 +274,7 @@ function Home() {
               <div className="py-2 md:py-5"></div>
               <div className="grid md:flex justify-evenly items-center">
                 <div className="hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full"></div>
-                <img src={pic2} alt="" className="hidden md:block md:px-5" />
+                <img src={pic5} alt="" className="hidden md:block md:px-5" />
                 <div className="bg-pink-500 rounded-md px-10 py-10 w-full">
                   <h3 className="font-serif text-3xl text-white pb-2">
                     Tur kampus dan laboratorium
@@ -270,7 +308,7 @@ function Home() {
                     liquid hand soap).
                   </p>
                 </div>
-                <img src={pic3} alt="" className="hidden md:block md:px-5" />
+                <img src={pic6} alt="" className="hidden md:block md:px-5" />
                 <div className="hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full"></div>
                 <div className="grid md:hidden mx-auto py-5">
                   <div className="w-6 h-6 rounded-full bg-blue-900" />
@@ -280,7 +318,7 @@ function Home() {
               <div className="py-2 md:py-1"></div>
               <div className="grid md:flex justify-evenly items-center">
                 <div className="hidden md:block bg-pink-500 opacity-0 rounded-md px-10 py-10 w-full"></div>
-                <img src={pic1} alt="" className="hidden md:block md:px-5" />
+                <img src={pic7} alt="" className="hidden md:block md:px-5" />
                 <div className="bg-pink-500 rounded-md px-10 py-10 w-full">
                   <h3 className="font-serif text-3xl text-white pb-2">
                     Pharmacy Championship (Pharmission dan Pharmacy Quiz)
