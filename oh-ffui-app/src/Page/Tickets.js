@@ -428,6 +428,7 @@ function Tickets() {
                   <button
                     data-modal-toggle="popup-modal"
                     type="button"
+                    disabled={!file}
                     className={`${
                       file
                         ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
