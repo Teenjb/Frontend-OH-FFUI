@@ -12,6 +12,7 @@ import pic1 from "../Img/Group 36.png";
 import pic2 from "../Img/Group 37.png";
 import pic4 from "../Img/Group 38.png";
 import pic3 from "../Img/Group 39.png";
+import fufi from "../Img/Maskot_Fufi_Hi.png";
 import Header from "../Component/Header";
 import Footer from "../Component/Footer";
 
@@ -30,35 +31,25 @@ function Home() {
             </h1>
           </div>
         </div>
-        <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
+        <div className="container mx-auto flex flex-col items-center py-6 sm:py-10">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
             <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
             Get To Know Our Mascot!
             </h1>
             <div>
-              <div className="bg-orange-400 md:flex md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md">
+              <div className="md:flex md:justify-evenly md:items-center place-items-center grid rounded-md">
                 <img
-                  src={sayFour}
+                  src={fufi}
                   alt=""
-                  className="object-scale-down h-80 w-100"
+                  className="object-scale-up h-96 rounded-full px-10 py-5"
                 />
-                <div>
+                <div className="bg-pink-600 rounded-md px-8 py-10">
+                <h3 className="font-serif text-2xl text-white text-l px-10 ">
+                  “ Halo, namaku Fufi! I hope I can be your fire of light that can lead you to catch your dream ”
+                  </h3>
                   <p className="text-white text-l px-10 py-5 ">
-                    " Di fakultas farmasi, kami dipertemukan dengan dosen-dosen
-                    yang ahli dan kompeten dalam bidang masing-masing, juga
-                    fasilitas yang memadai. Kami diajari beragam mata kuliah
-                    spesifik mengenai farmasi, ilmu pengetahuan alam, hingga
-                    ilmu kesehatan. Kami juga bebas mengakses kegiatan-kegiatan
-                    non akademik, seperti perlombaan, organisasi, hingga magang.
-                    So, jika kalian tertarik untuk mengetahui jurusan farmasi
-                    lebih lanjut, yuk ikuti Open House FF UI Vol. III! "
+                  Fufi kembali hadir sebagai maskot Open House FF UI Vol. III dengan bentuk api yang diartikan sebagai pembimbing serta penerang bagi para peserta menuju mimpi yang didambakan.
                   </p>
-                  <h3 className="font-serif text-2xl text-white text-l px-10 ">
-                    Mishbahus Surur - FF 19
-                  </h3>
-                  <h3 className="text-l text-white text-l px-10 ">
-                    Ketua BEM FF UI 2022
-                  </h3>
                 </div>
               </div>
               </div>
