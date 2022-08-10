@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/tickets" element={<Tickets />} />
-            <Route exact path="/submission" element={<Submission />} />
+            <Route exact path="/submission" element={<Coming />} />
             <Route
               path="*"
               element = {<Navigate to="/home" />}

@@ -17,7 +17,7 @@ function Home() {
       className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
       style={{ minHeight: 700 }}
     >
-      <Header/>
+      <Header />
       <div className="relative">
         <div className="container mx-auto flex flex-col items-center py-12">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
@@ -306,16 +306,18 @@ function Home() {
             </h1>
           </div>
           <iframe
-            src="https://www.youtube.com/embed/r9jwGansp1E"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Video Perkenalan"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FomHhPZxlEU"
+            title="YouTube video player"
+            frameborder="0"
             className="bg-orange-400 md:items-center place-items-center p-5 md:p-10 rounded-md lg:w-11/12 lg:h-screen md:w-3/4 md:h-96"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
           ></iframe>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 }
