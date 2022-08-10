@@ -2,30 +2,38 @@ import instagram from "../Img/icons8-instagram-100.svg";
 import whatsapp from "../Img/icons8-whatsapp-100.svg";
 import line from "../Img/icons8-line-100.svg";
 import tiktok from "../Img/icons8-tiktok-100.svg";
+import twitter from "../Img/icons8-twitter-120.png";
+import email from "../Img/icons8-mail-90.png";
+
 
 function Footer(){
     return(
         <footer className="w-full border-b bg-blue-900">
         <div>
-          <h2 className="text-pink-500 font-black flex md:text-3xl text-base items-center py-10 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-            {" "}
-            Open House FF UI Vol.III{" "}
-          </h2>
-          <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">
-            Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bl
-          </p>
-          <ul className="flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-            <li>
-              <img className="h-10 w-10" src={tiktok} alt="" />
-            </li>
-            <li>
+          <ul className="grid md:flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
+            <li className="flex justify-evenly items-center mx-3 px-2">
               <img className="h-10 w-10" src={instagram} alt="" />
+              <p className="font-medium text-white">@openhouseffui</p>
             </li>
-            <li>
+            <li className="flex justify-evenly items-center mx-3 px-2">
+              <img className="h-10 w-10" src={tiktok} alt="" />
+              <p className="font-medium text-white">@openhouseffui</p>
+            </li>
+            <li className="flex justify-evenly items-center mx-3 px-2">
+              <img className="h-10 w-10" src={twitter} alt="" />
+              <p className="font-medium text-white">@openhouseffui</p>
+            </li>
+            <li className="flex justify-evenly items-center mx-3 px-2">
+              <img className="h-8 w-8 mr-2" src={email} alt="" />
+              <p className="font-medium text-white">openhouseffuilvol3@gmail.com</p>
+            </li>
+            <li className="flex justify-evenly items-center mx-3 px-2">
               <img className="h-10 w-10" src={line} alt="" />
+              <p className="font-medium text-white">@rwq3795k</p>
             </li>
-            <li>
-              <img className="h-8 w-8" src={whatsapp} alt="" />
+            <li className="flex justify-evenly items-center mx-3 px-2">
+              <img className="h-10 w-10" src={whatsapp} alt="" />
+              <p className="font-medium text-white">+6288290087083</p>
             </li>
           </ul>
         </div>

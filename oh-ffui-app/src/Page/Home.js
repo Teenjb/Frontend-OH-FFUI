@@ -302,7 +302,7 @@ function Home() {
         <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col">
             <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-              Video Perkenalan
+              Video Teaser
             </h1>
           </div>
           <iframe
