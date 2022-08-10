@@ -19,7 +19,7 @@ import Footer from "../Component/Footer";
 function Home() {
   return (
     <div
-      className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
+      className="h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
       style={{ minHeight: 700 }}
     >
       <Header />
@@ -34,7 +34,7 @@ function Home() {
         <div className="container mx-auto flex flex-col items-center py-6 sm:py-10">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
             <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-            Get To Know Our Mascot!
+              Get To Know Our Mascot!
             </h1>
             <div>
               <div className="md:flex md:justify-evenly md:items-center place-items-center grid rounded-md">
@@ -44,17 +44,20 @@ function Home() {
                   className="object-scale-up h-96 rounded-full px-10 py-5"
                 />
                 <div className="bg-pink-600 rounded-md px-8 py-10">
-                <h3 className="font-serif text-2xl text-white text-l px-10 ">
-                  “ Halo, namaku Fufi! I hope I can be your fire of light that can lead you to catch your dream ”
+                  <h3 className="font-serif text-2xl text-white text-l px-10 ">
+                    “ Halo, namaku Fufi! I hope I can be your fire of light that
+                    can lead you to catch your dream ”
                   </h3>
                   <p className="text-white text-l px-10 py-5 ">
-                  Fufi kembali hadir sebagai maskot Open House FF UI Vol. III dengan bentuk api yang diartikan sebagai pembimbing serta penerang bagi para peserta menuju mimpi yang didambakan.
+                    Fufi kembali hadir sebagai maskot Open House FF UI Vol. III
+                    dengan bentuk api yang diartikan sebagai pembimbing serta
+                    penerang bagi para peserta menuju mimpi yang didambakan.
                   </p>
                 </div>
               </div>
-              </div>
-              </div>
             </div>
+          </div>
+        </div>
         <div className="container mx-auto flex flex-col items-center py-6 sm:py-12">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5">
             <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
@@ -335,8 +338,6 @@ function Home() {
             </h1>
           </div>
           <iframe
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/FomHhPZxlEU"
             title="YouTube video player"
             frameborder="0"
