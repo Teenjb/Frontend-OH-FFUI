@@ -12,16 +12,17 @@ function Cart() {
   const [paymentProof, setPaymentProof] = useState(null);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
-  const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
+  const endpoint =
+    "https://api-oh-ffui-2022.herokuapp.com/api/preorders/create";
   const hostendpoint = "http://localhost:1337/api/preorders/create";
 
   useEffect(() => {
     const tokenLocal = JSON.parse(localStorage.getItem("token"));
     console.log(tokenLocal);
     if (tokenLocal) {
-        if (tokenLocal.token !== null && tokenLocal.token !== "null") {
+      if (tokenLocal.token !== null && tokenLocal.token !== "null") {
         setToken(tokenLocal.token);
-        }
+      }
     }
   }, []);
 
@@ -31,7 +32,7 @@ function Cart() {
       window.location.href = "/shop";
     }
     if (id === "checkout") {
-        console.log(cart);
+      console.log(cart);
       setPopup(true);
     }
     if (id === "close") {
@@ -339,7 +340,12 @@ function Cart() {
                     <button
                       data-modal-toggle="popup-modal"
                       type="button"
-                      className="text-white bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+                      disabled={!paymentProof}
+                      className={`${
+                        paymentProof
+                          ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
+                          : "text-gray-400 bg-white border-gray-500"
+                      } text-white font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                       onClick={(e) => handleOnSubmit(e)}
                     >
                       Submit
