@@ -18,7 +18,6 @@ function Cart() {
 
   useEffect(() => {
     const tokenLocal = JSON.parse(localStorage.getItem("token"));
-    console.log(tokenLocal);
     if (tokenLocal) {
       if (tokenLocal.token !== null && tokenLocal.token !== "null") {
         setToken(tokenLocal.token);
@@ -32,7 +31,6 @@ function Cart() {
       window.location.href = "/shop";
     }
     if (id === "checkout") {
-      console.log(cart);
       setPopup(true);
     }
     if (id === "close") {
@@ -72,7 +70,6 @@ function Cart() {
     const data = '{"merchandises": ["1", "2", "3"], "status": "Requested"}';
     formData.append("data", data);
     formData.append("files.paymentPhoto", paymentProof);
-    console.log(formData);
     axios({
       method: "POST",
       url: endpoint,
@@ -82,7 +79,6 @@ function Cart() {
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => {
-      console.log(res);
       setCart(null);
       localStorage.removeItem("cart");
       setLoading(false);

@@ -48,7 +48,7 @@ function Register() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   }
 
@@ -61,7 +61,7 @@ function Register() {
         setLoadingkota(false);
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   }
 
@@ -77,7 +77,6 @@ function Register() {
 
   useEffect(() => {
     const obj = { name: username, token: token };
-    console.log(obj);
     localStorage.setItem("token", JSON.stringify(obj));
   }, [token]);
 
@@ -153,7 +152,6 @@ function Register() {
       })
       .then((response) => {
         if (response.data.errors) {
-          console.log(response.data);
           //setDataConfirm(true);
         } else {
           if (response.data.usernameFlag === "Username available") {
@@ -174,7 +172,7 @@ function Register() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   }
 

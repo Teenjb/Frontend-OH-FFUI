@@ -376,6 +376,9 @@ function Tickets() {
                     <li>OVO 081292718692</li>
                     <li>GOPAY 081292718692</li>
                   </ul>
+                  <h5 className="mb-5 bg-red-600 text-center p-2 rounded-lg text-sm font-normal text-blue-200 dark:text-blue-200">
+                  Jangan lupa untuk isi keterangan berita transfer dengan <b>Username Account</b> kalian saat melakukan pembayaran!
+                  </h5>
                   <label
                     htmlFor="dropzone-file"
                     className="flex flex-col justify-center items-center w-full h-64 mb-10 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 hover:bg-gray-100"
@@ -432,7 +435,7 @@ function Tickets() {
                     className={`${
                       file
                         ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
-                        : "text-gray-400 bg-white border-gray-500"
+                        : "text-gray-500 bg-white border-gray-500"
                     } font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                     onClick={(e) => handleOnSubmit(e)}
                   >

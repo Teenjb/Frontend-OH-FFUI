@@ -34,7 +34,7 @@ function Profile() {
           setLoading(false);
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
           setLoading(false);
         });
     }
@@ -45,7 +45,6 @@ function Profile() {
     if (data !== null) {
       getPreorder();
       setLoading(false);
-      console.log(preorder);
     }
   }, [data]);
 
