@@ -50,7 +50,7 @@ function Profile() {
 
   return (
     <div
-      className="grid h-full bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
+      className="grid h-full lg:h-screen bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
       style={{ minHeight: 700 }}
     >
       <Header />
@@ -136,7 +136,7 @@ function Profile() {
                     Id
                   </h3>
                   <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
-                    Tanggal
+                    Tgl
                   </h3>
                   <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
                     Status
