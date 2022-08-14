@@ -19,6 +19,7 @@ function Tickets() {
   const [typeClicked, setTypeClicked] = useState(null);
 
   const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api";
+  const hostendpoint = "http://localhost:1337/api";
 
   function loadTicketsCount() {
     axios
@@ -102,7 +103,6 @@ function Tickets() {
       "ticket" + name.replace(/\s/g, "")
     }", "ticketType": "${typeClicked}"}`;
     formData.append("data", data);
-    console.log(data);
     formData.append("files.paymentPhoto", file);
     axios({
       method: "POST",
@@ -141,10 +141,9 @@ function Tickets() {
             },
             onClick: function () {}, // Callback after click
           }).showToast();
-          setTimeout(() => {
-            setLoading(false);
-            window.location.reload();
-          }, 500);
+          loadTickets();
+          setLoading(false);
+          setPopUp(false);
         }
       })
       .catch((err) => {
@@ -426,6 +425,7 @@ function Tickets() {
                       onChange={(e) => handleFileChange(e)}
                       type="file"
                       className="hidden"
+                      multiple accept="image/*"
                     />
                   </label>
                   <button
@@ -434,7 +434,7 @@ function Tickets() {
                     disabled={!file}
                     className={`${
                       file
-                        ? "bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
+                        ? "bg-pink-500 text-white hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
                         : "text-gray-500 bg-white border-gray-500"
                     } font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                     onClick={(e) => handleOnSubmit(e)}

@@ -123,8 +123,8 @@ function About() {
                   Fakultas farmasi Universitas Indonesia menyediakan 5 jenis
                   program pendidikan, yaitu:
                 </p>
-                <div class="container bg-[#87b07b] rounded-md flex items-center justify-center">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
+                <div className="container bg-[#87b07b] rounded-md flex items-center justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
                     <div className="rounded-md px-10 py-10 w-auto text-center">
                       <div className="container rounded-md bg-[#f0eaa3] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
@@ -215,8 +215,8 @@ function About() {
                 <p className="text-medium text-xl justify-center text-white  items-center">
                   Terdapat 5 jalur masuk untuk Fakultas Farmasi UI, yaitu :
                 </p>
-                <div class="container rounded-md flex items-start justify-center">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
+                <div className="container rounded-md flex items-start justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
                     <div className="rounded-md px-10 py-10 w-auto">
                       <div className="container rounded-md bg-cyan-700 px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
@@ -268,8 +268,8 @@ function About() {
                   UI jenjang sarjana (S1) memiliki daya tampung dan keketatan
                   sebagai berikut :
                 </p>
-                <div class="container rounded-md flex items-start justify-center">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
+                <div className="container rounded-md flex items-start justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
                     <div className="rounded-md px-10 py-6 w-auto">
                       <div className="container rounded-md bg-pink-600 px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
@@ -308,8 +308,8 @@ function About() {
                 <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                   Organisasi
                 </h1>
-                <div class="container bg-[#f0eaa3] rounded-md flex items-center justify-center">
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-start text-medium">
+                <div className="container bg-[#f0eaa3] rounded-md flex items-center justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-start text-medium">
                     <div className="rounded-md px-10 py-10 w-auto">
                       <div className="container rounded-md bg-pink-600 px-5 py-5">
                         <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">

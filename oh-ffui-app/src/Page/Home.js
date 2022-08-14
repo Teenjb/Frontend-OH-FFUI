@@ -341,7 +341,7 @@ function Home() {
             src="https://www.youtube.com/embed/FomHhPZxlEU"
             title="YouTube video player"
             frameborder="0"
-            className="bg-orange-400 md:items-center place-items-center p-5 md:p-10 rounded-md lg:w-11/12 lg:h-screen md:w-3/4 md:h-96"
+            className="bg-orange-400 md:items-center place-items-center w-11/12 h-64 p-2 md:p-10 rounded-md lg:w-11/12 lg:h-screen md:w-3/4 md:h-96"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>

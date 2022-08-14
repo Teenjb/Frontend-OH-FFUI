@@ -1,12 +1,8 @@
 import "../index.css";
 import React from "react";
-import instagram from "../Img/icons8-instagram-100.svg";
-import whatsapp from "../Img/icons8-whatsapp-100.svg";
-import line from "../Img/icons8-line-100.svg";
-import tiktok from "../Img/icons8-tiktok-100.svg";
+import Footer from "../Component/Footer";
 import "toastify-js/src/toastify.css";
 import ShopCard from "../Component/ShopCard";
-import ShopCardWithDesc from "../Component/ShopCardWithDesc";
 import Header from "../Component/Header";
 import kaosA from "../Img/kaos A web.png";
 import kaosB from "../Img/kaos B web.png";
@@ -47,18 +43,18 @@ function Shop() {
           <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">
             Merch
           </h1>
-          <div class="min-h-screen flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
-              <ShopCard image={kaosA} id="kaosA" name="Kaos A" price="75.000" />
-              <ShopCard image={kaosB}id="kasoB" name="Kaos B" price="75.000" />
-              <ShopCard image={stikerA} id="stikerSetA" name="Stiker Set A" price="10.000" />
-              <ShopCard image={stikerB} id="stikerSetB" name="Stiker Set B" price="10.000" />
-              <ShopCard image={toteBagA} id="toteBagA" name="Tote Bag A" price="40.000" />
-              <ShopCard image={toteBagB} id="toteBagB" name="Tote Bag B" price="40.000" />
-              <ShopCard image={notebook} id="notebook" name="Notebook" price="30.000" />
-              <ShopCard image={pouch} id="pouch" name="Pouch" price="45.000" />
-              <ShopCard image={emoney} id="eMoney" name="E-Money" price="50.000" />
-              <ShopCard image={lanyard} id="lanyard" name="Lanyard" price="20.000" />
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+              <ShopCard image={kaosA} id="kaosA" name="Kaos A" price={75000} />
+              <ShopCard image={kaosB}id="kaosB" name="Kaos B" price={75000} />
+              <ShopCard image={stikerA} id="stikerSetA" name="Stiker Set A" price={10000} />
+              <ShopCard image={stikerB} id="stikerSetB" name="Stiker Set B" price={10000} />
+              <ShopCard image={toteBagA} id="toteBagA" name="Tote Bag A" price={40000} />
+              <ShopCard image={toteBagB} id="toteBagB" name="Tote Bag B" price={40000} />
+              <ShopCard image={notebook} id="notebook" name="Notebook" price={30000} />
+              <ShopCard image={pouch} id="pouch" name="Pouch" price={45000} />
+              <ShopCard image={emoney} id="eMoney" name="E-Money" price={50000} />
+              <ShopCard image={lanyard} id="lanyard" name="Lanyard" price={20000} />
             </div>
           </div>
         </div>
@@ -66,48 +62,48 @@ function Shop() {
           <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">
             Bundles
           </h1>
-          <div class=" flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
-              <ShopCardWithDesc
+          <div className=" flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+              <ShopCard
                 image={paketA1}
-                id="pakeA1"
+                id="paketA1"
                 name="Paket A1"
-                price="215.000"
+                price={215000}
                 desc="kaos A, sticker set A, notebook A, tote bag A, pouch, emoney + lanyard"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={paketA2}
                 id="paketA2"
                 name="Paket A2"
-                price="215.000"
+                price={215000}
                 desc="Kaos B, sticker set B, notebook B, totebag B, pouch, emoney B + lanyard"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={paketB1}
                 id="paketB1"
                 name="Paket B1"
-                price="135.000"
+                price={135000}
                 desc="Sticker set A, notebook A, tote bag A, pouch, emoney + lanyard"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={paketB2}
                 id="paketB2"
                 name="Paket B2"
-                price="135.000"
+                price={135000}
                 desc="Sticker set B, notebook B, totebag B, pouch, emoney B + lanyard"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={paketC1}
-                id="pakeC1"
+                id="paketC1"
                 name="Paket C1"
-                price="100.000"
+                price={100000}
                 desc="Sticker set A, notebook A, kaos A, pouch"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={paketC2}
-                id="pakeC2"
+                id="paketC2"
                 name="Paket C2"
-                price="100.000"
+                price={100000}
                 desc="Sticker set B, notebook B, kaos B, pouch"
               />
             </div>
@@ -117,57 +113,27 @@ function Shop() {
           <h1 className="font-serif py-10 text-black text-5xl xl:text-6xl text-center leading-7 md:leading-10">
             Workshop
           </h1>
-          <div class=" flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
-              <ShopCardWithDesc
+          <div className=" flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+              <ShopCard
                 image={workshopPulv}
                 id="pulverizeKit"
                 name="Pulverize Kit"
-                price="40.000"
+                price={40000}
                 desc="Tablet vitamin B, kertas perkamen, sudip, pot plastik, lumpang alu, cangkang kapsul, etiket putih"
               />
-              <ShopCardWithDesc
+              <ShopCard
                 image={workshopSani}
-                id="sanitizerKit"
-                name="Sanitizer Kit"
-                price="45.000"
+                id="saniterKit"
+                name="Saniter Kit"
+                price={45000}
                 desc="Texapon (SLES), nacl, glycerin, H2O2 3%, minyak atsiri/essence, aquades, beaker glass plastik, batang pengaduk, botol pump, botol plastik 10 ml, botol plastik 500 ml, corong plastik, wadah puding"
               />
             </div>
           </div>
         </div>
       </div>
-
-      <footer className="w-full border-b bg-blue-900">
-        <div>
-          <h2 className="text-pink-500 font-black flex md:text-3xl text-base items-center py-10 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-            {" "}
-            Open House FF UI Vol.III{" "}
-          </h2>
-          <p className="text-blue-200 justify-center font-normal text-center md:relative text-sm top-0 bottom-0 left-0 right-0">
-            Lorem Ipsum bla bla bla blaaaa Lorem Ipsum bla bla bla blaaaa
-          </p>
-          <ul className="flex items-center py-5 flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-            <li>
-              <img className="h-10 w-10" src={tiktok} alt="" />
-            </li>
-            <li>
-              <img className="h-10 w-10" src={instagram} alt="" />
-            </li>
-            <li>
-              <img className="h-10 w-10" src={line} alt="" />
-            </li>
-            <li>
-              <img className="h-8 w-8" src={whatsapp} alt="" />
-            </li>
-          </ul>
-        </div>
-        <div className="bg-pink-500 py-5 flex items-center flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-          <p className="text-blue-900 text-sm font-bold">
-            All rights reserved © OH FF UI VOL.III{" "}
-          </p>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

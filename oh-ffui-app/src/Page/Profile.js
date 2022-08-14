@@ -11,8 +11,8 @@ function Profile() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [preorder, setPreorder] = useState([]);
-  const Hostendpoint =
-    "http://localhost:1337/api/users/me?populate[0]=preorders&populate[1]=preorder.merchandises";
+  const hostendpoint =
+    "http://localhost:1337/api/users/me?populate=preorders";
   const endpoint =
     "https://api-oh-ffui-2022.herokuapp.com/api/users/me?populate[0]=preorders&populate[1]=preorders.merchandises";
 
@@ -57,8 +57,8 @@ function Profile() {
       >
         <div className="flex h-max">
           <div className="container mx-auto my-5 p-5">
-            <div className="md:flex no-wrap md:mx-5 mx-auto ">
-              <div className="w-full mx-2 h-full">
+            <div className="flex items-center no-wrap md:mx-5 mx-auto ">
+              <div className="w-full h-full">
                 <div className="bg-white p-3 shadow-sm rounded-md">
                   <div className="flex my-3 items-center space-x-2 px-2 font-semibold text-pink-500 leading-8">
                     <span clas="text-green-500">
@@ -148,18 +148,21 @@ function Profile() {
                       Preorder{" "}
                     </h2>
                   </div>
-                  <div className="flex mt-10 mb-5">
+                  <div className="flex mt-10 mb-5 justify-start">
                     <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
                       Id
                     </h3>
-                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
-                      Tgl
+                    <h3 className="hidden md:block font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
+                      Tanggal
                     </h3>
-                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
+                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/6 text-center">
                       Status
                     </h3>
-                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-3/6 text-center">
+                    <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/6 md:w-1/6 text-center">
                       Detail
+                    </h3>
+                    <h3 className="hidden md:block font-semibold text-gray-600 text-xs uppercase w-1/6 text-center">
+                      Price
                     </h3>
                   </div>
                   {preorder.map((item) => (
@@ -167,7 +170,8 @@ function Profile() {
                       id={item.id}
                       date={item.createdAt}
                       status={item.status}
-                      detail={item.merchandises}
+                      detail={item.Order}
+                      price = {item.totalPrice}
                     />
                   ))}
                   {preorder.length === 0 && (
