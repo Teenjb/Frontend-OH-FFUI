@@ -52,7 +52,7 @@ function Shop() {
               <ShopCard image={toteBagA} id="toteBagA" name="Tote Bag A" price={40000} />
               <ShopCard image={toteBagB} id="toteBagB" name="Tote Bag B" price={40000} />
               <ShopCard image={notebook} id="notebook" name="Notebook" price={30000} />
-              <ShopCard image={pouch} id="pouch" name="Pouch" price={45000} />
+              <ShopCard image={pouch} id="pouch" name="Pouch" price={25000} />
               <ShopCard image={emoney} id="eMoney" name="E-Money" price={50000} />
               <ShopCard image={lanyard} id="lanyard" name="Lanyard" price={20000} />
             </div>
