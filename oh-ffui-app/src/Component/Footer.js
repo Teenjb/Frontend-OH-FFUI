@@ -16,15 +16,15 @@ function Footer(){
           <div className="grid items-center justify-center">
             <h4 className="font-serif py-5 text-white text-xl text-center leading-7 md:leading-10">Sponsors</h4>
             <div className="relative items-center justify-center">
-              <img className="h-40" src={sp1} alt="" />
+              <img className="h-24 md:h-40" src={sp1} alt="" />
             </div>
           </div>
           <div className="relative items-center justify-center">
             <h4 className="font-serif py-5 text-white text-xl text-center leading-7 md:leading-10">Media Partners</h4>
-            <div className="flex flex-auto py-8 items-center justify-center">
-              <img className="h-20" src={mp2} alt="" />
-              <img className="h-20" src={mp3} alt="" />
-              <img className="h-16" src={mp1} alt="" />
+            <div className="flex flex-auto md:py-8 items-center justify-center">
+              <img className="h-10 md:h-20" src={mp2} alt="" />
+              <img className="h-10 md:h-20" src={mp3} alt="" />
+              <img className="h-8 md:h-16" src={mp1} alt="" />
             </div>
           </div>
         </div>
