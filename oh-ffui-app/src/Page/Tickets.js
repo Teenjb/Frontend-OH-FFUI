@@ -115,6 +115,7 @@ function Tickets() {
     })
       .then((res) => {
         if (res.data.errors) {
+          console.log(res.data.errors);
           Toastify({
             text: "Buying Failed please contact admin",
             duration: 3000,
@@ -183,7 +184,7 @@ function Tickets() {
                 </h1>
                 {ticketCount && (
                   <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
-                    {75 - ticketCount.countHybrid} left
+                    {100 - ticketCount.countHybrid} left
                   </h1>
                 )}
                 <div className="p-6 flex flex-col justify-start px-10">
@@ -203,11 +204,11 @@ function Tickets() {
                     id="open"
                     className={`${
                       !authenticated ? "hidden" : "block"
-                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-white bg-red-600`}
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
                     value="Hybrid"
-                    //onClick={(e) => handleOnClick(e)}
+                    onClick={(e) => handleOnClick(e)}
                   >
-                    SOLD OUT!
+                    Buy Here!
                   </button>
                   <button
                     className={`${
