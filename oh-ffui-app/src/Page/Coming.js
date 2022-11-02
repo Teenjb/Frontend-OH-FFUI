@@ -12,7 +12,7 @@ function Coming() {
         style={{ minHeight: 700 }}>
         <div className="mt-32">
         <h1 className="font-serif pt-28 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-              Coming Soon!
+              Closed !
             </h1>
         <div className="flex justify-center my-5 mx-auto py-10 px-5">
           <h5 className="text-2xl font-medium text-white">Stay Tuned for more Awesome Stuff!</h5>

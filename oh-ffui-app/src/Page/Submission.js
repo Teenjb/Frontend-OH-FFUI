@@ -45,6 +45,7 @@ function Submission() {
           if (response.data.errors) {
             console.log(response.data);
           } else {
+            console.log(response.data);
             if (response.data.status === "Competition exists") {
               setJenisLombaFlag(false);
             } else {
