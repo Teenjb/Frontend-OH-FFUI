@@ -20,12 +20,12 @@ import Footer from "../Component/Footer";
 function About() {
   return (
     <div
-      className="bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
+      className="bg-gradient-to-b from-[#f57ae5] to-[#fdf56e] overflow-y-hidden relative"
       style={{ minHeight: 700 }}
     >
       <Header />
       <div className="relative">
-        <div className="bg-orange-400 mx-auto md:flex md:flex-col items-center py-12 sm:py-24">
+        <div className="mx-auto md:flex md:flex-col items-center py-12 sm:py-24">
           <div className="md:w-11/12 flex justify-center items-center ">
             <h1 className="font-serif py-10 text-white text-5xl xl:text-6xl text-center leading-7 md:leading-10">
               About Us
@@ -92,7 +92,7 @@ function About() {
               <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                 Sejarah
               </h1>
-              <div className="bg-pink-600 md:flex md:text-xl text-medium text-white md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md">
+              <div className="bg-[#ea3431] md:flex md:text-xl text-medium text-white md:justify-evenly md:items-center place-items-center grid py-10 px-10 rounded-md">
                 <p>
                   Farmasi merupakan ilmu dan seni yang berkaitan dengan obat.
                   Mereka yang berkecimpung di bidang kefarmasian adalah para
@@ -123,10 +123,10 @@ function About() {
                   Fakultas farmasi Universitas Indonesia menyediakan 5 jenis
                   program pendidikan, yaitu:
                 </p>
-                <div className="container bg-[#87b07b] rounded-md flex items-center justify-center">
+                <div className="container bg-[#5b88d9] rounded-md flex items-center justify-center">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
                     <div className="rounded-md px-10 py-10 w-auto text-center">
-                      <div className="container rounded-md bg-[#f0eaa3] px-10 py-10">
+                      <div className="container rounded-md bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Sarjana (S1) Farmasi
                         </h3>
@@ -155,7 +155,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto text-center">
-                      <div className="container rounded-md  bg-[#f0eaa3] md:bg-transparent md:text-black px-10 py-10">
+                      <div className="container rounded-md  bg-[#70bae9] md:bg-transparent md:text-black px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Magister Ilmu Kefarmasian (S2)
                         </h3>
@@ -174,7 +174,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto text-center">
-                      <div className="container rounded-md  md:bg-[#f0eaa3] px-10 py-10">
+                      <div className="container rounded-md  md:bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Magister Ilmu Herbal (S2)
                         </h3>
@@ -189,7 +189,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto text-center">
-                      <div className="container rounded-md bg-[#f0eaa3] px-10 py-10">
+                      <div className="container rounded-md bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Doktor Ilmu Farmasi (S3)
                         </h3>
@@ -218,8 +218,8 @@ function About() {
                 <div className="container rounded-md flex items-start justify-center">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-cyan-700 px-5 py-5">
-                        <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
+                      <div className="container rounded-md bg-[#fdf56e] px-5 py-5">
+                        <h3 className="font-serif text-3xl text-center text-blackd pb-2 mb-3">
                           Paralel
                         </h3>
                         <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
@@ -234,7 +234,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-blue-900 px-5 py-5">
+                      <div className="container rounded-md bg-[#fa7f22] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
                           Reguler
                         </h3>
@@ -270,8 +270,8 @@ function About() {
                 </p>
                 <div className="container rounded-md flex items-start justify-center">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
-                    <div className="rounded-md px-10 py-6 w-auto">
-                      <div className="container rounded-md bg-pink-600 px-5 py-5">
+                    <div className="rounded-md px-10 py-10 w-auto">
+                      <div className="container rounded-md bg-[#70bae9] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
                           Paralel
                         </h3>
@@ -284,7 +284,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-red-600 px-5 py-5">
+                      <div className="container rounded-md bg-[#5b88d9] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
                           Reguler
                         </h3>
@@ -308,10 +308,10 @@ function About() {
                 <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                   Organisasi
                 </h1>
-                <div className="container bg-[#f0eaa3] rounded-md flex items-center justify-center">
+                <div className="container bg-[#70bae9] rounded-md flex items-center justify-center">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-start text-medium">
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-pink-600 px-5 py-5">
+                      <div className="container rounded-md bg-[#ea3431] px-5 py-5">
                         <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">
                           Badan Eksekutif Mahasiswa (BEM)
                         </h3>
@@ -331,8 +331,8 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-red-600 px-5 py-5">
-                        <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">
+                      <div className="container rounded-md bg-[#fdf56e] px-5 py-5">
+                        <h3 className="font-serif text-black text-3xl text-center  pb-2 mb-3">
                           Badan Perwakilan Mahasiswa (BPM)
                         </h3>
                         <p className="text-small container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
@@ -346,7 +346,7 @@ function About() {
                       </div>
                     </div>
                     <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-orange-400 px-5 py-5">
+                      <div className="container rounded-md bg-[#fa7f22] px-5 py-5">
                         <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">
                           Syiar Islam Farmasi (SYIFA FF UI)
                         </h3>

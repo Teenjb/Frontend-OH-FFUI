@@ -22,7 +22,7 @@ import mp12 from "../Img/Logo SL Terbaru.png";
 
 function Footer(){
     return(
-        <footer className="w-full border-b bg-blue-900">
+        <footer className="w-full border-b bg-[#70bae9]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 items-center justify-center">
           <div className="grid items-center justify-center">
             <h4 className="font-serif py-5 text-white text-xl text-center leading-7 md:leading-10">Sponsors</h4>
@@ -78,9 +78,9 @@ function Footer(){
             </a>
           </div>
         </div>
-        <div className="bg-pink-500 py-5 flex items-center flex-row justify-center relative top-0 bottom-0 left-0 right-0">
-          <p className="text-blue-900 text-sm font-bold">
-            All rights reserved © OH FF UI VOL.III{" "}
+        <div className="bg-[#f57ae5] py-5 flex items-center flex-row justify-center relative top-0 bottom-0 left-0 right-0">
+          <p className="text-[#454e5d]text-sm font-bold">
+            All rights reserved © OH FF UI VOL.IV{" "}
           </p>
         </div>
       </footer>

@@ -7,8 +7,8 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const hostendpoint = "http://localhost:1337/";
+const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const endpoint = "http://localhost:1337/";
 const provinsiEndpoint =
   "https://dev.farizdotid.com/api/daerahindonesia/provinsi";
 const kotaEndpoint = "https://dev.farizdotid.com/api/daerahindonesia/kota";
@@ -635,7 +635,7 @@ function Register() {
           </div>
         </div>
         <div className="hidden lg:block relative w-0 flex-1">
-          <h1 className="grid h-full place-items-center relative w-full bg-orange-400 font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+          <h1 className="grid h-full place-items-center relative w-full bg-[#fa7f22] font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
             Register
           </h1>
         </div>

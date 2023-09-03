@@ -5,8 +5,8 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const axios = require("axios");
-const endpoint = "https://api-oh-ffui-2022.herokuapp.com/";
-const hostendpoint = "http://localhost:1337/";
+const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/";
+const endpoint = "http://localhost:1337/";
 
 function Login() {
   //variable used in this page
@@ -212,7 +212,7 @@ function Login() {
             </div>
           </div>
           <div className="hidden lg:block relative w-0 flex-1">
-            <h1 className="grid h-full place-items-center relative w-full bg-[#87b07b] font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
+            <h1 className="grid h-full place-items-center relative w-full bg-[#5b88d9] font-serif text-white justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
               Login
             </h1>
           </div>

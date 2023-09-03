@@ -4,5 +4,10 @@
 
 @font-face {
     font-family: "Spicy Rice";
-    src: url("./Font/SpicyRice-Regular.ttf");
+    src: url("./Font/RetroCool-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Questrial";
+    src: url("./Font/Questrial-Regular.ttf");
   }

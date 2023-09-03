@@ -49,14 +49,8 @@ function Header() {
     if (id === "login") {
       window.location.href = "/login";
     }
-    if (id === "shop") {
-      window.location.href = "/shop";
-    }
     if (id === "home") {
       window.location.href = "/home";
-    }
-    if (id === "submission") {
-      authenticated ? window.location.href = "/submission" : notLoginYet();
     }
     if (id === "about") {
       window.location.href = "/about";
@@ -66,9 +60,6 @@ function Header() {
     }
     if (id === "tickets") {
       window.location.href = "/tickets";
-    }
-    if (id === "cart") {
-      authenticated ? window.location.href = "/cart" : notLoginYet();
     }
     if (id === "logout") {
       localStorage.removeItem("token");
@@ -91,7 +82,7 @@ function Header() {
   };
 
   return (
-    <nav className="w-full bg-blue-900">
+    <nav className="w-full bg-[#f57ae5]">
       <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
         <div aria-label="Home. logo" role="img">
           <img
@@ -107,7 +98,7 @@ function Header() {
             onClick={() => setShow(!show)}
             className={`${
               show ? "hidden" : ""
-            } sm:block md:hidden text-white hover:text-blue-200 focus:text-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-500`}
+            } sm:block md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d]focus:outline-none focus:ring-2 focus:text-[#454e5d]`}
           >
             <svg
               aria-haspopup="true"
@@ -152,36 +143,21 @@ function Header() {
                 <line x1={6} y1={6} x2={18} y2={18} />
               </svg>
             </button>
-            <ul className="flex text-3xl font-black md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-5 lg:left-20 right-0 bg-white md:bg-transparent z-20">
-              <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
+            <ul className="flex font-highlight font-bold text-3xl md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-5 lg:left-20 right-0 bg-white md:bg-transparent z-20">
+              <li className="text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
                 <a id="about" onClick={(e) => handleClick(e)}>
                   About Us
                 </a>
               </li>
-              <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                <a id="shop" onClick={(e) => handleClick(e)}>
-                  Shop
-                </a>
-              </li>
-              <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+              <li className="text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                 <a id="tickets" onClick={(e) => handleClick(e)}>
                   Tickets
-                </a>
-              </li>
-              <li className="text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                <a id="submission" onClick={(e) => handleClick(e)}>
-                  Submission
-                </a>
-              </li>
-              <li className="block md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                <a id="cart" onClick={(e) => handleClick(e)}>
-                  Cart
                 </a>
               </li>
               <li
                 className={`${
                   authenticated ? "hidden" : "block"
-                } md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="login" onClick={(e) => handleClick(e)}>
                   login
@@ -190,7 +166,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "hidden" : "block"
-                } md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="register" onClick={(e) => handleClick(e)}>
                   Sign Up
@@ -199,7 +175,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "block" : "hidden"
-                } md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="user" onClick={(e) => handleClick(e)}>
                   User
@@ -208,7 +184,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "block" : "hidden"
-                } md:hidden text-blue-200 hover:text-blue-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="logout" onClick={(e) => handleClick(e)}>
                   Logout
@@ -217,24 +193,11 @@ function Header() {
             </ul>
           </div>
         </div>
-        <div className="inline-flex space-x-2 items-center">
-          <a
-            id="cart"
-            onClick={(e) => handleClick(e)}
-            role="button"
-            className="hidden relative md:flex"
-          >
-            <svg
-              className="flex-1 w-8 h-6 fill-blue-200 pointer-events-none"
-              viewBox="0 0 24 24"
-            >
-              <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" />
-            </svg>
-          </a>
+        <div className="font-highlight inline-flex space-x-2 items-center">
           <button
             className={`${
               authenticated ? "md:hidden" : "md:block"
-            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden  transition duration-100 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`}
+            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden  transition duration-100 ease-in-out text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] rounded-full border border-[#f9f9fb] px-4 sm:px-8 py-1 sm:py-3 text-s`}
             id="login"
             onClick={(e) => handleClick(e)}
           >
@@ -243,7 +206,7 @@ function Header() {
           <button
             className={`${
               authenticated ? "md:hidden" : "md:block"
-            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-100 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`}
+            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-100 ease-in-out bg-[#fdf56e] hover:bg-[#454e5d] hover:text-[#f9f9fb] rounded-full border border-[#454e5d] text-[#454e5d] px-4 sm:px-8 py-1 sm:py-3 text-s`}
             id="register"
             onClick={(e) => handleClick(e)}
           >
@@ -252,7 +215,7 @@ function Header() {
           <button
             className={`${
               authenticated ? "md:block" : "md:hidden"
-            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-50 ease-in-out bg-blue-200 hover:bg-blue-400 rounded-full border border-blue-900 text-blue-900 px-4 sm:px-8 py-1 sm:py-3 text-s`}
+            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-50 ease-in-out bg-[#fdf56e] hover:bg-[#454e5d] hover:text-[#f9f9fb] rounded-full border border-[#454e5d] text-[#454e5d] px-4 sm:px-8 py-1 sm:py-3 text-s`}
             id="user"
             onClick={(e) => handleClick(e)}
           >
@@ -261,7 +224,7 @@ function Header() {
           <button
             className={`${
               authenticated ? "md:block" : "md:hidden"
-            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-100 ease-in-out hover:bg-blue-400 rounded-full border border-blue-200 text-blue-200 px-4 sm:px-8 py-1 sm:py-3 text-s`}
+            } focus:outline-none lg:text-sm lg:font-black focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 hidden transition duration-100 ease-in-out  text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] rounded-full border border-[#f9f9fb] px-4 sm:px-8 py-1 sm:py-3 text-s`}
             id="logout"
             onClick={(e) => handleClick(e)}
           >

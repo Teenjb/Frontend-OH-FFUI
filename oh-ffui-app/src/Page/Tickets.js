@@ -18,20 +18,42 @@ function Tickets() {
   const [loading, setLoading] = useState(true);
   const [typeClicked, setTypeClicked] = useState(null);
 
-  const endpoint = "https://api-oh-ffui-2022.herokuapp.com/api";
-  const hostendpoint = "http://localhost:1337/api";
+  const price = {
+    "Day 1": "Rp 50000",
+    "Day 2": "Rp 80000",
+    "Day 2 (no workshop)": "Rp 50000",
+    Bundle: "Rp 120000",
+    "Bundle (no workshop)": "Rp80000",
+  };
 
-  function loadTicketsCount() {
+  const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/api";
+  const endpoint = "http://localhost:1337/api";
+
+  async function loadTicketsCount() {
     axios
       .get(endpoint + "/tickets/count")
       .then((res) => {
         setTicketCount(res.data);
-        setLoading(false);
       })
       .catch((err) => {
         //console.log(err);
       });
   }
+  function ticketSoldOut() {
+    Toastify({
+      text: "Ticket Sold Out",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "left", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "#FF0000",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+  }
+
   function loadTickets() {
     axios
       .get(endpoint + "/tickets/getTicket", {
@@ -54,16 +76,20 @@ function Tickets() {
   }
 
   useEffect(() => {
-    loadTicketsCount();
+    setLoading(true);
     const tokenLocal = JSON.parse(localStorage.getItem("token"));
     if (tokenLocal) {
       if (tokenLocal.token !== null && tokenLocal.token !== "null") {
         setToken(tokenLocal.token);
         setName(tokenLocal.name);
         setAuthenticated(true);
+      } else {
+        setLoading(false);
       }
+    } else {
+      setLoading(false);
     }
-    setLoading(false);
+    loadTicketsCount();
   }, []);
 
   useEffect(() => {
@@ -90,14 +116,47 @@ function Tickets() {
       setPopUp(false);
     }
     if (id === "open") {
-      setTypeClicked(e.target.value);
-      setPopUp(true);
+      loadTicketsCount().then(() => {
+        setTypeClicked(e.target.value);
+        if (typeClicked === "Day 1") {
+          if (ticketCount.countDay1 < 150) {
+            setPopUp(true);
+          } else {
+            ticketSoldOut();
+          }
+        } else if (typeClicked === "Day 2") {
+          if (ticketCount.countDay2No < 150) {
+            setPopUp(true);
+          } else {
+            ticketSoldOut();
+          }
+        } else if (typeClicked === "Day 2 (no workshop)") {
+          if (ticketCount.countBundle < 50) {
+            setPopUp(true);
+          } else {
+            ticketSoldOut();
+          }
+        } else if (typeClicked === "Bundle") {
+          if (ticketCount.countBundleNo < 50) {
+            setPopUp(true);
+          } else {
+            ticketSoldOut();
+          }
+        } else if (typeClicked === "Bundle (no workshop)") {
+          if (ticketCount.countDay2 < 50) {
+            setPopUp(true);
+          } else {
+            ticketSoldOut();
+          }
+        }
+      });
     }
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    console.log(typeClicked);
     const formData = new FormData();
     const data = `{"ticketID": "${
       "ticket" + name.replace(/\s/g, "")
@@ -114,6 +173,7 @@ function Tickets() {
       },
     })
       .then((res) => {
+        console.log(res);
         if (res.data.errors) {
           Toastify({
             text: "Buying Failed please contact admin",
@@ -168,7 +228,7 @@ function Tickets() {
       {loading && <Loading />}
       <Header />
       <div
-        className="flex-col bg-gradient-to-b from-blue-900 to-blue-200 items-center h-full overflow-y-hidden relative"
+        className="flex-col bg-gradient-to-b from-[#f57ae5] to-[#fdf56e] items-center h-full overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         {!tickets && (
@@ -176,38 +236,36 @@ function Tickets() {
             <h1 className="font-serif pt-20 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
               Buy Tickets
             </h1>
+            {/* DAY 1 */}
             <div className="flex justify-center my-5 mx-auto py-10 px-5">
               <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlock The Ticket!
                 </h1>
                 {ticketCount && (
-                  <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
-                    {100 - ticketCount.countHybrid} left
+                  <h1 className="absolute bg-[#ea3431] font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {150 - ticketCount.countDay1} left
                   </h1>
                 )}
                 <div className="p-6 flex flex-col justify-start px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
-                    Open House Fakultas Farmasi UI Vol.III - Hybrid
+                    Open House Fakultas Farmasi UI Vol.IV - Day 1
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                    19 November 2022 - Online
+                    11 November 2023, Fakultas Farmasi UI, Depok
                   </p>
-                  <p className="text-gray-700 text-sm mb-4">
-                    26 November 2022 - Offline (Fakultas Farmasi UI, Depok)
-                  </p>
-                  <p className="text-pink-500 text-md font-semibold">
-                    Price : Rp. 35.000
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : Rp. 50.000
                   </p>
                   <button
                     id="open"
                     className={`${
                       !authenticated ? "hidden" : "block"
-                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-white bg-red-600`}
-                    value="Hybrid"
-                    //onClick={(e) => handleOnClick(e)}
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-[#f57ae5] bg-white  border-[#f57ae5] hover:bg-[#f57ae5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Day 1"
+                    onClick={(e) => handleOnClick(e)}
                   >
-                    SOLD OUT!
+                    Buy Here!
                   </button>
                   <button
                     className={`${
@@ -220,38 +278,166 @@ function Tickets() {
                 </div>
               </div>
             </div>
-            <h1 className="font-serif  text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-              Or
-            </h1>
+            {/* DAY 2 */}
             <div className="flex justify-center my-5 mx-auto py-10 px-5">
               <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
                 <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
                   Buy To Unlock The Ticket!
                 </h1>
                 {ticketCount && (
-                  <h1 className="absolute bg-red-600 font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
-                    {500 - ticketCount.countOnline} left
+                  <h1 className="absolute bg-[#ea3431] font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {150 - ticketCount.countDay2} left
                   </h1>
                 )}
                 <div className="p-6 flex flex-col justify-start px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
-                    Open House Fakultas Farmasi UI Vol.III - Online
+                    Open House Fakultas Farmasi UI Vol.IV - Day 2
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                    19 November 2022 - Online
+                    18 November 2023, Fakultas Farmasi UI, Depok
                   </p>
-                  <p className="text-gray-700 text-sm mb-4">
-                    26 November 2022 - Online
-                  </p>
-                  <p className="text-pink-500 text-md font-semibold">
-                    Price : Rp. 25.000
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : Rp. 80.000
                   </p>
                   <button
                     id="open"
                     className={`${
                       !authenticated ? "hidden" : "block"
-                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-pink-500 bg-white  border-pink-500 hover:bg-pink-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-[#f57ae5] bg-white  border-[#f57ae5] hover:bg-[#f57ae5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Day 2"
+                    onClick={(e) => handleOnClick(e)}
+                  >
+                    Buy Here!
+                  </button>
+                  <button
+                    className={`${
+                      authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-gray-500 bg-white  border-gray-500`}
                     value="Online"
+                  >
+                    Login First
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* DAY 2 NO */}
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+                <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
+                  Buy To Unlock The Ticket!
+                </h1>
+                {ticketCount && (
+                  <h1 className="absolute bg-[#ea3431] font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {50 - ticketCount.countDay2No} left
+                  </h1>
+                )}
+                <div className="p-6 flex flex-col justify-start px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
+                    Open House Fakultas Farmasi UI Vol.IV - Day 2 (No Workshop)
+                  </h5>
+                  <p className="text-gray-700 text-sm mb-4">
+                  18 November 2023, Fakultas Farmasi UI, Depok
+                  </p>
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : Rp. 50.000
+                  </p>
+                  <button
+                    id="open"
+                    className={`${
+                      !authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-[#f57ae5] bg-white  border-[#f57ae5] hover:bg-[#f57ae5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Day 2 (no workshop)"
+                    onClick={(e) => handleOnClick(e)}
+                  >
+                    Buy Here!
+                  </button>
+                  <button
+                    className={`${
+                      authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-gray-500 bg-white  border-gray-500`}
+                    value="Online"
+                  >
+                    Login First
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* BUNDLE */}
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+                <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
+                  Buy To Unlock The Ticket!
+                </h1>
+                {ticketCount && (
+                  <h1 className="absolute bg-[#ea3431] font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {50 - ticketCount.countBundle} left
+                  </h1>
+                )}
+                <div className="p-6 flex flex-col justify-start px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
+                    Open House Fakultas Farmasi UI Vol.IV - Bundle Day 1 & Day 2
+                  </h5>
+                  <p className="text-gray-700 text-sm mb-4">
+                  11 November 2023, Fakultas Farmasi UI, Depok
+                  </p>
+                  <p className="text-gray-700 text-sm mb-4">
+                  18 November 2023, Fakultas Farmasi UI, Depok
+                  </p>
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : Rp. 120.000
+                  </p>
+                  <button
+                    id="open"
+                    className={`${
+                      !authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-[#f57ae5] bg-white  border-[#f57ae5] hover:bg-[#f57ae5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Bundle"
+                    onClick={(e) => handleOnClick(e)}
+                  >
+                    Buy Here!
+                  </button>
+                  <button
+                    className={`${
+                      authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-gray-500 bg-white  border-gray-500`}
+                    value="Online"
+                  >
+                    Login First
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* BUNDLE NO */}
+            <div className="flex justify-center my-5 mx-auto py-10 px-5">
+              <div className="flex flex-col md:flex-row md:max-w-2xl rounded-lg bg-white shadow-lg">
+                <h1 className="bg-gray-600 font-serif text-xl text-white md:rounded-l-lg  text-center items-center justify-center px-5 py-28">
+                  Buy To Unlock The Ticket!
+                </h1>
+                {ticketCount && (
+                  <h1 className="absolute bg-[#ea3431] font-serif text-xl text-white md:rounded-br-lg md:rounded-tl-lg  text-center items-center justify-center px-5 py-2">
+                    {50 - ticketCount.countBundleNo} left
+                  </h1>
+                )}
+                <div className="p-6 flex flex-col justify-start px-10">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
+                    Open House Fakultas Farmasi UI Vol.IV - Bundle Day 1 & Day 2
+                    (No Workshop)
+                  </h5>
+                  <p className="text-gray-700 text-sm mb-4">
+                  11 November 2023, Fakultas Farmasi UI, Depok
+                  </p>
+                  <p className="text-gray-700 text-sm mb-4">
+                  18 November 2023, Fakultas Farmasi UI, Depok
+                  </p>
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : Rp. 80.000
+                  </p>
+                  <button
+                    id="open"
+                    className={`${
+                      !authenticated ? "hidden" : "block"
+                    } w-full mt-4 flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium text-[#f57ae5] bg-white  border-[#f57ae5] hover:bg-[#f57ae5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-700`}
+                    value="Bundle (no workshop)"
                     onClick={(e) => handleOnClick(e)}
                   >
                     Buy Here!
@@ -293,23 +479,22 @@ function Tickets() {
                 )}
                 <div className="p-6 flex flex-col justify-center px-10">
                   <h5 className="text-gray-900 text-xl font-medium mb-2">
-                    Open House Fakultas Farmasi UI Vol.III -{" "}
-                    {tickets.ticketType}
+                    Open House Fakultas Farmasi UI Vol.IV - {tickets.ticketType}
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                    19 November 2022 - Online
+                    {tickets.ticketType === "Day 2" ||
+                    tickets.ticketType === "Day 2 (no workshop)"
+                      ? ""
+                      : "11 November 2023"}
                   </p>
                   <p className="text-gray-700 text-sm mb-4">
-                    26 November 2022 - {tickets.ticketType}
+                    {tickets.ticketType === "Day 1" ? "" : "18 November 2023"}
                   </p>
                   <p className="text-gray-700 text-sm mb-4">
                     ID: {tickets.ticketID}
                   </p>
-                  <p className="text-pink-500 text-md font-semibold">
-                    Price :{" "}
-                    {tickets.ticketType === "Hybrid"
-                      ? "Rp. 35.000"
-                      : "Rp. 25.000"}
+                  <p className="text-[#f57ae5] text-md font-semibold">
+                    Price : {price[tickets.ticketType]}
                   </p>
                 </div>
               </div>
@@ -325,11 +510,11 @@ function Tickets() {
             className="overflow-y-auto overflow-x-hidden fixed flex items-center justify-center top-0 right-0 left-0 z-30 h-full bg-black bg-opacity-30"
           >
             <div className="relative p-4 w-full max-w-md h-full md:h-auto">
-              <div className="relative bg-blue-900 rounded-lg shadow dark:bg-blue-900">
+              <div className="relative bg-[#5b88d9] rounded-lg shadow dark:bg-blue-900">
                 <button
                   id="close"
                   type="button"
-                  className="absolute top-3 right-2.5 text-blue-200 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                  className="absolute top-3 right-2.5 text-[#f9f9fb] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
                   data-modal-toggle="popup-modal"
                   onClick={(e) => handleOnClick(e)}
                 >
@@ -351,7 +536,7 @@ function Tickets() {
                 <div className="p-6 text-center">
                   <svg
                     aria-hidden="true"
-                    className="mx-auto mb-4 w-14 h-14 text-blue-200 dark:text-blue-200"
+                    className="mx-auto mb-4 w-14 h-14 text-[#f9f9fb] dark:text-blue-200"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -364,19 +549,20 @@ function Tickets() {
                       d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  <h3 className="mb-5 text-lg font-normal text-blue-200 dark:text-blue-200">
+                  <h3 className="mb-5 text-lg font-normal text-[#f9f9fb] dark:text-blue-200">
                     Masukkan Bukti Pembayaran
                   </h3>
-                  <h5 className="mb-1 text-left text-sm font-bold text-blue-200 dark:text-blue-200">
+                  <h5 className="mb-1 text-left text-sm font-bold text-[#f9f9fb] dark:text-blue-200">
                     Pembayaran Melalui:
                   </h5>
-                  <ul className="mb-5 text-left text-sm font-normal text-blue-200">
+                  <ul className="mb-5 text-left text-sm font-normal text-[#f9f9fb]">
                     <li>BNI 1262422154 a.n. Jazmina Nur Shobrina</li>
                     <li>OVO 081292718692</li>
                     <li>GOPAY 081292718692</li>
                   </ul>
-                  <h5 className="mb-5 bg-red-600 text-center p-2 rounded-lg text-sm font-normal text-blue-200 dark:text-blue-200">
-                  Jangan lupa untuk isi keterangan berita transfer dengan <b>Username Account</b> kalian saat melakukan pembayaran!
+                  <h5 className="mb-5 bg-[#ea3431] text-center p-2 rounded-lg text-sm font-normal text-[#f9f9fb] dark:text-blue-200">
+                    Jangan lupa untuk isi keterangan berita transfer dengan{" "}
+                    <b>Username Account</b> kalian saat melakukan pembayaran!
                   </h5>
                   <label
                     htmlFor="dropzone-file"
@@ -425,7 +611,8 @@ function Tickets() {
                       onChange={(e) => handleFileChange(e)}
                       type="file"
                       className="hidden"
-                      multiple accept="image/*"
+                      multiple
+                      accept="image/*"
                     />
                   </label>
                   <button
@@ -434,7 +621,7 @@ function Tickets() {
                     disabled={!file}
                     className={`${
                       file
-                        ? "bg-pink-500 text-white hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
+                        ? "bg-[#e09bf4] text-white hover:bg-[#f57ae5] focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800"
                         : "text-gray-500 bg-white border-gray-500"
                     } font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                     onClick={(e) => handleOnSubmit(e)}
