@@ -26,8 +26,7 @@ function Tickets() {
     "Bundle (no workshop)": "Rp80000",
   };
 
-  const hostendpoint = "https://api-oh-ffui-2022.herokuapp.com/api";
-  const endpoint = "http://localhost:1337/api";
+  const endpoint = "https://oh-ffui-2023-im753hqaqa-et.a.run.app/api"; 
 
   async function loadTicketsCount() {
     axios

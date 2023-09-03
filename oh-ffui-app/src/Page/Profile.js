@@ -10,10 +10,8 @@ import PreorderCard from "../Component/PreorderCard";
 function Profile() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
-  const endpoint = "http://localhost:1337/api/users/me?populate=preorders";
-  const hostendpoint =
-    "https://api-oh-ffui-2022.herokuapp.com/api/users/me?populate[0]=preorders&populate[1]=preorders.merchandises";
-
+  const endpoint = `https://oh-ffui-2023-im753hqaqa-et.a.run.app/api/users/me?populate=preorders`;
+  
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
