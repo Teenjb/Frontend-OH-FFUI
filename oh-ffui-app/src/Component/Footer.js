@@ -27,14 +27,14 @@ function Footer(){
           <div className="grid items-center justify-center">
             <h4 className="font-serif py-5 text-white text-xl text-center leading-7 md:leading-10">Sponsors</h4>
             <div className="flex-wrap md:flex md:flex-auto md:my-4 items-center justify-center">
-              <img className="h-24 p-2 md:h-32" src={sp1} alt="" />
+              {/* <img className="h-24 p-2 md:h-32" src={sp1} alt="" />
               <img className="h-24 p-2 md:h-32" src={sp2} alt="" />
-              <img className="h-24 p-2 md:h-32" src={sp3} alt="" />
+              <img className="h-24 p-2 md:h-32" src={sp3} alt="" /> */}
             </div>
           </div>
           <div className="relative items-center justify-center">
             <h4 className="font-serif py-5 text-white text-xl text-center leading-7 md:leading-10">Media Partners</h4>
-            <div className="flex flex-auto md:pt-4 items-center justify-center">
+            {/* <div className="flex flex-auto md:pt-4 items-center justify-center">
               <img className="h-10 md:h-16" src={mp2} alt="" />
               <img className="h-10 bg-white mx-1 md:h-16" src={mp3} alt="" />
               <img className="h-8 md:h-14" src={mp1} alt="" />
@@ -53,7 +53,7 @@ function Footer(){
             <div className="flex my-1 flex-auto items-center justify-center">
               <img className="h-8 md:h-14" src={mp11} alt="" />
               <img className="h-10 bg-white mx-1 md:h-16" src={mp12} alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div>
