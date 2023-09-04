@@ -36,7 +36,7 @@ function Profile() {
     <div>
       <Header />
       <div
-        className="grid h-full lg:h-screen bg-gradient-to-b from-blue-900 to-blue-200 overflow-y-hidden relative"
+        className="grid h-full lg:h-screen bg-gradient-to-b from-[#f57ae5] to-[#fdf56e] overflow-y-hidden relative"
         style={{ minHeight: 700 }}
       >
         <div className="flex h-max">

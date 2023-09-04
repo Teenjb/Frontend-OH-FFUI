@@ -144,12 +144,12 @@ function Header() {
               </svg>
             </button>
             <ul className="flex font-highlight font-bold text-3xl md:text-base items-center py-5 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 md:left-5 lg:left-20 right-0 bg-white md:bg-transparent z-20">
-              <li className="text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
+              <li className="text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
                 <a id="about" onClick={(e) => handleClick(e)}>
                   About Us
                 </a>
               </li>
-              <li className="text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+              <li className="text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                 <a id="tickets" onClick={(e) => handleClick(e)}>
                   Tickets
                 </a>
@@ -157,7 +157,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "hidden" : "block"
-                } md:hidden text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#fdf56e] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="login" onClick={(e) => handleClick(e)}>
                   login
@@ -166,7 +166,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "hidden" : "block"
-                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="register" onClick={(e) => handleClick(e)}>
                   Sign Up
@@ -175,7 +175,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "block" : "hidden"
-                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="user" onClick={(e) => handleClick(e)}>
                   User
@@ -184,7 +184,7 @@ function Header() {
               <li
                 className={`${
                   authenticated ? "block" : "hidden"
-                } md:hidden text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
+                } md:hidden text-[#5b88d9] sm:text-[#f9f9fb] hover:text-[#454e5d] focus:text-[#454e5d] cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10`}
               >
                 <a id="logout" onClick={(e) => handleClick(e)}>
                   Logout

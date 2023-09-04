@@ -125,7 +125,7 @@ function About() {
                 </p>
                 <div className="container bg-[#5b88d9] rounded-md flex items-center justify-center">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-center text-medium">
-                    <div className="rounded-md px-10 py-10 w-auto text-center">
+                    <div className="rounded-md md:p-10 w-auto text-center">
                       <div className="container rounded-md bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Sarjana (S1) Farmasi
@@ -138,7 +138,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto text-center">
+                    <div className="rounded-md md:p-10 w-auto text-center">
                       <div className="container rounded-md px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Profesi Apoteker
@@ -154,7 +154,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto text-center">
+                    <div className="rounded-md md:p-10 w-auto text-center">
                       <div className="container rounded-md  bg-[#70bae9] md:bg-transparent md:text-black px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Magister Ilmu Kefarmasian (S2)
@@ -173,7 +173,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto text-center">
+                    <div className="rounded-md md:p-10 w-auto text-center">
                       <div className="container rounded-md  md:bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Program Pendidikan Magister Ilmu Herbal (S2)
@@ -188,7 +188,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto text-center">
+                    <div className="rounded-md md:p-10 w-auto text-center">
                       <div className="container rounded-md bg-[#70bae9] px-10 py-10">
                         <h3 className="font-serif text-3xl text-black pb-2 mb-3">
                           Doktor Ilmu Farmasi (S3)
@@ -210,92 +210,70 @@ function About() {
             <div className="container mx-auto grid md:flex md:flex-col items-start py-6 sm:py-12">
               <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
                 <h1 className="font-serif py-10 text-white  text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-                  Jalur Masuk
+                  Jalur Masuk dan Daya Tampung
                 </h1>
                 <p className="text-medium text-xl justify-center text-white  items-center">
-                  Terdapat 5 jalur masuk untuk Fakultas Farmasi UI, yaitu :
+                  Terdapat 4 jalur masuk untuk Fakultas Farmasi UI, yaitu :
                 </p>
                 <div className="container rounded-md flex items-start justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
-                    <div className="rounded-md px-10 py-10 w-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-2 md:p-5 items-start text-medium">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#fdf56e] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-blackd pb-2 mb-3">
-                          Paralel
+                          SNBP
                         </h3>
                         <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
-                          PPKB : Jalur seleksi berdasarkan nilai akademik rapor
-                          yang melibatkan peran sekolah yang diselenggarakan
-                          oleh Universitas Indonesia.
+                          Jalur seleksi berdasarkan nilai akademik rapor yang
+                          diselenggarakan secara nasional oleh LTMPT.
                         </p>
                         <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SIMAK UI Paralel : Ujian seleksi tanpa nilai UTBK yang
-                          diselenggarakan oleh Universitas Indonesia.
+                          Daya tampung (reguler): 30 orang
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#fa7f22] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
-                          Reguler
+                          SNBT
                         </h3>
                         <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
-                          SNMPTN : Jalur seleksi berdasarkan nilai akademik
-                          rapor yang diselenggarakan secara nasional oleh LTMPT.
+                          Seleksi bersama yang diselenggarakan secara nasional
+                          oleh LTMPT melalui Ujian Tulis Berbasis Komputer
+                          (UTBK).
                         </p>
                         <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SBMPTN : Seleksi bersama yang diselenggarakan secara
-                          nasional oleh LTMPT melalui Ujian Tulis Berbasis
-                          Komputer (UTBK).
-                        </p>
-                        <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SIMAK UI Reguler : Ujian seleksi dengan pertimbangan
-                          nilai UTBK yang diselenggarakan oleh Universitas
-                          Indonesia.
+                          Daya tampung (reguler): 45 orang
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="container mx-auto grid md:flex md:flex-col items-center text-center py-6 sm:py-12">
-              <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
-                <h1 className="font-serif py-10 text-white  text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
-                  Daya Tampung & Keketatan
-                </h1>
-                <p className="text-medium text-xl text-white justify-center items-center">
-                  Berdasarkan jalur masuknya, pada tahun 2022 Fakultas Farmasi
-                  UI jenjang sarjana (S1) memiliki daya tampung dan keketatan
-                  sebagai berikut :
-                </p>
-                <div className="container rounded-md flex items-start justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 items-start text-medium">
-                    <div className="rounded-md px-10 py-10 w-auto">
-                      <div className="container rounded-md bg-[#70bae9] px-5 py-5">
-                        <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
-                          Paralel
-                        </h3>
-                        <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
-                          PPKB : 30 orang (8.04%)
-                        </p>
-                        <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SIMAK UI Paralel : 30 orang (3.09%)
-                        </p>
-                      </div>
-                    </div>
-                    <div className="rounded-md px-10 py-10 w-auto">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#5b88d9] px-5 py-5">
                         <h3 className="font-serif text-3xl text-center text-white pb-2 mb-3">
-                          Reguler
+                          PPKB
                         </h3>
                         <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
-                          SNMPTN : 18 orang (4.89%)
+                          Jalur seleksi berdasarkan nilai akademik rapor yang
+                          melibatkan peran sekolah yang diselenggarakan oleh
+                          Universitas Indonesia.
                         </p>
                         <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SBMPTN : 27 orang (3.74%)
+                          Daya tampung (reguler): 8 orang Daya tampung (non
+                          reguler): 30 orang
+                        </p>
+                      </div>
+                    </div>
+                    <div className="rounded-md md:p-10 w-auto">
+                      <div className="container rounded-md bg-[#e09bf4] px-5 py-5">
+                        <h3 className="font-serif text-3xl text-center text-blackd pb-2 mb-3">
+                          SIMAK UI
+                        </h3>
+                        <p className="text-medium container bg-white mx-auto mb-4 px-2 py-2 rounded-md">
+                          Ujian seleksi dengan pertimbangan nilai UTBK yang
+                          diselenggarakan oleh Universitas Indonesia.
                         </p>
                         <p className="text-medium container bg-white mx-auto mt-4 px-2 py-2 rounded-md">
-                          SIMAK UI Reguler : 45 orang (1.49%)
+                          Daya tampung (reguler): 8 orang Daya tampung (non
+                          reguler): 29 orang
                         </p>
                       </div>
                     </div>
@@ -303,14 +281,15 @@ function About() {
                 </div>
               </div>
             </div>
+
             <div className="container mx-auto grid md:flex md:flex-col items-center text-center py-6 sm:py-12">
               <div className="lg:flex justify-center items-center flex-col mb-5 md:mx-36 mx-10">
                 <h1 className="font-serif py-10 text-white text-4xl lg:text-5xl xl:text-6xl text-center leading-7 md:leading-10">
                   Organisasi
                 </h1>
-                <div className="container bg-[#70bae9] rounded-md flex items-center justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-start text-medium">
-                    <div className="rounded-md px-10 py-10 w-auto">
+                <div className="container rounded-md flex items-center justify-center">
+                  <div className="grid grid-cols-1 gap-2 p-5 items-start text-medium">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#ea3431] px-5 py-5">
                         <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">
                           Badan Eksekutif Mahasiswa (BEM)
@@ -330,7 +309,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#fdf56e] px-5 py-5">
                         <h3 className="font-serif text-black text-3xl text-center  pb-2 mb-3">
                           Badan Perwakilan Mahasiswa (BPM)
@@ -345,7 +324,7 @@ function About() {
                         </p>
                       </div>
                     </div>
-                    <div className="rounded-md px-10 py-10 w-auto">
+                    <div className="rounded-md md:p-10 w-auto">
                       <div className="container rounded-md bg-[#fa7f22] px-5 py-5">
                         <h3 className="font-serif text-white text-3xl text-center  pb-2 mb-3">
                           Syiar Islam Farmasi (SYIFA FF UI)
@@ -368,7 +347,7 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
