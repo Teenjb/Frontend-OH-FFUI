@@ -17,6 +17,7 @@ function Tickets() {
   const [popUp, setPopUp] = useState(false);
   const [loading, setLoading] = useState(true);
   const [typeClicked, setTypeClicked] = useState(null);
+  const [preview, setPreview] = useState(null);
 
   const price = {
     "Day 1": "Rp 50000",
@@ -106,6 +107,7 @@ function Tickets() {
   const handleFileChange = async (e) => {
     const { files } = e.target;
     setFile(files[0]);
+    setPreview(URL.createObjectURL(files[0]));
   };
 
   const handleOnClick = (e) => {
@@ -565,7 +567,7 @@ function Tickets() {
                   </h5>
                   <label
                     htmlFor="dropzone-file"
-                    className="flex flex-col justify-center items-center w-full h-64 mb-10 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 hover:bg-gray-100"
+                    className="flex flex-col overflow-clip justify-center items-center w-full h-64 mb-10 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 hover:bg-gray-100"
                   >
                     {!file && (
                       <div className="flex flex-col justify-center items-center pt-5 pb-6">
@@ -596,9 +598,9 @@ function Tickets() {
                     {file && (
                       <div className="flex flex-col justify-center items-center pt-5 pb-6">
                         <img
-                          src={file}
+                          src={preview}
                           alt="payment proof"
-                          className="w-full h-full object-cover"
+                          className="h-40 object-cover"
                         />
                         <p className="text-xs text-gray-500 dark:text-gray-400">
                           {file.name}
