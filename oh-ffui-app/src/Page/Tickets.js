@@ -27,7 +27,7 @@ function Tickets() {
     "Bundle (no workshop)": "Rp80000",
   };
 
-  const endpoint = "https://oh-ffui-2023-im753hqaqa-et.a.run.app/api"; 
+  const endpoint = "https://oh-ffui-2023-im753hqaqa-et.a.run.app/api";
 
   async function loadTicketsCount() {
     axios
@@ -337,7 +337,7 @@ function Tickets() {
                     Open House Fakultas Farmasi UI Vol.IV - Day 2 (No Workshop)
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                  18 November 2023, Fakultas Farmasi UI, Depok
+                    18 November 2023, Fakultas Farmasi UI, Depok
                   </p>
                   <p className="text-[#f57ae5] text-md font-semibold">
                     Price : Rp. 50.000
@@ -379,10 +379,10 @@ function Tickets() {
                     Open House Fakultas Farmasi UI Vol.IV - Bundle Day 1 & Day 2
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                  11 November 2023, Fakultas Farmasi UI, Depok
+                    11 November 2023, Fakultas Farmasi UI, Depok
                   </p>
                   <p className="text-gray-700 text-sm mb-4">
-                  18 November 2023, Fakultas Farmasi UI, Depok
+                    18 November 2023, Fakultas Farmasi UI, Depok
                   </p>
                   <p className="text-[#f57ae5] text-md font-semibold">
                     Price : Rp. 120.000
@@ -425,10 +425,10 @@ function Tickets() {
                     (No Workshop)
                   </h5>
                   <p className="text-gray-700 text-sm mb-4">
-                  11 November 2023, Fakultas Farmasi UI, Depok
+                    11 November 2023, Fakultas Farmasi UI, Depok
                   </p>
                   <p className="text-gray-700 text-sm mb-4">
-                  18 November 2023, Fakultas Farmasi UI, Depok
+                    18 November 2023, Fakultas Farmasi UI, Depok
                   </p>
                   <p className="text-[#f57ae5] text-md font-semibold">
                     Price : Rp. 80.000
@@ -557,13 +557,17 @@ function Tickets() {
                     Pembayaran Melalui:
                   </h5>
                   <ul className="mb-5 text-left text-sm font-normal text-[#f9f9fb]">
-                    <li>BNI 1262422154 a.n. Jazmina Nur Shobrina</li>
-                    <li>OVO 081292718692</li>
-                    <li>GOPAY 081292718692</li>
+                    <li>BNI 0265810355 a/n Shahila Dicka Sjarif</li>
+                    <li>OVO 081382285616 a/n Shahila</li>
+                    <li>GOPAY 081387915188 a/n Kezia Jolanda Irsy Kusumah</li>
                   </ul>
                   <h5 className="mb-5 bg-[#ea3431] text-center p-2 rounded-lg text-sm font-normal text-[#f9f9fb] dark:text-blue-200">
                     Jangan lupa untuk isi keterangan berita transfer dengan{" "}
                     <b>Username Account</b> kalian saat melakukan pembayaran!
+                  </h5>
+                  <h5 className="mb-5 bg-[#ea3431] text-center p-2 rounded-lg text-sm font-normal text-[#f9f9fb] dark:text-blue-200">
+                    Tambahkan biaya admin saat transfer ke <b>OVO</b> sesuai dengan
+                    bank yang digunakan
                   </h5>
                   <label
                     htmlFor="dropzone-file"

@@ -72,13 +72,11 @@ function Home() {
                 />
                 <div>
                   <p className="text-white text-l px-10 py-5 ">
-                    " Ikut Open House FF UI membuat aku jadi banyak tahu tentang
-                    Farmasi UI!! Kita diajak ke tempat-tempat para mahasiswa
-                    belajar dan praktik dan itu sangattt menarik. Kakak-kakaknya
-                    juga menjelaskan banyakkk hal tentang Farmasi. Open House FF
-                    UI sangat seruuu!!! karena kita bisa banyak bertanya sama
-                    kakak-kakak mahasiswa farmasi UI dan menambah wawasan kita
-                    tentang Farmasii!! "
+                    " Open House FF UI memberikanku banyak pengetahuan baru
+                    tentang Farmasi UI. Rangkaian acaranya sangat seru dan
+                    menarik, seperti Talkshow, Campus Tour, dan Pharmacy Quiz.
+                    Terima kasih Open House FF UI yang sudah memotivasiku hingga
+                    bisa masuk FF UI. "
                   </p>
                   <h3 className="font-serif text-2xl text-white text-l px-10 ">
                     Dafina Azzahra Meliana - Peserta OH Vol. III
@@ -97,16 +95,13 @@ function Home() {
                 />
                 <div>
                   <p className="text-white text-l px-10 py-5 ">
-                    " Di fakultas farmasi, kalian akan banyak mempelajari hal
-                    mulai dari kimia, fisika, biologi. Tapi bagian terpentingnya
-                    adalah bagaimana kita dapat mengembangkan potensi diri untuk
-                    menjadi pribadi yang lebih baik. Mendaftarkan diri di IISMA
-                    adalah suatu perjalanan yang panjang, mulai dari
-                    mengumpulkan dokumen, seleksi berkas, wawancara hingga
-                    kemarin aku diterima menjadi perwakilan FF UI di IISMA tahun
-                    ini. Aku merasa honoured, dan aku percaya di IISMA aku dapat
-                    mengembangkan diriku untuk dapat memiliki mindset yang lebih
-                    global. "
+                    " Ikut Open House FF UI membuat aku jadi banyak tahu tentang
+                    Farmasi UI!! Kita diajak ke tempat-tempat para mahasiswa
+                    belajar dan praktik dan itu sangattt menarik. Kakak-kakaknya
+                    juga menjelaskan banyakkk hal tentang Farmasi. Open House FF
+                    UI sangat seruuu!!! karena kita bisa banyak bertanya sama
+                    kakak-kakak mahasiswa farmasi UI dan menambah wawasan kita
+                    tentang Farmasii!! "
                   </p>
                   <h3 className="font-serif text-2xl text-white text-l px-10 ">
                     Khalisah Bianka Azlin - Peserta OH Vol. III
