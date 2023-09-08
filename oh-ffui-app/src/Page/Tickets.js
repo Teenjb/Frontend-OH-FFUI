@@ -559,7 +559,6 @@ function Tickets() {
                   <ul className="mb-5 text-left text-sm font-normal text-[#f9f9fb]">
                     <li>BNI 0265810355 a/n Shahila Dicka Sjarif</li>
                     <li>OVO 081382285616 a/n Shahila</li>
-                    <li>GOPAY 081387915188 a/n Kezia Jolanda Irsy Kusumah</li>
                   </ul>
                   <h5 className="mb-5 bg-[#ea3431] text-center p-2 rounded-lg text-sm font-normal text-[#f9f9fb] dark:text-blue-200">
                     Jangan lupa untuk isi keterangan berita transfer dengan{" "}
