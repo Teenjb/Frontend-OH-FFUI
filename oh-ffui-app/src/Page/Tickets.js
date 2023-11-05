@@ -23,7 +23,7 @@ function Tickets() {
     "Day 1": "Rp 50000",
     "Day 2": "Rp 80000",
     "Day 2 (no workshop)": "Rp 50000",
-    Bundle: "Rp 120000",
+    "Bundle": "Rp 120000",
     "Bundle (no workshop)": "Rp80000",
   };
 
@@ -126,25 +126,25 @@ function Tickets() {
             ticketSoldOut();
           }
         } else if (typeClicked === "Day 2") {
-          if (ticketCount.countDay2No < 150) {
+          if (ticketCount.countDay2 < 150) {
             setPopUp(true);
           } else {
             ticketSoldOut();
           }
         } else if (typeClicked === "Day 2 (no workshop)") {
-          if (ticketCount.countBundle < 50) {
+          if (ticketCount.countDay2No < 50) {
             setPopUp(true);
           } else {
             ticketSoldOut();
           }
         } else if (typeClicked === "Bundle") {
-          if (ticketCount.countBundleNo < 50) {
+          if (ticketCount.countBundle < 50) {
             setPopUp(true);
           } else {
             ticketSoldOut();
           }
         } else if (typeClicked === "Bundle (no workshop)") {
-          if (ticketCount.countDay2 < 50) {
+          if (ticketCount.countBundleNo < 50) {
             setPopUp(true);
           } else {
             ticketSoldOut();
